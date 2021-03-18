@@ -1,6 +1,6 @@
 
 # User-specific folder
-source/.vs/
+.vs/
 
 # User-specific files
 *.rsuser
@@ -10,5 +10,9 @@ source/.vs/
 *.sln.docstates
 
 # Build results
-Debug/
-Release/
+source/Debug/
+source/Release/
+source/x64/Debug/
+source/x64/Release/
+
+
