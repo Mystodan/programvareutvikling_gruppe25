@@ -13,15 +13,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Custom Components">
+      <UniqueIdentifier>{b0fded53-f7bd-485c-bef4-d1757c7ee170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Custom Components">
+      <UniqueIdentifier>{d750494a-d412-4cd5-9a3d-1d9d475e1463}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="todo_list_application.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vtoggle.cpp">
+      <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vtoggle.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

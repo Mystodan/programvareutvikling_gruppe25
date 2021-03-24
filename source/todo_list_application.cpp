@@ -2,6 +2,7 @@
 #include <cmath>
 #include <thread>
 
+#include "vtoggle.h"
 #include "ftxui/component/checkbox.hpp"
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/input.hpp"
@@ -101,15 +102,15 @@ public:
  * \brief Spinner component/tab
  */
 class SpinnerComponent : public Component {
-  Element Render() override {
-    Elements entries;
-    for (int i = 0; i < 22; ++i) {
-      if (i != 0)
-        entries.push_back(spinner(i, shift / 2) | bold |
-                          size(WIDTH, GREATER_THAN, 2) | border);
-    }
-    return hflow(std::move(entries)) | border;
-  }
+	Element Render() override {
+		Elements entries;
+		for (int i = 0; i < 22; ++i) {
+			if (i != 0)
+				entries.push_back(spinner(i, shift / 2) | bold |
+					size(WIDTH, GREATER_THAN, 2) | border);
+		}
+		return hflow(std::move(entries)) | border;
+	}
 };
 
 /**
@@ -119,7 +120,7 @@ class Tab : public Component {
 public:
 	Container main_container = Container::Vertical();
 
-	Toggle tab_selection;
+	VToggle tab_selection;
 	Container container = Container::Tab(&tab_selection.selected);
 
 	HTopComponent htop_component;
@@ -139,8 +140,10 @@ public:
 	Element Render() override {
 		return vbox({
 			text(L"TODO List Application") | bold | hcenter,	// Bold text and horizontal centering
-			tab_selection.Render() | hcenter,					// Horizontal centering
-			container.Render() | flex,							// Flex/adaptive to terminal size
+			hbox(Elements{
+				tab_selection.Render() | hcenter,					// Horizontal centering
+				container.Render() | flex,							// Flex/adaptive to terminal size
+			})
 			});
 	}
 };
