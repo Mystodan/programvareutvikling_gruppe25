@@ -19,9 +19,9 @@
 
 using namespace ftxui;
 
-class Today : public Component {
+class Tasks : public Component {
 public:
-    Today() {
+    Tasks() {
         Add(&container_);
         container_.Add(&task_);
 
@@ -32,7 +32,7 @@ public:
         };
     }
     Element Render() override {
-        auto menu_win = window(text(L"Today") | center, task_.Render()); // Makes window around menu
+        auto menu_win = window(text(L"Tasks") | center, task_.Render()); // Makes window around menu
         return vbox({ menu_win });
     }
 
@@ -43,9 +43,9 @@ private:
     Container container_ = Container::Vertical();
 };
 
-class Upcoming : public Component {
+class Priority : public Component {
 public:
-    Upcoming() {
+    Priority() {
         Add(&container_);
         container_.Add(&task_);
 
@@ -56,7 +56,7 @@ public:
         };
     }
     Element Render() override {
-        auto menu_win = window(text(L"Upcoming") | center, task_.Render()); // Makes window around menu
+        auto menu_win = window(text(L"Priority") | center, task_.Render()); // Makes window around menu
         return vbox({ menu_win });
     }
 
@@ -92,6 +92,30 @@ private:
     Container container_ = Container::Vertical();
 };
 
+class RecycleBin : public Component {
+public:
+    RecycleBin() {
+        Add(&container_);
+        container_.Add(&task_);
+
+        task_.entries = {
+            L"Task 7",
+            L"Task 8",
+            L"Task 9",
+            L"Task 10",
+        };
+    }
+    Element Render() override {
+        auto menu_win = window(text(L"RecycleBin") | center, task_.Render()); // Makes window around menu
+        return vbox({ menu_win });
+    }
+
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu task_;
+    Container container_ = Container::Vertical();
+};
 
 class Tab : public Component {
 public:
@@ -99,23 +123,26 @@ public:
     Container container = Container::Tab(&menu.selected);
     Menu menu;
 
-    Today     td_Today;
-    Upcoming  td_Upcoming;
-    Completed td_Completed;
+    Tasks       td_Tasks;
+    Priority    td_Priority;
+    Completed   td_Completed;
+    RecycleBin  td_RecycleBin;
 
     Tab() {
 
         Add(&main_container);
         main_container.Add(&menu);
         menu.entries = {
-            L"Today",
-            L"Upcoming",
+            L"Tasks",
+            L"Priority",
             L"Completed",
+            L"Recycle bin"
         };
         main_container.Add(&container);
-        container.Add(&td_Today);
-        container.Add(&td_Upcoming);
+        container.Add(&td_Tasks);
+        container.Add(&td_Priority);
         container.Add(&td_Completed);
+        container.Add(&td_RecycleBin);
     }
 
     Element Render() override {
