@@ -1,166 +1,144 @@
-#include <iostream>
-#include <cmath>
-#include <thread>
+/*
+ *  To-do-list application group 25
+ *
+ *
+ *
+ *
+ *
+ */
 
-#include "vtoggle.h"
-#include "ftxui/component/checkbox.hpp"
 #include "ftxui/component/container.hpp"
-#include "ftxui/component/input.hpp"
+#include <ftxui/dom/elements.hpp>
+#include <ftxui/screen/screen.hpp>
 #include "ftxui/component/menu.hpp"
-#include "ftxui/component/radiobox.hpp"
 #include "ftxui/component/screen_interactive.hpp"
 #include "ftxui/component/toggle.hpp"
 #include "ftxui/screen/string.hpp"
 
+#include <iostream>
+
 using namespace ftxui;
 
-int shift = 0;
-class Graph {
+class Today : public Component {
 public:
-	std::vector<int> operator()(int width, int height) {
-		std::vector<int> output(width);
-		for (int i = 0; i < width; ++i) {
-			float v = 0;
-			v += 0.1f * sin((i + shift) * 0.1f);
-			v += 0.2f * sin((i + shift + 10) * 0.15f);
-			v += 0.1f * sin((i + shift) * 0.03f);
-			v *= height;
-			v += 0.5f * height;
-			output[i] = (int)v;
-		}
-		return output;
-	}
+    Today() {
+        Add(&container_);
+        container_.Add(&task_);
+
+        task_.entries = {
+            L"Task 1",
+            L"Task 2",
+            L"Task 3",
+        };
+    }
+    Element Render() override {
+        auto menu_win = window(text(L"Today") | center, task_.Render()); // Makes window around menu
+        return vbox({ menu_win });
+    }
+
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu task_;
+    Container container_ = Container::Vertical();
 };
 
-/**
- * \brief HTop component/tab
- */
-class HTopComponent : public Component {
-	Graph my_graph;
-
+class Upcoming : public Component {
 public:
-	HTopComponent() {}
-	~HTopComponent() override {}
+    Upcoming() {
+        Add(&container_);
+        container_.Add(&task_);
 
-	Element Render() override {
-		auto frequency = vbox({
-			text(L"Frequency [Mhz]") | hcenter,
-			hbox({
-				vbox({
-					text(L"2400 "),
-					filler(),
-					text(L"1200 "),
-					filler(),
-					text(L"0% "),
-				}),
-				graph(std::ref(my_graph)) | flex,
-			}) | flex,
-			});
+        task_.entries = {
+            L"Task 4",
+            L"Task 5",
+            L"Task 6",
+        };
+    }
+    Element Render() override {
+        auto menu_win = window(text(L"Upcoming") | center, task_.Render()); // Makes window around menu
+        return vbox({ menu_win });
+    }
 
-		auto utilization = vbox({
-			text(L"Utilization [%]") | hcenter,
-			hbox({
-				vbox({
-					text(L"100 "),
-					filler(),
-					text(L"50 "),
-					filler(),
-					text(L"0 "),
-				}),
-				graph(std::ref(my_graph)) | color(Color::RedLight),
-			}) | flex,
-			});
+    std::function<void()> on_enter = []() {};
 
-		auto ram = vbox({
-			text(L"Ram [Mo]") | hcenter,
-			hbox({
-				vbox({
-					text(L"8192"),
-					filler(),
-					text(L"4096 "),
-					filler(),
-					text(L"0 "),
-				}),
-				graph(std::ref(my_graph)) | color(Color::BlueLight),
-			}) | flex,
-			});
-
-		return hbox({
-				   vbox({
-					   frequency | flex,
-					   separator(),
-					   utilization | flex,
-				   }) | flex,
-				   separator(),
-				   ram | flex,
-			}) |
-			flex | border;
-	}
+private:
+    Menu task_;
+    Container container_ = Container::Horizontal();
 };
 
-/**
- * \brief Spinner component/tab
- */
-class SpinnerComponent : public Component {
-	Element Render() override {
-		Elements entries;
-		for (int i = 0; i < 22; ++i) {
-			if (i != 0)
-				entries.push_back(spinner(i, shift / 2) | bold |
-					size(WIDTH, GREATER_THAN, 2) | border);
-		}
-		return hflow(std::move(entries)) | border;
-	}
+class Completed : public Component {
+public:
+    Completed() {
+        Add(&container_);
+        container_.Add(&task_);
+
+        task_.entries = {
+            L"Task 7",
+            L"Task 8",
+            L"Task 9",
+            L"Task 10",
+        };
+    }
+    Element Render() override {
+        auto menu_win = window(text(L"Completed") | center, task_.Render()); // Makes window around menu
+        return vbox({ menu_win });
+    }
+
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu task_;
+    Container container_ = Container::Vertical();
 };
 
-/**
- * \brief Tab manager, keeps track of custom tab components
- */
+
 class Tab : public Component {
 public:
-	Container main_container = Container::Vertical();
+    Container main_container = Container::Horizontal();
+    Container container = Container::Tab(&menu.selected);
+    Menu menu;
 
-	VToggle tab_selection;
-	Container container = Container::Tab(&tab_selection.selected);
+    Today     td_Today;
+    Upcoming  td_Upcoming;
+    Completed td_Completed;
 
-	HTopComponent htop_component;
-	SpinnerComponent spinner_component;
+    Tab() {
 
-	Tab() {
-		Add(&main_container);
-		main_container.Add(&tab_selection);
-		tab_selection.entries = {
-			L"htop", L"spinner",
-		};
-		main_container.Add(&container);
-		container.Add(&htop_component);
-		container.Add(&spinner_component);
-	}
+        Add(&main_container);
+        main_container.Add(&menu);
+        menu.entries = {
+            L"Today",
+            L"Upcoming",
+            L"Completed",
+        };
+        main_container.Add(&container);
+        container.Add(&td_Today);
+        container.Add(&td_Upcoming);
+        container.Add(&td_Completed);
+    }
 
-	Element Render() override {
-		return vbox({
-			text(L"TODO List Application") | bold | hcenter,	// Bold text and horizontal centering
-			hbox(Elements{
-				tab_selection.Render() | hcenter,					// Horizontal centering
-				container.Render() | flex,							// Flex/adaptive to terminal size
-			})
-			});
-	}
+    Element Render() override {
+        return vbox({
+            text(L"To-do-list") | bold | hcenter,
+                hbox({
+                    hbox({ menu.Render() | border, container.Render() }),
+                }) | border,
+        });
+    }
 };
-int main() {
-	auto screen = ScreenInteractive::Fullscreen();
 
-	std::thread update([&screen]() {
-		while (true) {
-			using namespace std::chrono_literals;
-			std::this_thread::sleep_for(0.05s);
-			shift++;							// Shift the graphs
-			screen.PostEvent(Event::Custom);	// Post an even to cause the application to redraw the screen
-		}
-		});
+int main(int argc, const char* argv[]) {
+    auto screen = ScreenInteractive::TerminalOutput();
+    std::thread update([&screen]() {
+        for (;;) {
+            using namespace std::chrono_literals;
+            std::this_thread::sleep_for(0.05s);
+            screen.PostEvent(Event::Custom);
+        }
+        });
 
-	Tab tab;
-	screen.Loop(&tab);
-
-	return EXIT_SUCCESS;
+    Tab tab;
+    screen.Loop(&tab);
 }
+
