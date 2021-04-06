@@ -41,10 +41,11 @@ public:
         box_1_.label = L"Build examples";
         box_2_.label = L"Build tests";
         box_3_.label = L"Use WebAssembly";
+        
     }
 
     Element Render() override {
-        auto menu_win = window(text(L"Tasks") | center, box_1_.Render()); // Makes window around menu
+        auto menu_win = window( text(L"Tasks")|center, container_.Render() );
         return vbox({ menu_win });
     }
     std::function<void()> on_enter = []() {};
