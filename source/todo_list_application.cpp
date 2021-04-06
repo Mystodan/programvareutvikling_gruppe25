@@ -19,15 +19,16 @@
 
 using namespace ftxui;
 
-std::vector<Task> gTask;
 
-class Task {
+
+class newTask {
 public:
     bool isPriority,
          isComplete,
          inBin;
     int  status = 0,
-         date;
+         date,
+         id;
 
 };
 
