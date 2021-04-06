@@ -14,10 +14,25 @@
 #include "ftxui/component/screen_interactive.hpp"
 #include "ftxui/component/toggle.hpp"
 #include "ftxui/screen/string.hpp"
-
+#include <vector>
 #include <iostream>
 
 using namespace ftxui;
+
+std::vector<Task> gTask;
+
+class Task {
+public:
+    bool isPriority,
+         isComplete,
+         inBin;
+    int  status = 0,
+         date;
+
+};
+
+
+
 
 class Tasks : public Component {
 public:
@@ -37,6 +52,7 @@ public:
     }
 
     std::function<void()> on_enter = []() {};
+
 
 private:
     Menu task_;
@@ -156,6 +172,7 @@ public:
 };
 
 int main(int argc, const char* argv[]) {
+
     auto screen = ScreenInteractive::TerminalOutput();
     std::thread update([&screen]() {
         for (;;) {
@@ -164,7 +181,6 @@ int main(int argc, const char* argv[]) {
             screen.PostEvent(Event::Custom);
         }
         });
-
     Tab tab;
     screen.Loop(&tab);
 }
