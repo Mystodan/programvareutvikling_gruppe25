@@ -23,11 +23,11 @@ using namespace ftxui;
 class newTask {
 public:
     bool isPriority,
-        isComplete,
-        inBin;
+         isComplete,
+         inBin;
     int  status = 0,
-        date,
-        id;
+         date,
+         id;
     Menu temp;
 };
 
@@ -40,21 +40,20 @@ public:
         container_.Add(&box_3_);
         box_1_.label = L"Build examples";
         box_2_.label = L"Build tests";
-        box_3_.label = L"Use WebAssembly";
-        
+        box_3_.label = L"Use WebAssembly";   
+
     }
 
     Element Render() override {
-        auto menu_win = window( text(L"Tasks")|center, container_.Render() );
-        return vbox({ menu_win });
+        auto menu_win  = window(text(L"Tasks") | center, container_.Render() );
+        return hbox({ menu_win }); 
     }
-    std::function<void()> on_enter = []() {};
 
 private:
-    Menu task_;
     CheckBox box_1_;
     CheckBox box_2_;
     CheckBox box_3_;
+
     Container container_ = Container::Vertical();
 };
 
@@ -62,24 +61,37 @@ class Priority : public Component {
 public:
     Priority() {
         Add(&container_);
+        Add(&container_2);
         container_.Add(&task_);
+        container_2.Add(&status_);
 
         task_.entries = {
             L"Task 4",
             L"Task 5",
             L"Task 6",
         };
+        status_.entries = {
+            L"Status1",
+            L"Status2",
+            L"Status3",
+        };
     }
     Element Render() override {
-        auto menu_win = window(text(L"Priority") | center, task_.Render()); // Makes window around menu
-        return vbox({ menu_win });
+        auto task_win = window(text(L"Priority") | center, task_.Render());
+        auto status_win = window(text(L"Status") | center, status_.Render());
+        return hbox({ 
+            task_win, 
+            status_win, 
+            });
     }
 
     std::function<void()> on_enter = []() {};
 
 private:
     Menu task_;
-    Container container_ = Container::Horizontal();
+    Menu status_;
+    Container container_ = Container::Vertical();
+    Container container_2 = Container::Vertical();
 };
 
 class Completed : public Component {
@@ -152,6 +164,7 @@ public:
             L"Completed",
             L"Recycle bin"
         };
+
         main_container.Add(&container);
         container.Add(&td_Tasks);
         container.Add(&td_Priority);
@@ -160,7 +173,6 @@ public:
     }
 
     Element Render() override {
-        //auto menu_win = window(text(L"Side Menu") | center, menu.Render()); // Makes window around menu
         return vbox({
             text(L"To-do-list") | bold | hcenter,
                 hbox({
@@ -169,7 +181,6 @@ public:
             });
     }
 };
-
 std::vector<newTask> gTask[];
 
 int main(int argc, const char* argv[]) {
