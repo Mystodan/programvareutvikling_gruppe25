@@ -19,6 +19,18 @@
     <Filter Include="Source Files\Custom Components">
       <UniqueIdentifier>{d750494a-d412-4cd5-9a3d-1d9d475e1463}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SQL">
+      <UniqueIdentifier>{686f7dc7-7b26-4343-a666-9b5f9e5d5b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SQL\sqlite3">
+      <UniqueIdentifier>{78a4299d-5f4a-4dbb-ad52-79855e7b2f02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data">
+      <UniqueIdentifier>{5c791c54-23f7-40f3-85b9-04d31b107445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data">
+      <UniqueIdentifier>{f45475c3-a50b-483a-8513-2923b569e397}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="todo_list_application.cpp">
@@ -26,6 +38,30 @@
     </ClCompile>
     <ClCompile Include="vtoggle.cpp">
       <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="orm_test.cpp">
+      <Filter>Source Files\SQL</Filter>
+    </ClCompile>
+    <ClCompile Include="include\sqlite3\shell.c">
+      <Filter>Source Files\SQL\sqlite3</Filter>
+    </ClCompile>
+    <ClCompile Include="include\sqlite3\sqlite3.c">
+      <Filter>Source Files\SQL\sqlite3</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Source Files\SQL</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Task.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="UsersTasks.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Category.cpp">
+      <Filter>Source Files\Data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +72,30 @@
   <ItemGroup>
     <ClInclude Include="vtoggle.h">
       <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Task.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="UsersTasks.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="Category.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskStatus.h">
+      <Filter>Header Files\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
