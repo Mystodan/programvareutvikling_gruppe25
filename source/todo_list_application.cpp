@@ -1,10 +1,10 @@
 /*
- *  To-do-list application group 25
+ * To-do-list application group 25
+ * 
  *
  *
  *
- *
- *
+ *  
  */
 
 #include "ftxui/component/container.hpp"
@@ -15,10 +15,15 @@
 #include "ftxui/component/toggle.hpp"
 #include "ftxui/screen/string.hpp"
 #include "ftxui/component/checkbox.hpp"
+#include "ftxui/component/input.hpp"
 #include <vector>
 #include <iostream>
 
 using namespace ftxui;
+
+/*
+ *
+ */
 
 class newTask {
 public:
@@ -31,23 +36,23 @@ public:
     Menu temp;
 };
 
-class Tasks : public Component {
+/*
+ *
+ */
+
+class PriorityTask : public Component {
 public:
-    Tasks() {
+    PriorityTask() {
         Add(&container_);
         container_.Add(&box_1_);
         container_.Add(&box_2_);
         container_.Add(&box_3_);
-        box_1_.label = L"Build examples";
-        box_2_.label = L"Build tests";
-        box_3_.label = L"Use WebAssembly";   
+        box_1_.label = L" ";
+        box_2_.label = L" ";
+        box_3_.label = L" ";
 
     }
-
-    Element Render() override {
-        auto menu_win  = window(text(L"Tasks") | center, container_.Render() );
-        return hbox({ menu_win }); 
-    }
+    std::function<void()> on_enter = []() {};
 
 private:
     CheckBox box_1_;
@@ -57,42 +62,177 @@ private:
     Container container_ = Container::Vertical();
 };
 
-class Priority : public Component {
-public:
-    Priority() {
-        Add(&container_);
-        Add(&container_2);
-        container_.Add(&task_);
-        container_2.Add(&status_);
+/*
+ *
+ */
 
-        task_.entries = {
-            L"Task 4",
-            L"Task 5",
-            L"Task 6",
-        };
+class StatusTask : public Component {
+public:
+    StatusTask() {
+        Add(&container_);
+
+        container_.Add(&status_);
+
+
         status_.entries = {
-            L"Status1",
-            L"Status2",
-            L"Status3",
+               L"75%",                  //Read Task1 status
+               L"50%",
+               L"0%",
         };
     }
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu status_;
+    Container container_ = Container::Vertical();
+};
+
+/*
+ *
+ */
+
+class StartDateTask : public Component {
+public:
+    StartDateTask() {
+        Add(&container_);
+        container_.Add(&status_);
+
+        status_.entries = {
+               L"01.04.21",             //Read Task1 StartDate
+               L"01.04.21",
+               L"01.04.21",
+               L"02.04.21",
+        };
+    }
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu status_;
+    Container container_ = Container::Vertical();
+};
+
+/*
+ *
+ */
+
+class DeadlineTask : public Component {
+public:
+    DeadlineTask() {
+        Add(&container_);
+        container_.Add(&status_);
+
+        status_.entries = {
+               L"14.04.21",         //Read Task1 Deadline
+               L"16.04.21",
+               L"17.04.21",
+               L"18.04.21",
+        };
+    }
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu status_;
+    Container container_ = Container::Vertical();
+};
+
+/* 
+ * 
+ */
+
+class Tasks : public Component {
+public:
+    Tasks() {
+        Add(&container_);                   //Adds a new container
+        container_.Add(&task_);             //Adds a task container
+        container_.Add(&priority_);         //Adds a priority container
+        container_.Add(&status_);           //Adds a status container
+        container_.Add(&startDate_);        //Adds a startDate container
+        container_.Add(&deadline_);         //Adds a deadline container
+
+        task_.entries = {                   //Defines the entries in the task container
+            L"Task 1",                      //Read Task1 Name
+            L"Task 2",                      //Read Task2 Name
+            L"Task 3",                      //Read Task3 Name
+        };
+    }
+
     Element Render() override {
-        auto task_win = window(text(L"Priority") | center, task_.Render());
+        auto task_win = window(text(L"Task") | center, task_.Render());
+        auto priority_win = window(text(L"Priority") | center, priority_.Render());
         auto status_win = window(text(L"Status") | center, status_.Render());
-        return hbox({ 
-            task_win, 
-            status_win, 
+        auto startDate_win = window(text(L"Start-date") | center, startDate_.Render());
+        auto deadline_win = window(text(L"Deadline") | center, deadline_.Render());
+        return hbox({
+            task_win,
+            priority_win,
+            status_win,
+            startDate_win,
+            deadline_win,
             });
     }
-
     std::function<void()> on_enter = []() {};
 
 private:
     Menu task_;
-    Menu status_;
-    Container container_ = Container::Vertical();
-    Container container_2 = Container::Vertical();
+    StatusTask status_;
+    PriorityTask priority_;
+    StartDateTask startDate_;
+    DeadlineTask deadline_;
+
+    Container container_ = Container::Horizontal();
 };
+
+/*
+ *
+ */
+
+class Priority : public Component {
+
+public:
+    Priority() {
+        Add(&container_);                   //Adds a new container
+        container_.Add(&task_);             //Adds a task container
+        container_.Add(&priority_);         //Adds a priority container
+        container_.Add(&status_);           //Adds a status container
+        container_.Add(&startDate_);        //Adds a startDate container
+        container_.Add(&deadline_);         //Adds a deadline container
+
+        task_.entries = {                   //Defines the entries in the task container
+            L"Task 1",                      //Read Task1 Name
+            L"Task 2",                      //Read Task2 Name
+            L"Task 3",                      //Read Task3 Name
+        };
+    }
+
+    Element Render() override {
+        auto task_win = window(text(L"Task") | center, task_.Render());
+        auto priority_win = window(text(L"Priority") | center, priority_.Render());
+        auto status_win = window(text(L"Status") | center, status_.Render());
+        auto startDate_win = window(text(L"Start-date") | center, startDate_.Render());
+        auto deadline_win = window(text(L"Deadline") | center, deadline_.Render());
+        return hbox({
+            task_win,
+            priority_win,
+            status_win,
+            startDate_win,
+            deadline_win,
+            });
+    }
+    std::function<void()> on_enter = []() {};
+
+private:
+    Menu task_;
+    StatusTask status_;
+    PriorityTask priority_;
+    StartDateTask startDate_;
+    DeadlineTask deadline_;
+
+    Container container_   = Container::Horizontal();
+};
+
+/*
+ *
+ */
 
 class Completed : public Component {
 public:
@@ -119,6 +259,10 @@ private:
     Container container_ = Container::Vertical();
 };
 
+/*
+ *
+ */
+
 class RecycleBin : public Component {
 public:
     RecycleBin() {
@@ -144,16 +288,60 @@ private:
     Container container_ = Container::Vertical();
 };
 
+/*
+ *
+ *
+ */
+
+class CreateTask : public Component {
+public:
+    CreateTask() {
+        Add(&container);
+        container.Add(&input_1);
+        container.Add(&box_2);
+        container.Add(&input_3);
+        container.Add(&input_4);
+        container.Add(&input_5);
+        box_2.label = L"(X = Priority)";
+    }
+
+    std::function<void()> on_enter = []() {};
+
+private:
+    Container container = Container::Vertical();
+    Input input_1;
+    CheckBox box_2;
+    Input input_3;
+    Input input_4;
+    Input input_5;
+
+    Element Render() override {
+        return border(vbox({
+             hbox({text(L"Insert name of task: "), input_1.Render()}),
+             hbox({text(L"Choose priority of task: "), box_2.Render()}),
+             hbox({text(L"Insert status for task (0-100%): "), input_3.Render()}),
+             hbox({text(L"Set start-date for task (dd.mm.yy): "), input_4.Render()}),
+             hbox({text(L"Set deadline for task (dd.mm.yy): "), input_5.Render()}),
+             hbox(text(L"                         Confirm  Cancel")), // Will be changed to buttons later
+            }));
+    }
+};
+
+/*
+ *
+ */
+
 class Tab : public Component {
 public:
     Container main_container = Container::Horizontal();
     Container container = Container::Tab(&menu.selected);
-    Menu menu;
 
+    Menu        menu;
     Tasks       td_Tasks;
     Priority    td_Priority;
     Completed   td_Completed;
     RecycleBin  td_RecycleBin;
+    CreateTask  td_CreateTask;
 
     Tab() {
         Add(&main_container);
@@ -162,7 +350,8 @@ public:
             L"Tasks",
             L"Priority",
             L"Completed",
-            L"Recycle bin"
+            L"Recycle bin",
+            L"Create task",
         };
 
         main_container.Add(&container);
@@ -170,6 +359,8 @@ public:
         container.Add(&td_Priority);
         container.Add(&td_Completed);
         container.Add(&td_RecycleBin);
+        container.Add(&td_CreateTask);
+
     }
 
     Element Render() override {
@@ -182,6 +373,10 @@ public:
     }
 };
 std::vector<newTask> gTask[];
+
+/*
+ *
+ */
 
 int main(int argc, const char* argv[]) {
     auto screen = ScreenInteractive::TerminalOutput();
