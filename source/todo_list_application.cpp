@@ -44,7 +44,7 @@ class PriorityTask : public Component {
 public:
     PriorityTask() {
         Add(&container_);
-<<<<<<< HEAD
+
         container_.Add(&box_1_);
         container_.Add(&box_2_);
         container_.Add(&box_3_);
@@ -52,27 +52,14 @@ public:
         box_2_.label = L" ";
         box_3_.label = L" ";
 
-=======
-        container_.Add(&box_1);
-        container_.Add(&box_2);
-        container_.Add(&box_3);
-        box_1.label = L"Build examples";
-        box_2.label = L"Build tests";
-        box_3.label = L"Use WebAssembly";
-
     }
 
-    Element Render() override {
-        auto menu_win = window(text(L"Tasks") | center, container_.Render());
-        return hbox({ menu_win });
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
-    }
     std::function<void()> on_enter = []() {};
 
 private:
-    CheckBox box_1;
-    CheckBox box_2;
-    CheckBox box_3;
+    CheckBox box_1_;
+    CheckBox box_2_;
+    CheckBox box_3_;
 
     Container container_ = Container::Vertical();
 };
@@ -175,7 +162,6 @@ public:
         auto task_win = window(text(L"Task") | center, task_.Render());
         auto priority_win = window(text(L"Priority") | center, priority_.Render());
         auto status_win = window(text(L"Status") | center, status_.Render());
-<<<<<<< HEAD
         auto startDate_win = window(text(L"Start-date") | center, startDate_.Render());
         auto deadline_win = window(text(L"Deadline") | center, deadline_.Render());
         return hbox({
@@ -185,12 +171,7 @@ public:
             startDate_win,
             deadline_win,
             });
-=======
-        return hbox({
-            task_win,
-            status_win,
-        });
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
+
     }
     std::function<void()> on_enter = []() {};
 
@@ -310,14 +291,14 @@ private:
     Container container_ = Container::Vertical();
 };
 
-<<<<<<< HEAD
+
 /*
  *
  *
  */
 
-=======
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
+
+
 class CreateTask : public Component {
 public:
     CreateTask() {
@@ -341,34 +322,25 @@ private:
     Input input_5;
 
     Element Render() override {
-<<<<<<< HEAD
+
         return border(vbox({
              hbox({text(L"Insert name of task: "), input_1.Render()}),
              hbox({text(L"Choose priority of task: "), box_2.Render()}),
              hbox({text(L"Insert status for task (0-100%): "), input_3.Render()}),
              hbox({text(L"Set start-date for task (dd.mm.yy): "), input_4.Render()}),
              hbox({text(L"Set deadline for task (dd.mm.yy): "), input_5.Render()}),
-             hbox(text(L"                         Confirm  Cancel")), // Will be changed to buttons later
-=======
-       return border(vbox({
-            hbox({text(L"Insert name of task: "), input_1.Render()}),
-            hbox({text(L"Choose priority of task: "), box_2.Render()}),
-            hbox({text(L"Insert status for task (0-100%): "), input_3.Render()}),
-            hbox({text(L"Set start-date for task (dd.mm.yy): "), input_4.Render()}),
-            hbox({text(L"Set deadline for task (dd.mm.yy): "), input_5.Render()}),
-            hbox(text(L"                         Confirm  Cancel")), // Will be changed to buttons later
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
+             //hbox(text(L"                         Confirm  Cancel")), // Will be changed to buttons later
             }));
-    }
+    };
 };
 
-<<<<<<< HEAD
+
+
 /*
  *
  */
 
-=======
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
+
 class Tab : public Component {
 public:
     Container main_container = Container::Horizontal();
@@ -389,11 +361,7 @@ public:
             L"Priority",
             L"Completed",
             L"Recycle bin",
-<<<<<<< HEAD
             L"Create task",
-=======
-            L"Create task"
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
         };
 
         main_container.Add(&container);
@@ -402,10 +370,6 @@ public:
         container.Add(&td_Completed);
         container.Add(&td_RecycleBin);
         container.Add(&td_CreateTask);
-<<<<<<< HEAD
-
-=======
->>>>>>> 63332c2bfb2f20269a0446c4a969887f83e9cd42
     }
 
     Element Render() override {
