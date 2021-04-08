@@ -16,10 +16,15 @@
 #include "ftxui/screen/string.hpp"
 #include "ftxui/component/checkbox.hpp"
 #include "ftxui/component/input.hpp"
+
 #include <vector>
 #include <iostream>
 
 #include "EmptyCheckBox.h"
+#include "UsersTasks.h"
+#include "Task.h"
+#include "User.h"
+#include "Category.h"
 
 using namespace ftxui;
 
@@ -29,13 +34,13 @@ using namespace ftxui;
 
 class newTask {
 public:
-    bool isPriority,
-        isComplete,
-        inBin;
-    int  status = 0,
-        date,
-        id;
-    Menu temp;
+	bool isPriority,
+		isComplete,
+		inBin;
+	int  status = 0,
+		date,
+		id;
+	Menu temp;
 };
 
 /*
@@ -46,23 +51,25 @@ class PriorityTask : public Component {
 public:
     PriorityTask() {
         Add(&container_);
+    }
 
-        container_.Add(&box_1_);
-        container_.Add(&box_2_);
-        container_.Add(&box_3_);
-        box_1_.label = L"";
-        box_2_.label = L"";
-        box_3_.label = L"";
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
+        for (const auto& task : tasks) {
+            auto* checkbox = new EmptyCheckBox();
 
+            checkbox->state = task->get_category().get_priority();
+
+			checkbox->on_change = [=]() {
+				task->get_category().set_priority(checkbox->state);
+			};
+
+            container_.Add(checkbox);
+        }
     }
 
     std::function<void()> on_enter = []() {};
 
 private:
-    EmptyCheckBox box_1_;
-    EmptyCheckBox box_2_;
-    EmptyCheckBox box_3_;
-
     Container container_ = Container::Vertical();
 };
 
@@ -143,15 +150,26 @@ private:
  * 
  */
 
+// TODO: figure this out and have one vector of these base components in the tab class and then call fill_data from those base components to fill from vec
+class BaseTask : public Component {
+public:
+    void fill_data(const std::vector<Task>& tasks);
+};
+
 class Tasks : public Component {
 public:
     Tasks() {
+
+        auto tasks = UserTasksManager::get_all_tasks();
+
         Add(&container_);                   //Adds a new container
         container_.Add(&task_);             //Adds a task container
         container_.Add(&priority_);         //Adds a priority container
         container_.Add(&status_);           //Adds a status container
         container_.Add(&startDate_);        //Adds a startDate container
         container_.Add(&deadline_);         //Adds a deadline container
+
+        priority_.fill_data(tasks);
 
         task_.entries = {                   //Defines the entries in the task container
             L"Task 1",                      //Read Task1 Name
@@ -356,6 +374,7 @@ public:
     CreateTask  td_CreateTask;
 
     Tab() {
+
         Add(&main_container);
         main_container.Add(&menu);
         menu.entries = {
