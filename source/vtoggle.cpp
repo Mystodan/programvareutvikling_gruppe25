@@ -32,7 +32,7 @@ namespace ftxui {
         if (event == Event::Tab && entries.size())
             selected = (selected + 1) % entries.size();
         if (event == Event::TabReverse && entries.size())
-            selected = (selected + entries.size() - 1) % entries.size();
+            selected = static_cast<int>(selected + entries.size() - 1 % entries.size());
 
         selected = std::max(0, std::min(int(entries.size()) - 1, selected));
 
