@@ -1,22 +1,38 @@
 #pragma once
+#include <cassert>
 #include <string>
 
-struct Task;
+class Task;
 struct Color;
 
-struct User {
+struct UserDB {
 	/*
 	 * DB
 	 */
-	int id;
+	int id = -1;
 	std::string first_name;
 	std::string last_name;
 	int color_id;  // foreign
 
-	/*
-	 * Non DB
-	 */
+};
 
+class User {
+public:
+	User(UserDB user_) : user_(user_) {
+		assert(user_.id != -1);
+	}
+
+	int get_id() const;
+
+	std::string get_first_name();
+	void set_first_name(std::string first_name_);
+
+	std::string get_last_name();
+	void set_last_name(std::string last_name_);
+
+	int get_color_id();
+	void set_color_id(int color_id_);
+	Color get_color();
 
 	void add_task(Task task);
 
@@ -28,5 +44,10 @@ struct User {
 	 */
 	void remove_task(Task task);
 
-	Color get_color();
+	
+private:
+	void update();
+	void fetch();
+
+	UserDB user_;
 };

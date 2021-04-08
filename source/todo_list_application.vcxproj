@@ -148,11 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Category.cpp" />
+    <ClCompile Include="EmptyCheckBox.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="include\sqlite3\shell.c" />
     <ClCompile Include="include\sqlite3\sqlite3.c" />
     <ClCompile Include="orm_test.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskStatus.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UsersTasks.cpp" />
     <ClCompile Include="vtoggle.cpp" />
@@ -164,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="Category.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="EmptyCheckBox.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="Task.h" />

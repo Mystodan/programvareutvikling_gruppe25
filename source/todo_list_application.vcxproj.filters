@@ -63,6 +63,12 @@
     <ClCompile Include="Category.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
+    <ClCompile Include="EmptyCheckBox.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskStatus.cpp">
+      <Filter>Source Files\Data</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -96,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="TaskStatus.h">
       <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EmptyCheckBox.h">
+      <Filter>Header Files\Custom Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
