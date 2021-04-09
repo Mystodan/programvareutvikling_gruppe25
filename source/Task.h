@@ -1,23 +1,32 @@
 #pragma once
 #include <string>
 
-struct User;
-struct Category;
-struct TaskStatus;
-struct Task {
-	/*
-	 * DB
-	 */
-	int id;
-	std::string description;
-	int start_time;
-	int end_time;
-	int category_id; // foreign
-	int status_id; // foreign
+class User;
+class Category;
+class TaskStatus;
 
-	/*
-	 * Non DB
-	 */
+struct TaskDB {
+	int id = -1;
+	std::string description;
+	int start_time = -1;
+	int end_time = -1;
+	int category_id = -1; // foreign
+	int status_id = -1; // foreign
+};
+
+class Task {
+public:
+	Task(TaskDB task_db) : task_(task_db){}
+	int get_id() const;
+
+	std::string get_description();
+	void set_description(std::string description_);
+
+	int get_start_time();
+	void set_start_time(int start_time_);
+
+	int get_end_time();
+	void set_end_time(int end_time_);
 
 	void add_user(User user);
 
@@ -30,5 +39,16 @@ struct Task {
 	void remove_user(User user);
 
 	Category get_category();
+	int get_category_id();
+	void set_category_id(int category_id_);
+
 	TaskStatus get_status();
+	int get_status_id();
+	void set_status_id(int status_id_);
+
+private:
+	void update();
+	void fetch();
+
+	TaskDB task_{};
 };

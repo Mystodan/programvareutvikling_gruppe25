@@ -11,6 +11,12 @@
 #include <vector>
 #include <iostream>
 
+#include "EmptyCheckBox.h"
+#include "UsersTasks.h"
+#include "Task.h"
+#include "User.h"
+#include "Category.h"
+
 using namespace ftxui;
 
 int main(int argc, const char* argv[]) {
