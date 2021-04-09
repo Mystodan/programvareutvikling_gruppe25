@@ -97,5 +97,38 @@
     <ClInclude Include="TaskStatus.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
+    <ClInclude Include="NewTask.h">
+      <Filter>Header Files\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="StartDateTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadlineTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Tasks.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Priority.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Completed.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RecycleBin.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="SideMenu.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

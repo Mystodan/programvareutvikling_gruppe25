@@ -164,9 +164,20 @@
   <ItemGroup>
     <ClInclude Include="Category.h" />
     <ClInclude Include="Color.h" />
+    <ClInclude Include="Completed.h" />
+    <ClInclude Include="CreateTask.h" />
     <ClInclude Include="Database.h" />
+    <ClInclude Include="DeadlineTask.h" />
+    <ClInclude Include="Priority.h" />
+    <ClInclude Include="PriorityTask.h" />
+    <ClInclude Include="NewTask.h" />
+    <ClInclude Include="RecycleBin.h" />
+    <ClInclude Include="SideMenu.h" />
+    <ClInclude Include="StartDateTask.h" />
     <ClInclude Include="Status.h" />
+    <ClInclude Include="StatusTask.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="Tasks.h" />
     <ClInclude Include="TaskStatus.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UsersTasks.h" />
