@@ -3,11 +3,11 @@
 #include <iostream>
 
 #include "Category.h"
-#include "Color.h"
 #include "Task.h"
 #include "TaskStatus.h"
 #include "User.h"
 #include "UsersTasks.h"
+#include "Color.h"
 
 namespace Database {
 

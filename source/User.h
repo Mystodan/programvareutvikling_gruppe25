@@ -1,14 +1,15 @@
 #pragma once
 #include <cassert>
 #include <string>
+#include "Color.h"
 
 class Task;
 struct Color;
 
 struct UserDB {
 	int id = -1;
-	std::string first_name;
-	std::string last_name;
+	std::wstring first_name;
+	std::wstring last_name;
 	int color_id;  // foreign
 
 };
@@ -21,11 +22,11 @@ public:
 
 	int get_id() const;
 
-	std::string get_first_name();
-	void set_first_name(std::string first_name_);
+	std::wstring get_first_name();
+	void set_first_name(std::wstring first_name_);
 
-	std::string get_last_name();
-	void set_last_name(std::string last_name_);
+	std::wstring get_last_name();
+	void set_last_name(std::wstring last_name_);
 
 	int get_color_id();
 	void set_color_id(int color_id_);

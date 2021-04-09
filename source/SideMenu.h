@@ -3,22 +3,18 @@
 /*
  *
  */
+#include <ftxui/component/container.hpp>
+#include <ftxui/component/menu.hpp>
+#include <ftxui/component/screen_interactive.hpp>
 
-#include "ftxui/component/container.hpp"
-#include "ftxui/component/menu.hpp"
-#include "ftxui/component/screen_interactive.hpp"
-#include "tasks.h"
+#include "Tasks.h"
 #include "Priority.h"
 #include "Completed.h"
 #include "RecycleBin.h"
 #include "CreateTask.h"
-
+#include "TaskManager.h"
 
 using namespace ftxui;
-
-/*
- *
- */
 
 class SideMenu : public Component {
 public:
@@ -52,7 +48,15 @@ public:
             L"Create task",
         };
 
+        auto tasks = TaskManager::get_all_tasks();
+
+        // TODO: Add some callback here with criteria to adding the task (like python filter)
+        td_Tasks.fill_data(tasks);
+        td_Priority.fill_data(tasks);
+        td_Completed.fill_data(tasks);
+
         main_container.Add(&container);
+        // TODO: Pass rebuild function as callback to all these that will happen on change for all these controls
         container.Add(&td_Tasks);
         container.Add(&td_Priority);
         container.Add(&td_Completed);

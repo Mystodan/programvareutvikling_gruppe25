@@ -6,13 +6,13 @@ int TaskStatus::get_id() const {
 	return tasks_status_.id;
 }
 
-std::string TaskStatus::get_description() {
+std::wstring TaskStatus::get_description() {
 	fetch();
 
 	return tasks_status_.description;
 }
 
-void TaskStatus::set_description(std::string description_) {
+void TaskStatus::set_description(std::wstring description_) {
 	tasks_status_.description = description_;
 
 	update();

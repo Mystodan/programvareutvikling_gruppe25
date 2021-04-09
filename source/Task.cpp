@@ -6,11 +6,11 @@ int Task::get_id() const {
 	return task_.id;
 }
 
-std::string Task::get_description() {
+std::wstring Task::get_description() {
 	return task_.description;
 }
 
-void Task::set_description(std::string description_) {
+void Task::set_description(std::wstring description_) {
 	task_.description = description_;
 
 	update();

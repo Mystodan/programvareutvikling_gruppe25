@@ -149,11 +149,14 @@
   <ItemGroup>
     <ClCompile Include="BaseTask.cpp" />
     <ClCompile Include="Category.cpp" />
+    <ClCompile Include="DeadlineTask.cpp" />
     <ClCompile Include="EmptyCheckBox.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="include\sqlite3\shell.c" />
     <ClCompile Include="include\sqlite3\sqlite3.c" />
     <ClCompile Include="orm_test.cpp" />
+    <ClCompile Include="PriorityTask.cpp" />
+    <ClCompile Include="StatusTask.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TaskManager.cpp" />
     <ClCompile Include="TaskStatus.cpp" />

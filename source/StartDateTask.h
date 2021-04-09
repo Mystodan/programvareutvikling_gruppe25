@@ -1,10 +1,5 @@
 #pragma once
 
-#include <Windows.h>
-/*
- *
- */
-
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 
@@ -19,7 +14,6 @@ public:
     void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
         status_.entries.clear();
         for (const auto& task : tasks) {
-            OutputDebugStringA("Test\n");
             status_.entries.push_back(std::to_wstring(task->get_start_time()));
         }
     }
