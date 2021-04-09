@@ -136,5 +136,8 @@
     <ClInclude Include="SideMenu.h">
       <Filter>Header Files\Custom Components</Filter>
     </ClInclude>
+    <ClInclude Include="EmptyCheckBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

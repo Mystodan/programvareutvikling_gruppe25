@@ -9,5 +9,6 @@ public:
          date,
          id;
     int  temp;
+
 };
 

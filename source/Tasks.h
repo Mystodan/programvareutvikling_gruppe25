@@ -11,6 +11,11 @@
 #include "StatusTask.h"
 #include "StartDateTask.h"
 #include "DeadlineTask.h"
+#include "EmptyCheckBox.h"
+#include "UsersTasks.h"
+#include "User.h"
+#include "Category.h"
+
 
 using namespace ftxui;
 
@@ -18,12 +23,17 @@ using namespace ftxui;
 class Tasks : public Component {
 public:
     Tasks() {
+
+        auto tasks = UserTasksManager::get_all_tasks();
+
         Add(&container_);                   //Adds a new container
         container_.Add(&task_);             //Adds a task container
         container_.Add(&priority_);         //Adds a priority container
         container_.Add(&status_);           //Adds a status container
         container_.Add(&startDate_);        //Adds a startDate container
         container_.Add(&deadline_);         //Adds a deadline container
+
+        priority_.fill_data(tasks);
 
         task_.entries = {                   //Defines the entries in the task container
             L"Task 1",                      //Read Task1 Name

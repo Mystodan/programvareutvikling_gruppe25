@@ -7,6 +7,10 @@
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 #include "ftxui/component/checkbox.hpp"
+#include "EmptyCheckBox.h"
+#include "Category.h"
+#include "Task.h"
+#include "User.h"
 
 using namespace ftxui;
 
@@ -14,22 +18,26 @@ class PriorityTask : public Component {
 public:
     PriorityTask() {
         Add(&container_);
+    }
 
-        container_.Add(&box_1_);
-        container_.Add(&box_2_);
-        container_.Add(&box_3_);
-        box_1_.label = L" ";
-        box_2_.label = L" ";
-        box_3_.label = L" ";
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
+        for (const auto& task : tasks) {
+            auto* checkbox = new EmptyCheckBox();
 
+            checkbox->state = task->get_category().get_priority();
+
+            checkbox->on_change = [=]() {
+                task->get_category().set_priority(checkbox->state);
+            };
+
+            container_.Add(checkbox);
+        }
     }
 
     std::function<void()> on_enter = []() {};
 
 private:
-    CheckBox box_1_;
-    CheckBox box_2_;
-    CheckBox box_3_;
-
     Container container_ = Container::Vertical();
 };
+
+
