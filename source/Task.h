@@ -46,6 +46,8 @@ public:
 	int get_status_id();
 	void set_status_id(int status_id_);
 
+	TaskDB get_task() const;
+
 private:
 	void update();
 	void fetch();

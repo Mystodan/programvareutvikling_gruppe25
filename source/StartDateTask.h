@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Windows.h>
 /*
  *
  */
@@ -14,13 +15,13 @@ public:
     StartDateTask() {
         Add(&container_);
         container_.Add(&status_);
-
-        status_.entries = {
-               L"01.04.21",             //Read Task1 StartDate
-               L"01.04.21",
-               L"01.04.21",
-               L"02.04.21",
-        };
+    }
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
+        status_.entries.clear();
+        for (const auto& task : tasks) {
+            OutputDebugStringA("Test\n");
+            status_.entries.push_back(std::to_wstring(task->get_start_time()));
+        }
     }
     std::function<void()> on_enter = []() {};
 

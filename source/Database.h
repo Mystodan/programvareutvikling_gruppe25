@@ -70,7 +70,7 @@ namespace Database {
 	 */
 	template <typename T>
 	int add(T object) {
-		return get_db().insert(object);
+		return get_db().insert<T>(object);
 	}
 
 	/**

@@ -78,6 +78,9 @@
     <ClCompile Include="TaskManager.cpp">
       <Filter>Source Files\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="BaseTask.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -150,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="TaskManager.h">
       <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTask.h">
+      <Filter>Header Files\Custom Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

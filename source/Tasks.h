@@ -31,6 +31,7 @@ public:
         container_.Add(&startDate_);        //Adds a startDate container
         container_.Add(&deadline_);         //Adds a deadline container
 
+        startDate_.fill_data(tasks);
         priority_.fill_data(tasks);
 
         task_.entries = {                   //Defines the entries in the task container

@@ -86,6 +86,10 @@ void Task::set_status_id(int status_id_) {
 	update();
 }
 
+TaskDB Task::get_task() const {
+	return task_;
+}
+
 void Task::update() {
 	Database::update<TaskDB>(task_);
 }

@@ -25,6 +25,8 @@ public:
     Container main_container = Container::Horizontal();
     Container container = Container::Tab(&menu.selected);
 
+    // TODO: Restructure so they are all the same class (except recyclebin and createtask) but with some different properties
+    // Makes it easier to add new code for all of them and the layout is the same on all
     Menu        menu;
     Tasks       td_Tasks;
     Priority    td_Priority;
@@ -33,6 +35,13 @@ public:
     CreateTask  td_CreateTask;
 
     SideMenu() {
+        Rebuild();
+    }
+
+    /**
+     * \brief This is awful
+     */
+    void Rebuild() {
         Add(&main_container);
         main_container.Add(&menu);
         menu.entries = {

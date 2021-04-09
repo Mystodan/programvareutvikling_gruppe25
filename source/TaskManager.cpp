@@ -26,7 +26,7 @@ std::vector<std::shared_ptr<Task>> TaskManager::get_all_tasks() {
 }
 
 void TaskManager::add_task(Task task) {
-	Database::add<TaskDB>(TaskDB{ task.get_id() });
+	Database::add<TaskDB>(task.get_task());
 }
 
 Task TaskManager::get_task(int task_id) {

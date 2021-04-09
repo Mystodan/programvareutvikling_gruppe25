@@ -6,9 +6,6 @@ class Task;
 struct Color;
 
 struct UserDB {
-	/*
-	 * DB
-	 */
 	int id = -1;
 	std::string first_name;
 	std::string last_name;
