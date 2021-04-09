@@ -1,4 +1,7 @@
 #include "TaskManager.h"
+#include "Task.h"
+#include "User.h"
+#include "Database.h"
 
 using namespace sqlite_orm;
 

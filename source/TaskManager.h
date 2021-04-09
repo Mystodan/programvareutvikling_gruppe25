@@ -2,15 +2,14 @@
 #include <memory>
 #include <vector>
 
-
-#include "database.h"
-#include "User.h"
+class Task;
+class User;
 
 class TaskManager {
 public:
-	std::vector<std::shared_ptr<User>> get_all_users();
-	std::vector<std::shared_ptr<Task>> get_all_tasks();
+	static std::vector<std::shared_ptr<User>> get_all_users();
+	static std::vector<std::shared_ptr<Task>> get_all_tasks();
 
-	void add_task(Task task);
-	Task get_task(int task_id);
+	static void add_task(Task task);
+	static Task get_task(int task_id);
 };
