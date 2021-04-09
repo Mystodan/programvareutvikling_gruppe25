@@ -16,7 +16,7 @@ namespace Database {
 
 		// Only initialize and sync once
 		static auto storage = []() {
-			auto storage = make_storage("new_test.sqlite",
+			auto storage = make_storage("task_test.sqlite",
 				make_table("users",
 					make_column("id", &UserDB::id, autoincrement(), primary_key()),
 					make_column("first_name", &UserDB::first_name),
