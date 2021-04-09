@@ -7,7 +7,7 @@ class TaskStatus;
 
 struct TaskDB {
 	int id = -1;
-	std::string description;
+	std::wstring description;
 	int start_time = -1;
 	int end_time = -1;
 	int category_id = -1; // foreign
@@ -19,8 +19,8 @@ public:
 	Task(TaskDB task_db) : task_(task_db){}
 	int get_id() const;
 
-	std::string get_description();
-	void set_description(std::string description_);
+	std::wstring get_description();
+	void set_description(std::wstring description_);
 
 	int get_start_time();
 	void set_start_time(int start_time_);

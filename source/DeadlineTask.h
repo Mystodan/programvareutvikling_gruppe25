@@ -1,9 +1,6 @@
 #pragma once
 
-/*
- *
- */
-
+#include "Task.h"
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 
@@ -23,6 +20,9 @@ public:
                L"18.04.21",
         };
     }
+
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks);
+
     std::function<void()> on_enter = []() {};
 
 private:

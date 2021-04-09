@@ -81,6 +81,15 @@
     <ClCompile Include="BaseTask.cpp">
       <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
+    <ClCompile Include="DeadlineTask.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PriorityTask.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusTask.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">

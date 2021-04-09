@@ -1,7 +1,6 @@
 #include "Category.h"
 
 #include "Database.h"
-#include "Color.h"
 
 int Category::get_color_id() {
 	fetch();
@@ -25,12 +24,12 @@ int Category::get_id() const {
 	return category_.id;
 }
 
-std::string Category::get_description() {
+std::wstring Category::get_description() {
 	fetch();
 	return category_.description;
 }
 
-void Category::set_description(std::string description_) {
+void Category::set_description(std::wstring description_) {
 	category_.description = description_;
 
 	update();

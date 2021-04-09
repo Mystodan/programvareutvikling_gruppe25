@@ -1,10 +1,5 @@
 #pragma once
 
-#include <Windows.h>
-/*
- *
- */
-
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 #include <ctime>

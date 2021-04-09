@@ -2,11 +2,11 @@
 #include <cassert>
 #include <string>
 
-struct Color;
+#include "Color.h"
 
 struct CategoryDB {
 	int id = -1;
-	std::string description;
+	std::wstring description;
 	int priority = -1;
 	int color_id;
 
@@ -20,8 +20,8 @@ public:
 
 	int get_id() const;
 
-	std::string get_description();
-	void set_description(std::string description_);
+	std::wstring get_description();
+	void set_description(std::wstring description_);
 
 	int get_priority();
 	void set_priority(int priority);
