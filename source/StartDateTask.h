@@ -5,14 +5,15 @@
 #include <ctime>
 #include <string>
 
-using namespace ftxui;
+class Task;
 
-class StartDateTask : public Component {
+class StartDateTask : public ftxui::Component {
 public:
     StartDateTask() {
         Add(&container_);
         container_.Add(&status_);
     }
+<<<<<<< HEAD
     void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
         status_.entries.clear();
         for (const auto& task : tasks) {
@@ -24,9 +25,16 @@ public:
             status_.entries.push_back(buffer);
         }
     }
+=======
+
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks);
+    void add_task(const std::shared_ptr<Task>& task);
+    void clear();
+
+>>>>>>> 95c8a79fae04051727a99faf5776dacc80e5f7f6
     std::function<void()> on_enter = []() {};
 
 private:
-    Menu status_;
-    Container container_ = Container::Vertical();
+    ftxui::Menu status_;
+    ftxui::Container container_ = ftxui::Container::Vertical();
 };

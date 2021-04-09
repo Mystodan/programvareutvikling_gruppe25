@@ -3,18 +3,22 @@
 /*
  *
  */
+#include <functional>
+
 #include <ftxui/component/container.hpp>
 #include <ftxui/component/menu.hpp>
 #include <ftxui/component/screen_interactive.hpp>
 
+#include "Category.h"
 #include "Tasks.h"
 #include "Priority.h"
 #include "Completed.h"
 #include "RecycleBin.h"
 #include "CreateTask.h"
 #include "TaskManager.h"
+#include "TaskStatus.h"
 
-using namespace ftxui;
+//using namespace ftxui;
 
 class SideMenu : public Component {
 public:
@@ -31,38 +35,49 @@ public:
     CreateTask  td_CreateTask;
 
     SideMenu() {
-        Rebuild();
+		Add(&main_container);
+		main_container.Add(&menu);
+		menu.entries = {
+			L"Tasks",
+			L"Priority",
+			L"Completed",
+			L"Recycle bin",
+			L"Create task",
+		};
+		main_container.Add(&container);
+
+		container.Add(&td_Tasks);
+		container.Add(&td_Priority);
+		container.Add(&td_Completed);
+		container.Add(&td_RecycleBin);
+		container.Add(&td_CreateTask);
+
+		RebuildDataEntries();
     }
 
     /**
      * \brief This is awful
      */
-    void Rebuild() {
-        Add(&main_container);
-        main_container.Add(&menu);
-        menu.entries = {
-            L"Tasks",
-            L"Priority",
-            L"Completed",
-            L"Recycle bin",
-            L"Create task",
-        };
+    void RebuildDataEntries() {
+		auto tasks = TaskManager::get_all_tasks();
 
-        auto tasks = TaskManager::get_all_tasks();
+		auto on_change = [this]() { RebuildDataEntries(); };
+    	
+		// Add the tasks and supply them with a predicate for adding them or not and also the on_change callback
+		td_Tasks.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			return true;
+			}, on_change);
 
-        // TODO: Add some callback here with criteria to adding the task (like python filter)
-        td_Tasks.fill_data(tasks);
-        td_Priority.fill_data(tasks);
-        td_Completed.fill_data(tasks);
+		td_Priority.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			return task->get_category().get_priority() != 0;
+			}, on_change);
 
-        main_container.Add(&container);
-        // TODO: Pass rebuild function as callback to all these that will happen on change for all these controls
-        container.Add(&td_Tasks);
-        container.Add(&td_Priority);
-        container.Add(&td_Completed);
-        container.Add(&td_RecycleBin);
-        container.Add(&td_CreateTask);
-    }
+		td_Completed.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			// NB! This is an example
+			//return task->get_status().get_description() == L"DONE";
+			return true;
+			}, on_change);
+	}
 
     Element Render() override {
         return vbox({

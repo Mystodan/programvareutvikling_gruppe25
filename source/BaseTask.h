@@ -11,7 +11,6 @@
 // TODO: figure this out and have one vector of these base components in the tab class and then call fill_data from those base components to fill from vec
 class Task;
 
-using namespace ftxui;
 class BaseTask : public Component {
 public:
     BaseTask() {
@@ -23,15 +22,25 @@ public:
         container_.Add(&deadline_);         //Adds a deadline container
     }
 
-	void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
-        for (auto& task : tasks) {
-            task_.entries.push_back(task->get_description());
-        }
+	void rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks, std::function<bool(const std::shared_ptr<Task>&)> predicate, std::function<void()> on_change) {
+        priority_.on_change = on_change;
 
-        priority_.fill_data(tasks);
-        startDate_.fill_data(tasks);
-        deadline_.fill_data(tasks);
-        status_.fill_data(tasks);
+        task_.entries.clear();
+
+        priority_.clear();
+        startDate_.clear();
+        deadline_.clear();
+        status_.clear();
+
+        for (const auto& task : tasks) {
+            if (predicate(task)) {
+				task_.entries.push_back(task->get_description());
+                priority_.add_task(task);
+                startDate_.add_task(task);
+                deadline_.add_task(task);
+                status_.add_task(task);
+            }
+        }
     }
 
     Element Render() override {

@@ -12,16 +12,11 @@ public:
     DeadlineTask() {
         Add(&container_);
         container_.Add(&status_);
-
-        status_.entries = {
-               L"14.04.21",         //Read Task1 Deadline
-               L"16.04.21",
-               L"17.04.21",
-               L"18.04.21",
-        };
     }
 
     void fill_data(const std::vector<std::shared_ptr<Task>>& tasks);
+    void add_task(const std::shared_ptr<Task>& task);
+    void clear();
 
     std::function<void()> on_enter = []() {};
 

@@ -6,8 +6,6 @@
 
 #include "BaseTask.h"
 
-using namespace ftxui;
-
 
 class Tasks : public BaseTask {
 public:
