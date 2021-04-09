@@ -3,23 +3,22 @@
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 
-using namespace ftxui;
+class Task;
 
-class StartDateTask : public Component {
+class StartDateTask : public ftxui::Component {
 public:
     StartDateTask() {
         Add(&container_);
         container_.Add(&status_);
     }
-    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
-        status_.entries.clear();
-        for (const auto& task : tasks) {
-            status_.entries.push_back(std::to_wstring(task->get_start_time()));
-        }
-    }
+
+    void fill_data(const std::vector<std::shared_ptr<Task>>& tasks);
+    void add_task(const std::shared_ptr<Task>& task);
+    void clear();
+
     std::function<void()> on_enter = []() {};
 
 private:
-    Menu status_;
-    Container container_ = Container::Vertical();
+    ftxui::Menu status_;
+    ftxui::Container container_ = ftxui::Container::Vertical();
 };
