@@ -77,6 +77,8 @@ public:
 			//return task->get_status().get_description() == L"DONE";
 			return true;
 			}, on_change);
+
+		td_CreateTask.on_change = on_change;
 	}
 
     Element Render() override {
