@@ -41,26 +41,3 @@ std::vector<Task> UserTasksManager::get_tasks_by_user(User user) {
 	return tasks;
 }
 
-std::vector<std::shared_ptr<User>> UserTasksManager::get_all_users() {
-	using namespace sqlite_orm;
-	auto users_db = Database::get_db().get_all<UserDB>();
-	std::vector<std::shared_ptr<User>> users{};
-	users.reserve(users_db.size());
-	for (auto user_db : users_db) {
-		users.emplace_back(std::make_shared<User>(user_db));
-	}
-	return users;
-}
-
-std::vector<std::shared_ptr<Task>> UserTasksManager::get_all_tasks() {
-	using namespace sqlite_orm;
-	auto tasks_db = Database::get_db().get_all<TaskDB>();
-	std::vector<std::shared_ptr<Task>> tasks{};
-	tasks.reserve(tasks_db.size());
-	for (auto task_db : tasks_db) {
-		tasks.emplace_back(std::make_shared<Task>(task_db));
-	}
-	return tasks;
-}
-	
-		 

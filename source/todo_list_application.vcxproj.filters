@@ -31,6 +31,12 @@
     <Filter Include="Source Files\Data">
       <UniqueIdentifier>{f45475c3-a50b-483a-8513-2923b569e397}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{927ea6c8-9656-425a-a13e-e158e9cde477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Managers">
+      <UniqueIdentifier>{fc2a76bd-f732-48f4-9422-fc62925165eb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="todo_list_application.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="TaskStatus.cpp">
       <Filter>Source Files\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManager.cpp">
+      <Filter>Source Files\Managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,7 +146,10 @@
       <Filter>Header Files\Custom Components</Filter>
     </ClInclude>
     <ClInclude Include="EmptyCheckBox.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager.h">
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

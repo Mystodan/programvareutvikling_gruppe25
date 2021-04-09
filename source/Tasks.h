@@ -6,15 +6,13 @@
 
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
-#include "NewTask.h"
 #include "PriorityTask.h"
 #include "StatusTask.h"
 #include "StartDateTask.h"
 #include "DeadlineTask.h"
 #include "EmptyCheckBox.h"
+#include "TaskManager.h"
 #include "UsersTasks.h"
-#include "User.h"
-#include "Category.h"
 
 
 using namespace ftxui;
@@ -24,7 +22,7 @@ class Tasks : public Component {
 public:
     Tasks() {
 
-        auto tasks = UserTasksManager::get_all_tasks();
+        auto tasks = TaskManager::get_all_tasks();
 
         Add(&container_);                   //Adds a new container
         container_.Add(&task_);             //Adds a task container

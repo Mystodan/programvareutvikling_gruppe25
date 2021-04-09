@@ -6,7 +6,6 @@
 
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
-#include "NewTask.h"
 #include "PriorityTask.h"
 #include "StatusTask.h"
 #include "StartDateTask.h"

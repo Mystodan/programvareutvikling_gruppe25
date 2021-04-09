@@ -5,12 +5,10 @@
  */
 
 #include "ftxui/component/container.hpp"
-#include "ftxui/component/menu.hpp"
 #include "ftxui/component/checkbox.hpp"
 #include "EmptyCheckBox.h"
 #include "Category.h"
 #include "Task.h"
-#include "User.h"
 
 using namespace ftxui;
 

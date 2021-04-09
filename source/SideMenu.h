@@ -9,7 +9,6 @@
 #include "ftxui/component/screen_interactive.hpp"
 #include "tasks.h"
 #include "Priority.h"
-#include "PriorityTask.h"
 #include "Completed.h"
 #include "RecycleBin.h"
 #include "CreateTask.h"

@@ -154,6 +154,7 @@
     <ClCompile Include="include\sqlite3\sqlite3.c" />
     <ClCompile Include="orm_test.cpp" />
     <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskManager.cpp" />
     <ClCompile Include="TaskStatus.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UsersTasks.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="Status.h" />
     <ClInclude Include="StatusTask.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="TaskManager.h" />
     <ClInclude Include="Tasks.h" />
     <ClInclude Include="TaskStatus.h" />
     <ClInclude Include="User.h" />

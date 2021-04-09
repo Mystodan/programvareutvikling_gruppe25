@@ -5,7 +5,6 @@
  */
 
 #include "ftxui/component/container.hpp"
-#include "ftxui/component/menu.hpp"
 #include "ftxui/component/checkbox.hpp"
 #include "ftxui/component/input.hpp"
 
