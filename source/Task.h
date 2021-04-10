@@ -44,7 +44,7 @@ public:
 	 * this task's id
 	 * \param user to be removed from being associated with this task
 	 */
-	void remove_user(User user);
+	//void remove_user(User user);
 
 	//Category get_category();
 	//int get_category_id();

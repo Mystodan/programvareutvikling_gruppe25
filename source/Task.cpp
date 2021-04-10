@@ -40,10 +40,10 @@ void Task::set_end_time(int end_time_) {
 	update();
 }
 
-void Task::add_user(User user) {
-	UsersTasksDB users_tasks{ user.get_id(), task_.id };
-	Database::add<UsersTasksDB>(users_tasks);
-}
+//void Task::add_user(User user) {
+//	UsersTasksDB users_tasks{ user.get_id(), task_.id };
+//	Database::add<UsersTasksDB>(users_tasks);
+//}
 
 int Task::get_status() {
 	fetch();
@@ -69,10 +69,10 @@ void Task::set_priority(bool has_priority) {
 	update();
 }
 
-void Task::remove_user(User user) {
-	using namespace sqlite_orm;
-	Database::remove<UsersTasksDB>(where(is_equal(&UserDB::id, user.get_id()) && where(is_equal(&TaskDB::id, task_.id))));
-}
+//void Task::remove_user(User user) {
+//	using namespace sqlite_orm;
+//	Database::remove<UsersTasksDB>(where(is_equal(&UserDB::id, user.get_id()) && where(is_equal(&TaskDB::id, task_.id))));
+//}
 
 
 

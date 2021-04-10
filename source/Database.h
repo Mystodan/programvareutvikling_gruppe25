@@ -17,12 +17,12 @@ namespace Database {
 		// Only initialize and sync once
 		static auto storage = []() {
 			auto storage = make_storage("new_db.sqlite",
-				make_table("users",
-					make_column("id", &UserDB::id, autoincrement(), primary_key()),
-					make_column("first_name", &UserDB::first_name),
-					make_column("last_name", &UserDB::last_name),
-					make_column("color_id", &UserDB::color_id),
-					foreign_key(&UserDB::color_id).references(&Color::id)),
+				//make_table("users",
+				//	make_column("id", &UserDB::id, autoincrement(), primary_key()),
+				//	make_column("first_name", &UserDB::first_name),
+				//	make_column("last_name", &UserDB::last_name),
+				//	make_column("color_id", &UserDB::color_id),
+				//	foreign_key(&UserDB::color_id).references(&Color::id)),
 				make_table("tasks",
 					make_column("id", &TaskDB::id, autoincrement(), primary_key()),
 					make_column("description", &TaskDB::description), // allow null
@@ -30,11 +30,11 @@ namespace Database {
 					make_column("end_time", &TaskDB::end_time, default_value(0)),
 					make_column("status", &TaskDB::status),
 					make_column("priority", &TaskDB::priority)),
-				make_table("users_tasks", // Junction table
-					make_column("user_id", &UsersTasksDB::user_id),
-					foreign_key(&UsersTasksDB::user_id).references(&UserDB::id),
-					make_column("task_id", &UsersTasksDB::task_id),
-					foreign_key(&UsersTasksDB::task_id).references(&TaskDB::id)),
+				//make_table("users_tasks", // Junction table
+				//	make_column("user_id", &UsersTasksDB::user_id),
+				//	foreign_key(&UsersTasksDB::user_id).references(&UserDB::id),
+				//	make_column("task_id", &UsersTasksDB::task_id),
+					//foreign_key(&UsersTasksDB::task_id).references(&TaskDB::id)),
 				make_table("color",
 					make_column("id", &Color::id, autoincrement(), primary_key()),
 					make_column("hex_color", &Color::hex_value))

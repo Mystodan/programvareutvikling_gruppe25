@@ -1,4 +1,4 @@
-#include <sqlite_orm3/sqlite_orm.h>
+/*#include <sqlite_orm3/sqlite_orm.h>
 #include "User.h"
 #include "Task.h"
 #include "UsersTasks.h"
@@ -68,4 +68,4 @@ void User::update() {
 
 void User::fetch() {
 	user_ = Database::get<UserDB>(user_.id);
-}
+}*/

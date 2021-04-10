@@ -30,50 +30,65 @@ public:
         priority_box.label = L"(X = Priority)";
         confirm_button.label = L"Confirm";
 
+
         confirm_button.on_click = [&]() {
+			auto is_number = [](const std::wstring& s) {
+				return !s.empty() && std::find_if(s.begin(),
+					s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
+			};
+
+			output_window_.entries.clear();
+
             // This is to be filled in
             TaskDB task;
 
-            int priority = static_cast<int>(priority_box.state);
+            bool valid_data = true;
+
             if (status_input_.content.empty()) {
                 output_window_.entries.emplace_back(L"The task cannot have an empty status");
-                return;
+                valid_data = false;
             }
 
-            task.status = stoi(status_input_.content);
+            if (!is_number(status_input_.content)) {
+                output_window_.entries.emplace_back(L"The status must be a number");
+                valid_data = false;
+            }
 
             // TODO: Check if empty and give error/warning in the Menu input below
             std::wstring description = description_input_.content;
 			if (description.empty()) {
                 output_window_.entries.emplace_back(L"The task needs to have a name");
-                return;
+                valid_data = false;
 			}
-            task.description = description;
-
-            int start_time = 0; // replace with input_3 content TODO: convert string dd.mm.yy to unix time
-            task.start_time = start_time;
 
             std::wstring start_time_str = start_time_input_.content;
             if (start_time_str.empty()) {
                 output_window_.entries.emplace_back(L"The task needs to have a start time");
-                return;
+                valid_data = false;
             }
 
-            int end_time = 100; // replace with input_4 content TODO: convert string dd.mm.yy to unix time
-            task.end_time = end_time;
+        	if (valid_data) {
+				task.description = description;
 
-            // 1 is priority?? DB doesn't match wireframe, need to change
-            //TaskDB task{ -1, description, start_date, end_date, 1, status };
+				int end_time = 100; // replace with start_time_ content TODO: convert string dd.mm.yy to unix time
+				int start_time = 0; // replace with end_time_ content TODO: convert string dd.mm.yy to unix time
 
-            TaskManager::add_task(task);
+				task.start_time = start_time;
+				task.end_time = end_time;
+				task.priority = static_cast<int>(priority_box.state);
 
-            on_change();
+				task.status = stoi(status_input_.content);
 
-        	// Clear data
-            description_input_.content.clear();
-            status_input_.content.clear();
-            start_time_input_.content.clear();
-            end_time_input_.content.clear();
+				TaskManager::add_task(task);
+
+				on_change();
+
+				// Clear data
+				description_input_.content.clear();
+				status_input_.content.clear();
+				start_time_input_.content.clear();
+				end_time_input_.content.clear();
+        	}
         };
     }
     std::function<void()> on_change = [](){};
