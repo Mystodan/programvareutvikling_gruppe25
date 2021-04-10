@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="BaseTask.cpp" />
     <ClCompile Include="Category.cpp" />
+    <ClCompile Include="CreateTask.cpp" />
     <ClCompile Include="DeadlineTask.cpp" />
     <ClCompile Include="EmptyCheckBox.cpp" />
     <ClCompile Include="Database.cpp" />
