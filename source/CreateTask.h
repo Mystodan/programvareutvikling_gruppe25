@@ -30,7 +30,6 @@ public:
         priority_box.label = L"(X = Priority)";
         confirm_button.label = L"Confirm";
 
-
         confirm_button.on_click = [&]() {
 			auto is_number = [](const std::wstring& s) {
 				return !s.empty() && std::find_if(s.begin(),
@@ -70,8 +69,8 @@ public:
         	if (valid_data) {
 				task.description = description;
 
-				int end_time = 100; // replace with start_time_ content TODO: convert string dd.mm.yy to unix time
 				int start_time = 0; // replace with end_time_ content TODO: convert string dd.mm.yy to unix time
+				int end_time = 100; // replace with start_time_ content TODO: convert string dd.mm.yy to unix time
 
 				task.start_time = start_time;
 				task.end_time = end_time;
@@ -105,7 +104,7 @@ private:
 
     Element Render() override {
 
-        auto input_win = window(text(L"task name"), hbox({output_window_.Render(), }));
+        auto input_win = window(text(L"Output"), hbox({output_window_.Render(), }));
 
         return border(vbox({
              hbox({text(L"Insert name of task: "), description_input_.Render()}),

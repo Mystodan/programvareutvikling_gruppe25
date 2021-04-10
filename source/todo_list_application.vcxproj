@@ -161,6 +161,7 @@
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TaskManager.cpp" />
     <ClCompile Include="TaskStatus.cpp" />
+    <ClCompile Include="TimeUtil.cpp" />
     <ClCompile Include="User.cpp" />
     <ClCompile Include="UsersTasks.cpp" />
     <ClCompile Include="vtoggle.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="TaskManager.h" />
     <ClInclude Include="Tasks.h" />
     <ClInclude Include="TaskStatus.h" />
+    <ClInclude Include="TimeUtil.h" />
     <ClInclude Include="User.h" />
     <ClInclude Include="UsersTasks.h" />
     <ClInclude Include="vtoggle.h" />

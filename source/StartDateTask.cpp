@@ -1,6 +1,7 @@
 #include "StartDateTask.h"
 
 #include "Task.h"
+#include "TimeUtil.h"
 
 void StartDateTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
 	status_.entries.clear();
@@ -10,12 +11,9 @@ void StartDateTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
 }
 
 void StartDateTask::add_task(const std::shared_ptr<Task>& task) {
-	wchar_t buffer[9];
-	time_t unixTime = task->get_start_time();
-	struct tm tm_;
-	localtime_s(&tm_, &unixTime);
-	wcsftime(buffer, sizeof(buffer), L"%d.%m.%y", &tm_);
-	status_.entries.emplace_back(buffer);
+	auto time = Utils::unixtime_to_string(task->get_start_time());
+
+	status_.entries.emplace_back(time);
 }
 
 void StartDateTask::clear() {

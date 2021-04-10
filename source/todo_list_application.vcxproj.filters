@@ -37,6 +37,12 @@
     <Filter Include="Source Files\Managers">
       <UniqueIdentifier>{fc2a76bd-f732-48f4-9422-fc62925165eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{470d6bfd-a416-4515-87f0-8e1e8b281a64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{4092a3ba-dd2d-496a-a1c7-aaee32bc7365}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="todo_list_application.cpp">
@@ -92,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="StartDateTask.cpp">
       <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeUtil.cpp">
+      <Filter>Source Files\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +177,9 @@
     </ClInclude>
     <ClInclude Include="BaseTask.h">
       <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeUtil.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
