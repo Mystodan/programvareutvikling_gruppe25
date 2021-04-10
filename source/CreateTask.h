@@ -40,7 +40,7 @@ public:
                 return;
             }
 
-            task.status_id = stoi(status_input_.content);
+            task.status = stoi(status_input_.content);
 
             // TODO: Check if empty and give error/warning in the Menu input below
             std::wstring description = description_input_.content;
@@ -48,6 +48,7 @@ public:
                 output_window_.entries.emplace_back(L"The task needs to have a name");
                 return;
 			}
+            task.description = description;
 
             int start_time = 0; // replace with input_3 content TODO: convert string dd.mm.yy to unix time
             task.start_time = start_time;

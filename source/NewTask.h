@@ -1,5 +1,5 @@
 #pragma once
-
+/*
 class NewTask {
 public:
     bool isPriority,
@@ -11,4 +11,4 @@ public:
     int  temp;
 
 };
-
+*/

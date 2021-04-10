@@ -16,7 +16,7 @@ namespace Database {
 
 		// Only initialize and sync once
 		static auto storage = []() {
-			auto storage = make_storage("task_test.sqlite",
+			auto storage = make_storage("new_db.sqlite",
 				make_table("users",
 					make_column("id", &UserDB::id, autoincrement(), primary_key()),
 					make_column("first_name", &UserDB::first_name),
@@ -28,10 +28,8 @@ namespace Database {
 					make_column("description", &TaskDB::description), // allow null
 					make_column("start_time", &TaskDB::start_time, default_value(0)),
 					make_column("end_time", &TaskDB::end_time, default_value(0)),
-					make_column("category_id", &TaskDB::category_id),
-					foreign_key(&TaskDB::category_id).references(&CategoryDB::id),
-					make_column("status_id", &TaskDB::status_id),
-					foreign_key(&TaskDB::status_id).references(&TaskStatusDB::id)),
+					make_column("status", &TaskDB::status),
+					make_column("priority", &TaskDB::priority)),
 				make_table("users_tasks", // Junction table
 					make_column("user_id", &UsersTasksDB::user_id),
 					foreign_key(&UsersTasksDB::user_id).references(&UserDB::id),
@@ -39,16 +37,7 @@ namespace Database {
 					foreign_key(&UsersTasksDB::task_id).references(&TaskDB::id)),
 				make_table("color",
 					make_column("id", &Color::id, autoincrement(), primary_key()),
-					make_column("hex_color", &Color::hex_value)),
-				make_table("categories",
-					make_column("id", &CategoryDB::id, autoincrement(), primary_key()),
-					make_column("description", &CategoryDB::description),
-					make_column("priority", &CategoryDB::priority),
-					make_column("color_id", &CategoryDB::color_id),
-					foreign_key(&CategoryDB::color_id).references(&Color::id)),
-				make_table("task_statuses",
-					make_column("id", &TaskStatusDB::id, autoincrement(), primary_key()),
-					make_column("description", &TaskStatusDB::description))
+					make_column("hex_color", &Color::hex_value))
 			);
 			try {
 				storage.sync_schema(); // Sync schema and ignore tables that might not exist in the schema defined here

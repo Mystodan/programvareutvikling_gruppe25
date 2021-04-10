@@ -1,5 +1,5 @@
 #pragma once
-#include <cassert>
+/*#include <cassert>
 #include <string>
 
 #include "Color.h"
@@ -36,4 +36,4 @@ private:
 
 	// Could make this static and only hold the id of the object per instance
 	CategoryDB category_{};
-};
+};*/

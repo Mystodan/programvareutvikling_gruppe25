@@ -69,13 +69,12 @@ public:
 			}, on_change);
 
 		td_Priority.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
-			return task->get_category().get_priority() != 0;
+			return task->get_priority() != 0;
 			}, on_change);
 
 		td_Completed.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
 			// NB! This is an example
-			//return task->get_status().get_description() == L"DONE";
-			return true;
+			return task->get_status() == 100;
 			}, on_change);
 
 		td_CreateTask.on_change = on_change;

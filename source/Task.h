@@ -2,7 +2,7 @@
 #include <string>
 
 class User;
-class Category;
+//class Category;
 class TaskStatus;
 
 struct TaskDB {
@@ -10,8 +10,10 @@ struct TaskDB {
 	std::wstring description;
 	int start_time = -1;
 	int end_time = -1;
-	int category_id = -1; // foreign
-	int status_id = -1; // foreign
+	int status = -1;
+	bool priority = false;
+	//int category_id = -1; // foreign
+	//int status_id = -1; // foreign
 };
 
 class Task {
@@ -30,6 +32,12 @@ public:
 
 	void add_user(User user);
 
+	int get_status();
+	void set_status(int status_);
+
+	bool get_priority();
+	void set_priority(bool has_priority);
+
 	/**
 	 * \brief removes the junction table entry where
 	 * user_id is the provided user's id and task_id is
@@ -38,13 +46,13 @@ public:
 	 */
 	void remove_user(User user);
 
-	Category get_category();
-	int get_category_id();
-	void set_category_id(int category_id_);
+	//Category get_category();
+	//int get_category_id();
+	//void set_category_id(int category_id_);
 
-	TaskStatus get_status();
-	int get_status_id();
-	void set_status_id(int status_id_);
+	//TaskStatus get_status();
+	//int get_status_id();
+	//void set_status_id(int status_id_);
 
 	TaskDB get_task() const;
 

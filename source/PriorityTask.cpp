@@ -13,10 +13,10 @@ void PriorityTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
 void PriorityTask::add_task(const std::shared_ptr<Task>& task) {
 	auto* checkbox = new EmptyCheckBox();
 
-	checkbox->state = task->get_category().get_priority();
+	checkbox->state = task->get_priority();
 
 	checkbox->on_change = [=]() {
-		task->get_category().set_priority(checkbox->state);
+		task->set_priority(checkbox->state);
 		on_change();
 	};
 

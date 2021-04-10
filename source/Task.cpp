@@ -45,46 +45,72 @@ void Task::add_user(User user) {
 	Database::add<UsersTasksDB>(users_tasks);
 }
 
+int Task::get_status() {
+	fetch();
+
+	return task_.status;
+}
+
+void Task::set_status(int status_) {
+	task_.status = status_;
+
+	update();
+}
+
+bool Task::get_priority() {
+	fetch();
+
+	return task_.priority;
+}
+
+void Task::set_priority(bool has_priority) {
+	task_.priority = has_priority;
+
+	update();
+}
+
 void Task::remove_user(User user) {
 	using namespace sqlite_orm;
 	Database::remove<UsersTasksDB>(where(is_equal(&UserDB::id, user.get_id()) && where(is_equal(&TaskDB::id, task_.id))));
 }
 
-Category Task::get_category() {
-	fetch();
 
-	return Database::get<CategoryDB>(task_.category_id);
-}
 
-int Task::get_category_id() {
-	fetch();
-
-	return task_.category_id;
-}
-
-void Task::set_category_id(int category_id_) {
-	task_.category_id = category_id_;
-
-	update();
-}
-
-TaskStatus Task::get_status() {
-	fetch();
-
-	return Database::get<TaskStatusDB>(task_.status_id);
-}
-
-int Task::get_status_id() {
-	fetch();
-
-	return task_.status_id;
-}
-
-void Task::set_status_id(int status_id_) {
-	task_.status_id = status_id_;
-
-	update();
-}
+//Category Task::get_category() {
+//	fetch();
+//
+//	return Database::get<CategoryDB>(task_.category_id);
+//}
+//
+//int Task::get_category_id() {
+//	fetch();
+//
+//	return task_.category_id;
+//}
+//
+//void Task::set_category_id(int category_id_) {
+//	task_.category_id = category_id_;
+//
+//	update();
+//}
+//
+//TaskStatus Task::get_status() {
+//	fetch();
+//
+//	return Database::get<TaskStatusDB>(task_.status_id);
+//}
+//
+//int Task::get_status_id() {
+//	fetch();
+//
+//	return task_.status_id;
+//}
+//
+//void Task::set_status_id(int status_id_) {
+//	task_.status_id = status_id_;
+//
+//	update();
+//}
 
 TaskDB Task::get_task() const {
 	return task_;

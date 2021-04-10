@@ -11,7 +11,7 @@ void StatusTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
 }
 
 void StatusTask::add_task(const std::shared_ptr<Task>& task) {
-	status_.entries.push_back(std::to_wstring(task->get_category().get_priority()));
+	status_.entries.push_back(std::to_wstring(task->get_status()));
 }
 
 void StatusTask::clear() {
