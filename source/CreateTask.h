@@ -20,64 +20,83 @@ class CreateTask : public Component {
 public:
     CreateTask() {
         Add(&container);
-        container.Add(&input_1);
-        container.Add(&box);
-        container.Add(&input_2);
-        container.Add(&input_3);
-        container.Add(&input_4);
+        container.Add(&description_input_);
+        container.Add(&priority_box);
+        container.Add(&status_input_);
+        container.Add(&start_time_input_);
+        container.Add(&end_time_input_);
         container.Add(&confirm_button);
 
-        box.label = L"(X = Priority)";
+        priority_box.label = L"(X = Priority)";
         confirm_button.label = L"Confirm";
 
         confirm_button.on_click = [&]() {
-            // TODO: Check if empty and give error/warning in the window below
-            std::wstring description = input_1.content;
-            int priority = static_cast<int>(box.state);
-            int status = stoi(input_2.content);
-            int start_date = 0; // replace with input_3 content
-            int end_date = 100; // replace with input_4 content
+            // This is to be filled in
+            TaskDB task;
 
-            // 1 is priority?? DB doesn't match wireframe
-            TaskDB task{ -1, description, start_date, end_date, 1, status };
+            int priority = static_cast<int>(priority_box.state);
+            if (status_input_.content.empty()) {
+                output_window_.entries.emplace_back(L"The task cannot have an empty status");
+                return;
+            }
+
+            task.status_id = stoi(status_input_.content);
+
+            // TODO: Check if empty and give error/warning in the Menu input below
+            std::wstring description = description_input_.content;
+			if (description.empty()) {
+                output_window_.entries.emplace_back(L"The task needs to have a name");
+                return;
+			}
+
+            int start_time = 0; // replace with input_3 content TODO: convert string dd.mm.yy to unix time
+            task.start_time = start_time;
+
+            std::wstring start_time_str = start_time_input_.content;
+            if (start_time_str.empty()) {
+                output_window_.entries.emplace_back(L"The task needs to have a start time");
+                return;
+            }
+
+            int end_time = 100; // replace with input_4 content TODO: convert string dd.mm.yy to unix time
+            task.end_time = end_time;
+
+            // 1 is priority?? DB doesn't match wireframe, need to change
+            //TaskDB task{ -1, description, start_date, end_date, 1, status };
 
             TaskManager::add_task(task);
 
             on_change();
 
         	// Clear data
-            input_1.content.clear();
-            input_2.content.clear();
-            input_3.content.clear();
-            input_4.content.clear();
-        };
-        input_1.on_enter = [this] {
-            input.entries.push_back(input_1.content); //Vector? string??
-            input_1.content = L" ";
+            description_input_.content.clear();
+            status_input_.content.clear();
+            start_time_input_.content.clear();
+            end_time_input_.content.clear();
         };
     }
     std::function<void()> on_change = [](){};
        
 private:
     Container container = Container::Vertical();   
-    Menu input; //input til string eller char???
-    Input input_1;
-    Input input_2;
-    Input input_3;
-    Input input_4;
-    CheckBox box;
+    Menu output_window_;
+    Input description_input_;
+    Input status_input_;
+    Input start_time_input_;
+    Input end_time_input_;
+    CheckBox priority_box;
     Button confirm_button;
 
     Element Render() override {
 
-        auto input_win = window(text(L"task name"), hbox({input.Render(), }));
+        auto input_win = window(text(L"task name"), hbox({output_window_.Render(), }));
 
         return border(vbox({
-             hbox({text(L"Insert name of task: "), input_1.Render()}),
-             hbox({text(L"Choose priority of task: "), box.Render()}),
-             hbox({text(L"Insert status for task (0-100%): "), input_2.Render()}),
-             hbox({text(L"Set start-date for task (dd.mm.yy): "), input_3.Render()}),
-             hbox({text(L"Set deadline for task (dd.mm.yy): "), input_4.Render()}),
+             hbox({text(L"Insert name of task: "), description_input_.Render()}),
+             hbox({text(L"Choose priority of task: "), priority_box.Render()}),
+             hbox({text(L"Insert status for task (0-100%): "), status_input_.Render()}),
+             hbox({text(L"Set start-date for task (dd.mm.yy): "), start_time_input_.Render()}),
+             hbox({text(L"Set deadline for task (dd.mm.yy): "), end_time_input_.Render()}),
              hbox({confirm_button.Render()}),
              vbox({input_win | size(WIDTH, EQUAL, 60), }),
             })); 
