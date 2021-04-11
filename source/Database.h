@@ -11,11 +11,17 @@
 
 namespace Database {
 
+	/**
+	 * \brief Mostly for internal use, returns an instance of the database storage object
+	 * \return the database storage object
+	 */
 	inline auto get_db() {
 		using namespace sqlite_orm;
 
-		// Only initialize and sync once
+		// Only initialize and sync once (static)
 		static auto storage = []() {
+
+			// Create the database schema layout/structure
 			auto storage = make_storage("new_db.sqlite",
 				//make_table("users",
 				//	make_column("id", &UserDB::id, autoincrement(), primary_key()),

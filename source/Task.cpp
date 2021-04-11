@@ -2,42 +2,47 @@
 #include "User.h"
 #include "Database.h"
 
-int Task::get_id() const {										//Gets and returns task ID
+/*
+ * The getters in the class will all call fetch (see fetch) and then return the property
+ * The setters in this calss will all call update (see update) after setting the property for the internal DB object
+ */
+
+int Task::get_id() const {
 	return task_.id;
 }
 
-std::wstring Task::get_description() {							//Gets and returns description
+std::wstring Task::get_description() {
 	return task_.description;
 }
 
-void Task::set_description(std::wstring description_) {		   //Sets task description to description_
+void Task::set_description(std::wstring description_) {
 	task_.description = description_;						   
 
-	update();												   //Calls update function
+	update();
 }
 
-int Task::get_start_time() {									   //Gets and returns start time
+int Task::get_start_time() {
 	fetch();
 
 	return task_.start_time;
 }
 
-void Task::set_start_time(int start_time_) {					  //Sets task start time to start_time
+void Task::set_start_time(int start_time_) {
 	task_.start_time = start_time_;                           
 
-	update();												  //Calls update function
+	update();
 }
 
-int Task::get_end_time() {									  //Gets and returns end time
+int Task::get_end_time() {
 	fetch();
 
 	return task_.end_time;
 }
 
-void Task::set_end_time(int end_time_) {                     //Sets task end time to end_time_ 
+void Task::set_end_time(int end_time_) {
 	task_.end_time = end_time_;						         
 
-	update();												 //Calls update function
+	update();
 }
 
 //void Task::add_user(User user) {
@@ -45,28 +50,28 @@ void Task::set_end_time(int end_time_) {                     //Sets task end tim
 //	Database::add<UsersTasksDB>(users_tasks);
 //}
 
-int Task::get_status() {										//Gets and returns task status
+int Task::get_status() {
 	fetch();
 
 	return task_.status;
 }
 
-void Task::set_status(int status_) {							//Sets task status to status_
+void Task::set_status(int status_) {
 	task_.status = status_;
 
-	update();											    //Calls update function
+	update();
 }
 
-bool Task::get_priority() {									//Gets and returns task priority, bool
+bool Task::get_priority() {
 	fetch();
 
 	return task_.priority;
 }
 
-void Task::set_priority(bool has_priority) {				    //Uses the bool above, if task has priority then returns it
+void Task::set_priority(bool has_priority) {
 	task_.priority = has_priority;		
 
-	update();												//Calls update function
+	update();
 }
 
 //void Task::remove_user(User user) {
@@ -116,10 +121,17 @@ TaskDB Task::get_task() const {
 	return task_;
 }
 
+/**
+ * \brief Updates the database with the internal task_ object data
+ */
 void Task::update() {
 	Database::update<TaskDB>(task_);
 }
 
+
+/**
+ * \brief Fetches new data for our internal task_ object from the database
+ */
 void Task::fetch() {
 	task_ = Database::get<TaskDB>(task_.id);
 }
