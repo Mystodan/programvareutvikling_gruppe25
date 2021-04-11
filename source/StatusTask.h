@@ -3,7 +3,14 @@
 #include "ftxui/component/container.hpp"
 #include "ftxui/component/menu.hpp"
 
+/**
+* \Forward declaration of task
+*/
 class Task;
+
+/**
+* \brief StatusTask includes: filling, adding & clearing status data
+*/
 class StatusTask : public ftxui::Component {
 public:
     StatusTask() {
