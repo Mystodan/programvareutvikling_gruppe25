@@ -1,12 +1,11 @@
 /*
  * To-do-list application group 25
  * 
- * 
- * 
- * 
- * 
+ * This application allows you to add a new task, and then assign priority, description
+ * status, category, start and enddate.
+ *
+ *  
  */
-
 #include "SideMenu.h"
 
 int main(int argc, const char* argv[]) {
