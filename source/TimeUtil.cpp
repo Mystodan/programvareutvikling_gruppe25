@@ -39,19 +39,16 @@ namespace Utils {
 	* \return unixTime
 	*/
 	int string_to_unixtime(std::wstring str_time) {
-		
 		struct tm tm;
 		time_t unixTime = 0;
 		memset(&tm, 0, sizeof(tm));
 
-		std::wstring wdate(str_time);
 		std::string sdate(wdate.begin(), wdate.end());
+		std::wstring wdate(str_time);
 		int length = sdate.size();
 		char* cdate;
 		cdate = &sdate[0];
-
 		strptime(cdate, "%d.%m.%y", &tm);
-
 		unixTime = mktime(&tm);
 
 		return unixTime;
