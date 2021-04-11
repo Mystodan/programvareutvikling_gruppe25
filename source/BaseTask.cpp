@@ -5,13 +5,14 @@ void BaseTask::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
                             std::function<void()> on_change) {
 	priority_.on_change = on_change;
 
-	task_.entries.clear();
+	task_.entries.clear(); // Clears task_.entries
 
-	priority_.clear();
-	startDate_.clear();
-	deadline_.clear();
-	status_.clear();
+	priority_.clear();    // Clears priority_
+	startDate_.clear();   // Clears startDate_
+	deadline_.clear();    // Clears deadline_
+	status_.clear();      // Clears status_
 
+	// Gets every variable in tasks and updates them
 	for (const auto& task : tasks) {
 		if (predicate(task)) {
 			task_.entries.push_back(task->get_description());
@@ -23,12 +24,14 @@ void BaseTask::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
 	}
 }
 
+// Renders the elements with a window around each container
 Element BaseTask::Render() {
 	auto task_win = window(text(L"Task") | center, task_.Render());
 	auto priority_win = window(text(L"Priority") | center, priority_.Render());
 	auto status_win = window(text(L"Status") | center, status_.Render());
 	auto startDate_win = window(text(L"Start-date") | center, startDate_.Render());
 	auto deadline_win = window(text(L"Deadline") | center, deadline_.Render());
+	// Returns a horizontal container
 	return hbox({
 		task_win,
 		priority_win,

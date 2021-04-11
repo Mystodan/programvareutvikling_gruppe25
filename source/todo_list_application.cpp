@@ -1,11 +1,12 @@
 /*
  * To-do-list application group 25
  * 
- *
- *
- *
- *  
+ * 
+ * 
+ * 
+ * 
  */
+
 #include "SideMenu.h"
 
 int main(int argc, const char* argv[]) {

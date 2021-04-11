@@ -1,26 +1,18 @@
 #pragma once
 
-/*
- *
- */
-
-#include "ftxui/component/container.hpp"
-#include "ftxui/component/menu.hpp"
-
+#include "ftxui/component/container.hpp" // Containers
+#include "ftxui/component/menu.hpp"      // Menu 
 
 using namespace ftxui;
 
-/*
- *
- */
-
+// NOT FINISHED!
 class RecycleBin : public Component {
 public:
     RecycleBin() {
         Add(&container_);
         container_.Add(&task_);
 
-        task_.entries = {
+        task_.entries = {               // NB! Example entries!
             L"Task 7",
             L"Task 8",
             L"Task 9",
@@ -28,7 +20,7 @@ public:
         };
     }
     Element Render() override {
-        auto menu_win = window(text(L"RecycleBin") | center, task_.Render()); // Makes window around menu
+        auto menu_win = window(text(L"RecycleBin") | center, task_.Render()); // Renders RecycleBin 
         return vbox({ menu_win });
     }
 

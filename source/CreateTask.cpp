@@ -4,7 +4,7 @@
 #include "TimeUtil.h"
 
 CreateTask::CreateTask() {
-	Add(&container);
+	Add(&container);				     // Adds a new container 
 	container.Add(&description_input_);
 	container.Add(&priority_box);
 	container.Add(&status_input_);

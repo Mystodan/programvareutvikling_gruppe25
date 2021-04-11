@@ -7,7 +7,6 @@ void DeadlineTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
 		add_task(task);
 	}
 }
-
 void DeadlineTask::add_task(const std::shared_ptr<Task>& task) {
 	auto time = Utils::unixtime_to_string(task->get_end_time());
 

@@ -1,11 +1,6 @@
 #pragma once
 
-/*
- *
- */
-
 #include "BaseTask.h"
-
 
 class Tasks : public BaseTask {
 public:
