@@ -5,8 +5,14 @@
 #include <ctime>
 #include <string>
 
+/**
+* \Forward declaration of task
+*/
 class Task;
 
+/**
+* \brief StartDateTask includes: filling, adding & clearing StartDateTask data
+*/
 class StartDateTask : public ftxui::Component {
 public:
     StartDateTask() {
