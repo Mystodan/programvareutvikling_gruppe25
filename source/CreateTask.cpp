@@ -47,6 +47,12 @@ CreateTask::CreateTask() {
 			valid_data = false;
 		}
 
+		std::wstring end_time_str = end_time_input_.content;
+		if (end_time_str.empty()) {
+			output_window_.entries.emplace_back(L"The task needs to have a end time");
+			valid_data = false;
+		}
+
 		if (valid_data) {
 			// This is to be filled in
 			TaskDB task;

@@ -17,7 +17,7 @@ public:
     //ftxui::Element Render() override;
 
     std::function<void()> on_enter = []() {};
-    std::function<void()> on_change = [](){};
+    std::function<void()> on_change = [](){}; // Callback to be called when a state change happens
 
 private:
 	ftxui::Container container_ = ftxui::Container::Vertical();

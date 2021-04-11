@@ -12,7 +12,7 @@ void BaseTask::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
 	deadline_.clear();    // Clears deadline_
 	status_.clear();      // Clears status_
 
-	// Gets every variable in tasks and updates them
+	// Gets every variable in tasks and updates them if it passes the predicate
 	for (const auto& task : tasks) {
 		if (predicate(task)) {
 			task_.entries.push_back(task->get_description());
@@ -31,7 +31,7 @@ Element BaseTask::Render() {
 	auto status_win = window(text(L"Status") | center, status_.Render());
 	auto startDate_win = window(text(L"Start-date") | center, startDate_.Render());
 	auto deadline_win = window(text(L"Deadline") | center, deadline_.Render());
-	// Returns a horizontal container
+	// Returns a horizontal container displaying all the columns
 	return hbox({
 		task_win,
 		priority_win,
