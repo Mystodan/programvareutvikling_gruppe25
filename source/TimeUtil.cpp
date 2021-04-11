@@ -43,12 +43,14 @@ namespace Utils {
 		time_t unixTime = 0;
 		memset(&tm, 0, sizeof(tm));
 
-		std::string sdate(wdate.begin(), wdate.end());
 		std::wstring wdate(str_time);
+		std::string sdate(wdate.begin(), wdate.end());
 		int length = sdate.size();
 		char* cdate;
 		cdate = &sdate[0];
+
 		strptime(cdate, "%d.%m.%y", &tm);
+
 		unixTime = mktime(&tm);
 
 		return unixTime;
