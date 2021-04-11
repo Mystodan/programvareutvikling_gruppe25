@@ -48,9 +48,6 @@
     <ClCompile Include="todo_list_application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="vtoggle.cpp">
-      <Filter>Source Files\Custom Components</Filter>
-    </ClCompile>
     <ClCompile Include="orm_test.cpp">
       <Filter>Source Files\SQL</Filter>
     </ClCompile>
@@ -112,9 +109,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vtoggle.h">
-      <Filter>Header Files\Custom Components</Filter>
-    </ClInclude>
     <ClInclude Include="Database.h">
       <Filter>Header Files</Filter>
     </ClInclude>

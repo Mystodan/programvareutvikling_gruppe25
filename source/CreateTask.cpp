@@ -18,10 +18,10 @@ CreateTask::CreateTask() {
 	confirm_button.on_click = [&]() { // When confirm button is clicked, do the following:
 		auto is_number = [](const std::wstring& s) {
 			return !s.empty() && std::find_if(s.begin(),
-			                                  s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
+				s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
 		};
 
-		output_window_.entries.clear();  
+		output_window_.entries.clear();
 
 		bool valid_data = true;
 
@@ -51,8 +51,17 @@ CreateTask::CreateTask() {
 			valid_data = false;
 		}
 
+		// If end time is empty, valid_data is set to false and corresponding error message is shown
+		std::wstring end_time_str = end_time_input_.content;
+		if (end_time_str.empty()) {
+			output_window_.entries.emplace_back(L"The task needs to have a end time");
+			valid_data = false;
+		}
+
+
+
 		// If all data is valid, data gets filled in and adds a new task
-		if (valid_data) { 
+		if (valid_data) {
 			TaskDB task;
 
 			task.description = description; // Adds task description
@@ -81,7 +90,7 @@ CreateTask::CreateTask() {
 
 Element CreateTask::Render() {
 
-	auto input_win = window(text(L"Output"), hbox({output_window_.Render(),}));
+	auto input_win = window(text(L"Output"), hbox({ output_window_.Render(), }));
 
 	return border(vbox({
 		hbox({text(L"Insert name of task: "), description_input_.Render()}), // User can write task name
@@ -89,7 +98,7 @@ Element CreateTask::Render() {
 		hbox({text(L"Insert status for task (0-100%): "), status_input_.Render()}), // User can set a status for task
 		hbox({text(L"Set start-date for task (dd.mm.yy): "), start_time_input_.Render()}), // User can set start-date for task
 		hbox({text(L"Set deadline for task (dd.mm.yy): "), end_time_input_.Render()}), // User can set deadline for task 
-		hbox({confirm_button.Render()}), 
+		hbox({confirm_button.Render()}),
 		vbox({input_win | size(WIDTH, EQUAL, 60),}),
-	}));
+		}));
 }
