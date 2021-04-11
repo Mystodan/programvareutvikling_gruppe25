@@ -7,6 +7,9 @@
 
 using namespace ftxui;
 
+/**
+ * \brief Sets up the "Priority" column
+ */
 class DeadlineTask : public Component {
 public:
     DeadlineTask() {

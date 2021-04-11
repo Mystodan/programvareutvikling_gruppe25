@@ -1,6 +1,7 @@
 #include "EmptyCheckBox.h"
 
 using namespace ftxui;
+
 /**
  * \brief Render override for an empty checkbox
  * \return element to be rendered

@@ -14,7 +14,7 @@ public:
         container_.Add(&status_);
     }
     void fill_data(const std::vector<std::shared_ptr<Task>>& tasks);
-
+	
     void add_task(const std::shared_ptr<Task>& task);
     void clear();
 

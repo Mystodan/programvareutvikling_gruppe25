@@ -5,6 +5,9 @@
 
 #include "Task.h"
 
+/**
+ * \brief Sets up the "Priority" column
+ */
 class PriorityTask : public ftxui::Component {
 public:
     PriorityTask() {
