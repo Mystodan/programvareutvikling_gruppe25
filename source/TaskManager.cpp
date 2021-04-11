@@ -15,6 +15,10 @@ using namespace sqlite_orm;
 //	return users;
 //}
 
+/**
+ * \brief Will fetch all the tasks in the database
+ * \return all tasks as a shared_ptr of type Task
+ */
 std::vector<std::shared_ptr<Task>> TaskManager::get_all_tasks() {
 	auto tasks_db = Database::get_db().get_all<TaskDB>();
 	std::vector<std::shared_ptr<Task>> tasks{};
@@ -25,10 +29,19 @@ std::vector<std::shared_ptr<Task>> TaskManager::get_all_tasks() {
 	return tasks;
 }
 
+/**
+ * \brief Adds a new task to the database from a task object
+ * \param task Task to be added to the database
+ */
 void TaskManager::add_task(Task task) {
 	Database::add<TaskDB>(task.get_task());
 }
 
+/**
+ * \brief Gets a task from the database based on id
+ * \param task_id id of the task object we want
+ * \return the task object
+ */
 Task TaskManager::get_task(int task_id) {
 	return Database::get<TaskDB>(task_id);
 }

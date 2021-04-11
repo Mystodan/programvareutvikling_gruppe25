@@ -5,6 +5,9 @@ class User;
 //class Category;
 class TaskStatus;
 
+/**
+ * \brief structure for internal Database Data
+ */
 struct TaskDB {
 	int id = -1;
 	std::wstring description;
