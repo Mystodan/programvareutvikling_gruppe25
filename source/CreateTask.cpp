@@ -58,8 +58,6 @@ CreateTask::CreateTask() {
 			valid_data = false;
 		}
 
-
-
 		// If all data is valid, data gets filled in and adds a new task
 		if (valid_data) {
 			TaskDB task;
@@ -93,6 +91,7 @@ Element CreateTask::Render() {
 	auto input_win = window(text(L"Output"), hbox({ output_window_.Render(), }));
 
 	return border(vbox({
+		// TODO: separation with set width
 		hbox({text(L"Insert name of task: "), description_input_.Render()}), // User can write task name
 		hbox({text(L"Choose priority of task: "), priority_box.Render()}), // User can choose priority
 		hbox({text(L"Insert status for task (0-100%): "), status_input_.Render()}), // User can set a status for task

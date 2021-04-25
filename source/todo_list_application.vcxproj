@@ -118,7 +118,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions);NOMINMAX</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -134,7 +134,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions);NOMINMAX</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
@@ -147,14 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AllTask.cpp" />
     <ClCompile Include="BaseTask.cpp" />
     <ClCompile Include="Category.cpp" />
     <ClCompile Include="CreateTask.cpp" />
+    <ClCompile Include="CustomInput.cpp" />
     <ClCompile Include="DeadlineTask.cpp" />
     <ClCompile Include="EmptyCheckBox.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="include\sqlite3\shell.c" />
     <ClCompile Include="include\sqlite3\sqlite3.c" />
+    <ClCompile Include="InputColumn.cpp" />
     <ClCompile Include="orm_test.cpp" />
     <ClCompile Include="PriorityTask.cpp" />
     <ClCompile Include="SideMenu.cpp" />
@@ -172,14 +175,17 @@
     <None Include="..\.gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllTask.h" />
     <ClInclude Include="BaseTask.h" />
     <ClInclude Include="Category.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Completed.h" />
     <ClInclude Include="CreateTask.h" />
+    <ClInclude Include="CustomInput.h" />
     <ClInclude Include="EmptyCheckBox.h" />
     <ClInclude Include="Database.h" />
     <ClInclude Include="DeadlineTask.h" />
+    <ClInclude Include="InputColumn.h" />
     <ClInclude Include="Priority.h" />
     <ClInclude Include="PriorityTask.h" />
     <ClInclude Include="NewTask.h" />

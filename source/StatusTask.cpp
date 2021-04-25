@@ -1,30 +1,42 @@
 #include "StatusTask.h"
 
 #include "Category.h"
-#include "EmptyCheckBox.h"
+#include "CustomInput.h"
 #include "Task.h"
 
-/**
- * \brief Fills component with task data
- * \param tasks Tasks to be added
- */
-void StatusTask::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
-	for (const auto& task : tasks) {
-		add_task(task);
-	}
-}
+using namespace ftxui;
 
 /**
  * \brief Adds task data to component
  * \param task Task to be added
  */
 void StatusTask::add_task(const std::shared_ptr<Task>& task) {
-	status_.entries.push_back(std::to_wstring(task->get_status()));
-}
+	auto* input = new CustomInput();
 
-/**
- * \brief Clears all all entries from component
- */
-void StatusTask::clear() {
-	status_.entries.clear();
+	input->placeholder = L"0-100%";
+
+	input->set_content(std::to_wstring(task->get_status()));
+
+	input->on_enter_validate = [=]() {
+		auto is_number = [](const std::wstring& s) {
+			return !s.empty() && std::find_if(s.begin(),
+				s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
+		};
+		if (!is_number(input->content)) {
+			// TODO: Display error in output window
+			return false;	
+		}
+
+		// Convert to int and clamp
+		auto num = std::clamp<int>(std::stoi(input->content), 0, 100);
+		task->set_status(num);
+
+		on_change(); // update for all others
+
+		// TODO: Output success or something to output window
+		return true;
+	};
+
+	container_.Add(input);
+	inputboxes.push_back(input);
 }

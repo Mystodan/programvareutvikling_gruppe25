@@ -108,8 +108,8 @@ namespace Database {
 	template <typename T>
 	T get(int id) {
 		try {
-			auto user = get_db().get<T>(id);
-			return user;
+			auto object = get_db().get<T>(id);
+			return object;
 		}
 		catch (std::system_error& e) {
 			std::cerr << e.what() << "\n";
