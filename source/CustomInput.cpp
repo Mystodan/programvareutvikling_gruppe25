@@ -71,6 +71,11 @@ namespace ftxui {
 		auto main_decorator = flex | size(HEIGHT, EQUAL, 1);
 		bool is_focused = Focused();
 
+		// Not focused.
+		if (!is_focused)
+			return text(original_content) | main_decorator;
+			//return text(content) | main_decorator;
+
 		// Placeholder.
 		if (content.size() == 0) {
 			if (is_focused)
@@ -79,10 +84,6 @@ namespace ftxui {
 				return text(placeholder) | dim | main_decorator;
 		}
 
-		// Not focused.
-		if (!is_focused)
-			return text(original_content) | main_decorator;
-			//return text(content) | main_decorator;
 
 		std::wstring part_before_cursor = content.substr(0, cursor_position);
 		std::wstring part_at_cursor = cursor_position < (int)content.size()
