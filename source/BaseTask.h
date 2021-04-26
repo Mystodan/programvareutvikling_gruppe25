@@ -1,5 +1,7 @@
 #pragma once
 #include <ftxui/component/menu.hpp> // Menu
+#include "ftxui/component/container.hpp"
+#include "ftxui/component/input.hpp" 
 
 #include "DeadlineTask.h" 
 #include "PriorityTask.h"
@@ -30,9 +32,15 @@ public:
 
     std::function<void()> on_change = []() {};
 
+    // Bool for is_number 
+   // bool is_number(const std::wstring& s) {
+     //   return !s.empty() && std::find_if(s.begin();
+       // s.end(), [](unsigned char c) { return !std::isdigit(c); }) == s.end();
+    //}
 
 private:
-    Menu task_;                                     
+    Menu task_;
+    Menu output_window_;
     StatusTask status_;                             
     PriorityTask priority_;               
     StartDateTask startDate_;                     

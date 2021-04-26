@@ -4,7 +4,7 @@
 #include "TimeUtil.h"
 
 CreateTask::CreateTask() {
-	Add(&container); // Adds relevant containers from library
+	Add(&container);                                  // Adds relevant containers from library
 	container.Add(&description_input_);
 	container.Add(&priority_box);
 	container.Add(&status_input_);
@@ -12,10 +12,10 @@ CreateTask::CreateTask() {
 	container.Add(&end_time_input_);
 	container.Add(&confirm_button);
 
-	priority_box.label = L"(X = Priority)"; // Text is shown to user to explain that when box is marked with X, it is a priority
-	confirm_button.label = L"Confirm"; // Text content inside confirm button
+	priority_box.label = L"(X = Priority)";           // Text is shown to user to explain that when box is marked with X, it is a priority
+	confirm_button.label = L"Confirm";                // Text content inside confirm button
 
-	confirm_button.on_click = [&]() { // When confirm button is clicked, do the following:
+	confirm_button.on_click = [&]() {                 // When confirm button is clicked, do the following:
 		auto is_number = [](const std::wstring& s) {
 			return !s.empty() && std::find_if(s.begin(),
 				s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
