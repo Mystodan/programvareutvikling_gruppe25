@@ -105,6 +105,15 @@
     <ClCompile Include="SideMenu.cpp">
       <Filter>Source Files\Custom Components</Filter>
     </ClCompile>
+    <ClCompile Include="AllTask.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomInput.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
+    <ClCompile Include="InputColumn.cpp">
+      <Filter>Source Files\Custom Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.gitignore">
@@ -180,6 +189,15 @@
     </ClInclude>
     <ClInclude Include="TimeUtil.h">
       <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AllTask.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomInput.h">
+      <Filter>Header Files\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="InputColumn.h">
+      <Filter>Header Files\Custom Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

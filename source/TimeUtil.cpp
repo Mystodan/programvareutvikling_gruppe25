@@ -59,6 +59,10 @@ namespace Utils {
 
 		strptime(cdate, "%d.%m.%y", &tm); // Converts char date to tm structure
 
+		// TODO: Further input validation
+		// For now 10.04.2a works, should not work
+		// For now 10.04.20a works, should not work
+		
 		unixTime = mktime(&tm); // Converts tm structure to unixTime
 
 		return unixTime;

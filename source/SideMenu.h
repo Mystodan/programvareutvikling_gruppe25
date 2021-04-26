@@ -37,6 +37,33 @@ public:
     SideMenu();
 
     void RebuildDataEntries();
+    bool OnEvent(Event) override;
 
     Element Render() override;
+
+
+    std::function<void()> on_change = []() {};
+
+	/*
+	 * Sorting
+	 */
+    enum class SortBy : int {
+	    TASKNAME,
+        PRIORITY,
+    	STATUS,
+    	STARTDATE,
+    	DEADLINE
+    };
+    enum class SortOrder : int {
+	    ASCENDING = 0,
+    	DESCENDING = 1
+    };
+
+	SortBy sort_by = SortBy::TASKNAME;
+    SortOrder sort_order = SortOrder::ASCENDING;
+
+	std::map<std::string, SortBy> key_map ;
+
+    void sort_tasks(std::vector<std::shared_ptr<Task>>& tasks) const;
+
 };

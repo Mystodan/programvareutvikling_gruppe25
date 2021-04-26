@@ -12,6 +12,8 @@ int Task::get_id() const {
 }
 
 std::wstring Task::get_description() {
+	fetch(); 
+
 	return task_.description;
 }
 
