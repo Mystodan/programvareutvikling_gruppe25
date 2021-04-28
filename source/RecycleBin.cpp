@@ -26,8 +26,10 @@ Element ConfirmationDialog::Render() {
 RecycleBin::RecycleBin() {
 	Add(&container_);
 
+
 	// Row (Task name and deleted column)
-	container_.Add(&row_container_);
+	container_.Add(&content_);
+	content_.Add(&row_container_);
 	row_container_.Add(&tasks_);
 	row_container_.Add(&deleted_);
 

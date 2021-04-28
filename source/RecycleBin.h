@@ -40,7 +40,8 @@ private:
 
 	ftxui::Button delete_button_;
 
-	ftxui::Container container_ = ftxui::Container::Vertical();
+	ftxui::Container container_ = ftxui::Container::Tab(nullptr);
+	ftxui::Container content_ = ftxui::Container::Vertical();
 	ftxui::Container row_container_ = ftxui::Container::Horizontal();
 	ftxui::Container subcontainer_ = ftxui::Container::Vertical();
 

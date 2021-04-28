@@ -21,10 +21,10 @@ private:
     Container container = Container::Vertical(); // Relevant features from library are added
     Menu output_window_;                         // to be used to create new tasks
     Input description_input_;  
-    Input status_input_;
+    //Input status_input_;
     Input start_time_input_;
     Input end_time_input_;
-    CheckBox priority_box;
+    //CheckBox priority_box;
     Button confirm_button;
 
 	Element Render() override;;
