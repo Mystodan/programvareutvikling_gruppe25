@@ -35,7 +35,7 @@ RecycleBin::RecycleBin() {
 
 	// Button
 	container_.Add(&subcontainer_);
-	subcontainer_.Add(&delete_button_);
+	content_.Add(&delete_button_);
 	subcontainer_.Add(&confirmation_dialog_);
 
 	delete_button_.label = L"Recycle";
