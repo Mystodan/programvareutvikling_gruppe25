@@ -18,13 +18,20 @@ void AllTask::add_task(const std::shared_ptr<Task>& task) {
 	input->set_content(task->get_description());
 
 	input->on_enter_validate = [=]() {
-#ifdef DEBUG
-		OutputDebugStringW((std::wstring(L"Pressed enter with ") + task->get_description() + std::wstring(L"\n")).c_str());
-#endif
+		clear_output();
+
+		const auto old_description = task->get_description();
+		if (old_description == input->content) {
+
+			return false;
+		}
+
 		task->set_description(input->content);
 		on_change(); // update for all others
 
-		// TODO: Output to output window
+		clear_output();
+		add_output(L"Successfully changed the description");
+
 		return true;
 	};
 

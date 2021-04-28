@@ -18,22 +18,31 @@ void StatusTask::add_task(const std::shared_ptr<Task>& task) {
 	input->set_content(std::to_wstring(task->get_status()));
 
 	input->on_enter_validate = [=]() {
+		clear_output();
+
 		auto is_number = [](const std::wstring& s) {
 			return !s.empty() && std::find_if(s.begin(),
 				s.end(), [](wchar_t c) { return !std::isdigit(c); }) == s.end();
 		};
+
 		if (!is_number(input->content)) {
-			// TODO: Display error in output window
+			add_error(L"Input is not a valid number");
 			return false;	
 		}
 
 		// Convert to int and clamp
 		auto num = std::clamp<int>(std::stoi(input->content), 0, 100);
+
+		if (num == task->get_status()) {
+			return false;	
+		}
+
 		task->set_status(num);
 
 		on_change(); // update for all others
 
-		// TODO: Output success or something to output window
+		add_output(L"Successfully set status");
+
 		return true;
 	};
 

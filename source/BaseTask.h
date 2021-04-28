@@ -6,12 +6,13 @@
 
 #include "AllTask.h"
 #include "DeadlineTask.h" 
+#include "CheckboxColumn.h"
+#include "DeleteTask.h"
 #include "PriorityTask.h"
 #include "StartDateTask.h"
 #include "StatusTask.h"
 #include "TaskManager.h"
 
-// TODO: figure this out and have one vector of these base components in the SideMenu class and then call fill_data from those base components to fill from vec
 class Task;
 
 class BaseTask : public ftxui::Component {
@@ -25,6 +26,8 @@ public:
         container_.Add(&status_);           // Adds status to_ the container
         container_.Add(&startDate_);        // Adds startDate_ to the container
         container_.Add(&deadline_);         // Adds deadline_ to the container
+        container_.Add(&deleted_);          // Adds deleted_ to the container
+        container_.Add(&output_window_);    // Adds output_window_ to the container
 
     }
 
@@ -35,11 +38,19 @@ public:
     // Renders everything in BaseTask to the user
     ftxui::Element Render() override;
 
+    void add_output(const std::wstring& output);
+    void add_error(const std::wstring& error_message);
+    void clear_output();
+
 private:
-    AllTask task_;                                     
+
+    AllTask task_;                     
     StatusTask status_;                             
     PriorityTask priority_;               
     StartDateTask startDate_;                     
     DeadlineTask deadline_;
+    DeleteTask deleted_;               
+    ftxui::Menu output_window_;
+
     ftxui::Container container_ = ftxui::Container::Horizontal(); // Adds container variable
 };

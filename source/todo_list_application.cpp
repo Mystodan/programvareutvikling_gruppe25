@@ -2,7 +2,7 @@
  * To-do-list application group 25
  * 
  * This application allows you to add a new task, and then assign priority, description
- * status, category, start and enddate.
+ * status, category, start and end date.
  *
  *  
  */

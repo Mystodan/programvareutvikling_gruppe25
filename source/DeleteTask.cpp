@@ -1,14 +1,13 @@
-#include "PriorityTask.h"
-
+#include "DeleteTask.h"
 #include "EmptyCheckBox.h"
 
-void PriorityTask::add_task(const std::shared_ptr<Task>& task) {
+void DeleteTask::add_task(const std::shared_ptr<Task>& task) {
 	auto* checkbox = new EmptyCheckBox();
 
-	checkbox->state = task->get_priority();
+	checkbox->state = task->get_deleted();
 
 	checkbox->on_change = [=]() {
-		task->set_priority(checkbox->state);
+		task->set_deleted(checkbox->state);
 
 		on_change();
 	};

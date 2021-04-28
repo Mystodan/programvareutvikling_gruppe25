@@ -57,12 +57,15 @@ namespace Utils {
 		char* cdate;
 		cdate = &sdate[0]; // Converts string to char date
 
+		// Further input validation
+		int day, month, year;
+		if (sscanf_s(sdate.c_str(), "%2d.%2d.%2d", &day, &month, &year) != 3) {
+			return -1;
+		}
+
 		strptime(cdate, "%d.%m.%y", &tm); // Converts char date to tm structure
 
-		// TODO: Further input validation
-		// For now 10.04.2a works, should not work
-		// For now 10.04.20a works, should not work
-		
+
 		unixTime = mktime(&tm); // Converts tm structure to unixTime
 
 		return unixTime;

@@ -31,11 +31,12 @@ namespace Database {
 				//	foreign_key(&UserDB::color_id).references(&Color::id)),
 				make_table("tasks",
 					make_column("id", &TaskDB::id, autoincrement(), primary_key()),
-					make_column("description", &TaskDB::description), // allow null
+					make_column("description", &TaskDB::description, default_value("")), // allow null
 					make_column("start_time", &TaskDB::start_time, default_value(0)),
 					make_column("end_time", &TaskDB::end_time, default_value(0)),
-					make_column("status", &TaskDB::status),
-					make_column("priority", &TaskDB::priority)),
+					make_column("status", &TaskDB::status, default_value(0)),
+					make_column("priority", &TaskDB::priority, default_value(0)),
+					make_column("deleted", &TaskDB::deleted, default_value(0))),
 				//make_table("users_tasks", // Junction table
 				//	make_column("user_id", &UsersTasksDB::user_id),
 				//	foreign_key(&UsersTasksDB::user_id).references(&UserDB::id),
@@ -69,13 +70,12 @@ namespace Database {
 	}
 
 	/**
-	 * \brief removes the object to the database
-	 * \param object to be added to the database
-	 * \return created id of the object
+	 * \brief removes the object from the database
+	 * \param object to be removed from the database
 	 */
 	template <typename T>
 	void remove(T object) {
-		return get_db().remove(object);
+		return get_db().remove<T>(object.id);
 	}
 
     template<class T, class... Args>

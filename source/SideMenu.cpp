@@ -15,6 +15,7 @@ SideMenu::SideMenu() {
 		L"Completed",
 		L"Recycle bin",
 		L"Create task",
+		L"Help",
 	};
 	main_container.Add(&container);
 
@@ -23,18 +24,15 @@ SideMenu::SideMenu() {
 	container.Add(&td_Completed);
 	container.Add(&td_RecycleBin);
 	container.Add(&td_CreateTask);
+	container.Add(&help_window);
 
 
 	// Fill the map
-	// F1: OP
-	// F2: OQ
-	// TODO: Change to F1
-	key_map["OP"] = SortBy::TASKNAME;
-	key_map["p"] = SortBy::PRIORITY;
-	key_map["s"] = SortBy::STATUS;
-	key_map["b"] = SortBy::STARTDATE;
-	key_map["d"] = SortBy::DEADLINE;
-
+	key_map["OP"] = SortBy::TASKNAME;		// F1
+	key_map["OQ"] = SortBy::PRIORITY;		// F2
+	key_map["OS"] = SortBy::STATUS;		// F3
+	key_map["[15~"] = SortBy::STARTDATE;	// F4
+	key_map["[17~"] = SortBy::DEADLINE;	// F5
 
 	on_change = [this]() { RebuildDataEntries(); };
 
@@ -45,27 +43,41 @@ SideMenu::SideMenu() {
  * \brief Rebuilds all the data entries when a change happens to one of the data entries (tasks)
  */
 void SideMenu::RebuildDataEntries() {
-	auto tasks = TaskManager::get_all_tasks();
+	try {
+		auto tasks = TaskManager::get_all_tasks();
 
-	sort_tasks(tasks);
+		sort_tasks(tasks);
 
-	// On change function to be passed onto the children to call when a change happens in them
-	// It will then call this rebuild function we are currently in
+		// On change function to be passed onto the children to call when a change happens in them
+		// It will then call this rebuild function we are currently in
 
-	// Add the tasks and supply them with a predicate for adding them or not and also the on_change callback
-	td_Tasks.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
-		return true;
-	}, on_change);
+		// Add the tasks and supply them with a predicate for adding them or not and also the on_change callback
+		td_Tasks.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			// All tasks that are not set to be deleted
+			return task->get_deleted() == 0;
+			}, on_change);
 
-	td_Priority.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
-		return task->get_priority() != 0;
-	}, on_change);
+		td_Priority.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			// Priority is set and not deleted
+			return task->get_priority() == 1 && task->get_deleted() == 0;
+			}, on_change);
 
-	td_Completed.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
-		return task->get_status() == 100;
-	}, on_change);
+		td_Completed.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			// Status is 100% and not deleted
+			return task->get_status() == 100 && task->get_deleted() == 0;
+			}, on_change);
 
-	td_CreateTask.on_change = on_change;
+		td_RecycleBin.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
+			// Is deleted
+			return task->get_deleted() == 1;
+			}, on_change);
+
+		td_CreateTask.on_change = on_change;
+	}
+	catch (std::exception& e) {
+		auto err = e.what();
+		std::cout << err << "\n";
+	}
 }
 
 /**
@@ -74,7 +86,7 @@ void SideMenu::RebuildDataEntries() {
  */
 Element SideMenu::Render() {
 	return vbox({
-		text(L"To-do-list") | bold | hcenter,
+		text(L"NTNDU") | bold | hcenter,
 		hbox({
 			hbox({window(text(L"Side Menu") | center, menu.Render()) | center, container.Render()}),
 		}) | border,
@@ -143,6 +155,8 @@ bool SideMenu::OnEvent(ftxui::Event event) {
 			sort_order = SortOrder::ASCENDING;
 		}
 	};
+
+	OutputDebugStringA((event.input() + "\n").c_str());
 
 	if (const auto it = key_map.find(event.input()); it != key_map.end()) {
 

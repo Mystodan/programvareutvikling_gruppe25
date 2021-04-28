@@ -12,6 +12,7 @@
 #include "Completed.h"
 #include "RecycleBin.h"
 #include "CreateTask.h"
+#include "HelpWindow.h"
 #include "TaskManager.h"
 #include "TaskStatus.h"
 
@@ -33,6 +34,7 @@ public:
     Completed   td_Completed;   // Completed tab
     RecycleBin  td_RecycleBin;  // RecycleBin tab
     CreateTask  td_CreateTask;  // CreateTask tab
+	HelpWindow  help_window;
 
     SideMenu();
 

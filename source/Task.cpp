@@ -76,6 +76,18 @@ void Task::set_priority(bool has_priority) {
 	update();
 }
 
+bool Task::get_deleted() {
+	fetch();
+
+	return task_.deleted;
+}
+
+void Task::set_deleted(bool deleted) {
+	task_.deleted = deleted;		
+
+	update();
+}
+
 //void Task::remove_user(User user) {
 //	using namespace sqlite_orm;
 //	Database::remove<UsersTasksDB>(where(is_equal(&UserDB::id, user.get_id()) && where(is_equal(&TaskDB::id, task_.id))));

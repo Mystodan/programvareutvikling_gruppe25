@@ -30,6 +30,14 @@ std::vector<std::shared_ptr<Task>> TaskManager::get_all_tasks() {
 }
 
 /**
+ * \brief Deletes a task from the database with a task object
+ * \param task Task to be delted to the database
+ */
+void TaskManager::delete_task(Task task) {
+	Database::remove<TaskDB>(task.get_task());
+}
+
+/**
  * \brief Adds a new task to the database from a task object
  * \param task Task to be added to the database
  */

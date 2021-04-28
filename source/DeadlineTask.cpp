@@ -16,18 +16,21 @@ void DeadlineTask::add_task(const std::shared_ptr<Task>& task) {
 	input->set_content(time);
 
 	input->on_enter_validate = [=]() {
+		clear_output();
 
-		auto time = Utils::string_to_unixtime(input->content);
+		const auto conv_time = Utils::string_to_unixtime(input->content);
 
-		if (time == -1) {
-			// TODO: output error
+		if (conv_time == -1) {
+			add_error(L"Invalid time format, try again");
 			return false;
 		}
-		task->set_end_time(time);
+		task->set_end_time(conv_time);
 
 		on_change(); // update for all others
 
-		// TODO: Output success or something to output window
+
+		add_output(L"Successfully set new date\n");
+
 		return true;
 	};
 

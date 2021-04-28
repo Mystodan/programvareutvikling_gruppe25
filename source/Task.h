@@ -14,7 +14,8 @@ struct TaskDB {
 	int start_time = -1;
 	int end_time = -1;
 	int status = -1;
-	bool priority = false;
+	int priority = 0; // Acts like boolean
+	int deleted = 0; // Acts like boolean
 	//int category_id = -1; // foreign
 	//int status_id = -1; // foreign
 };
@@ -33,13 +34,16 @@ public:
 	int get_end_time();
 	void set_end_time(int end_time_);
 
-	void add_user(User user);
+	//void add_user(User user);
 
 	int get_status();
 	void set_status(int status_);
 
 	bool get_priority();
 	void set_priority(bool has_priority);
+
+	bool get_deleted();
+	void set_deleted(bool deleted);
 
 	/**
 	 * \brief removes the junction table entry where

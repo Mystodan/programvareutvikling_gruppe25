@@ -70,6 +70,7 @@ CreateTask::CreateTask() {
 			task.start_time = start_time; // Adds task start time
 			task.end_time = end_time; // Adds task end time
 			task.priority = static_cast<int>(priority_box.state); // Adds task priority
+			task.deleted = false;
 
 			task.status = stoi(status_input_.content); // Adds task status
 
