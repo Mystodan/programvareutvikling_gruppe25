@@ -20,6 +20,7 @@ public:
 
     void clear();
 
+	//ftxui::Element Render() override;
 
 
 	/**

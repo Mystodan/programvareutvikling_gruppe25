@@ -14,6 +14,7 @@ using namespace ftxui;
 void AllTask::add_task(const std::shared_ptr<Task>& task) {
 	auto* input = new CustomInput();
 
+	input->main_decorator = flex | size(HEIGHT, EQUAL, 1) | size(WIDTH, EQUAL, 30);
 	input->placeholder = L"Task description";
 	input->set_content(task->get_description());
 

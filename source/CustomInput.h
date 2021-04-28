@@ -13,6 +13,8 @@ namespace ftxui {
 		std::wstring original_content;
 
 		std::function<bool()> on_enter_validate = []{ return false;};
+
+		Decorator main_decorator = flex | size(HEIGHT, EQUAL, 1);
 	};
 
 }

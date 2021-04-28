@@ -43,16 +43,15 @@ CreateTask::CreateTask() {
 		if (valid_data) {
 			TaskDB task;
 
-			task.description = description; // Adds task description
+			task.description = description; // Sets task description
 
 			int start_time = Utils::string_to_unixtime(start_time_input_.content); // Converts start_date string input to unixTime, makes it easier to add sorting functionality
 			int end_time = Utils::string_to_unixtime(end_time_input_.content); // Converts end_date string input to unixTime, makes it easier to add sorting functionality
 
-			task.start_time = start_time; // Adds task start time
-			task.end_time = end_time; // Adds task end time
-			//task.priority = static_cast<int>(priority_box.state); // Adds task priority
-			task.priority = 0;
-			task.deleted = false;
+			task.start_time = start_time; // Sets task start time
+			task.end_time = end_time; // Sets task end time
+			task.priority = 0; // Sets task priority
+			task.deleted = false; // Sets if task is deleted
 
 			task.status = 0;
 			
@@ -65,6 +64,8 @@ CreateTask::CreateTask() {
 			description_input_.content.clear();
 			start_time_input_.content.clear();
 			end_time_input_.content.clear();
+
+			output_window_.entries.emplace_back(L"Successfully added a new task!");
 		}
 	};
 }

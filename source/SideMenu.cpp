@@ -85,10 +85,11 @@ void SideMenu::RebuildDataEntries() {
  * \return Element to be rendered
  */
 Element SideMenu::Render() {
+	auto s = size(Direction::WIDTH, Constraint::EQUAL, 20);
 	return vbox({
 		text(L"NTNDU") | bold | hcenter,
 		hbox({
-			hbox({window(text(L"Side Menu") | center, menu.Render()) | center, container.Render()}),
+			hbox({window(text(L"Side Menu") | center, menu.Render()) | s | center, container.Render()}),
 		}) | border,
 	});
 }

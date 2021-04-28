@@ -46,13 +46,13 @@ void BaseTask::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
 
 // Renders the elements with a window around each container
 Element BaseTask::Render() {
-	auto task_win = window(text(L"Task (F1)") | center, task_.Render());
-	auto priority_win = window(text(L"Priority (F2)") | center, priority_.Render());
-	auto status_win = window(text(L"Status (F3)") | center, status_.Render());
-	auto startDate_win = window(text(L"Start-date (F4)") | center, startDate_.Render());
-	auto deadline_win = window(text(L"Deadline (F5)") | center, deadline_.Render());
-	auto output_win = window(text(L"Output"), output_window_.Render());
+	auto task_win = window(text(L"Task(F1)") | center, task_.Render());
+	auto priority_win = window(text(L"Priority(F2)") | center | size(WIDTH, EQUAL, 12), priority_.Render());
+	auto status_win = window(text(L"Status(F3)") | center, status_.Render());
+	auto startDate_win = window(text(L"Start-date(F4)") | center, startDate_.Render());
+	auto deadline_win = window(text(L"Deadline(F5)") | center, deadline_.Render());
 	auto deleted_win = window(text(L"Deleted"), deleted_.Render());
+	auto output_win = window(text(L"Output"), output_window_.Render());
 
 	// Returns a horizontal container displaying all the columns
 	return vbox(hbox({

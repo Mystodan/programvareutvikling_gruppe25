@@ -26,3 +26,7 @@ void InputColumn::clear() {
 		input->Detach();
 	}
 }
+
+//ftxui::Element InputColumn::Render() {
+//	return container_.Render();
+//}

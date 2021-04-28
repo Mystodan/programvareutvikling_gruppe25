@@ -68,7 +68,6 @@ namespace ftxui {
 		// Always have it placed to the right of the text because we no longer have left/right control of the cursor
 		cursor_position = std::max(0, (int)content.size());
 
-		auto main_decorator = flex | size(HEIGHT, EQUAL, 1);
 		bool is_focused = Focused();
 
 		// Not focused.
