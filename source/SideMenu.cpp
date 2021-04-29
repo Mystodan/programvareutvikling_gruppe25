@@ -48,6 +48,15 @@ void SideMenu::RebuildDataEntries() {
 
 		sort_tasks(tasks);
 
+		// Helper to check if the tab is now empty
+		// If it is, we set focus back to the sidemenu
+		const auto check_empty_take_focus = [&](auto& task_tab) {
+			if (task_tab.is_empty() && task_tab.Focused()) {
+				// Give focus to menu (sidebar)
+				menu.TakeFocus();
+			}
+		};
+
 		// On change function to be passed onto the children to call when a change happens in them
 		// It will then call this rebuild function we are currently in
 
@@ -56,21 +65,26 @@ void SideMenu::RebuildDataEntries() {
 			// All tasks that are not set to be deleted
 			return task->get_deleted() == 0;
 			}, on_change);
+		check_empty_take_focus(td_Tasks);
+
 
 		td_Priority.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
 			// Priority is set and not deleted
 			return task->get_priority() == 1 && task->get_deleted() == 0;
 			}, on_change);
+		check_empty_take_focus(td_Priority);
 
 		td_Completed.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
 			// Status is 100% and not deleted
 			return task->get_status() == 100 && task->get_deleted() == 0;
 			}, on_change);
+		check_empty_take_focus(td_Completed);
 
 		td_RecycleBin.rebuild_data(tasks, [](const std::shared_ptr<Task>& task) {
 			// Is deleted
 			return task->get_deleted() == 1;
 			}, on_change);
+		//check_empty_take_focus(td_RecycleBin);
 
 		td_CreateTask.on_change = on_change;
 	}

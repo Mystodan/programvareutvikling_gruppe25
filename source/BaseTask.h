@@ -41,6 +41,7 @@ public:
     void add_output(const std::wstring& output);
     void add_error(const std::wstring& error_message);
     void clear_output();
+	bool is_empty() const;
 
 private:
 

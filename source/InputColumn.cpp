@@ -25,6 +25,7 @@ void InputColumn::clear() {
 		//delete checkbox;
 		input->Detach();
 	}
+	inputboxes.clear();
 }
 
 //ftxui::Element InputColumn::Render() {

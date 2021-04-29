@@ -79,3 +79,7 @@ void BaseTask::clear_output() {
 	output_window_.entries.clear();
 }
 
+bool BaseTask::is_empty() const {
+	return task_.inputboxes.empty();
+}
+
