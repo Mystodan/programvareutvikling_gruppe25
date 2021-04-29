@@ -22,8 +22,8 @@ void InputColumn::fill_data(const std::vector<std::shared_ptr<Task>>& tasks) {
  */
 void InputColumn::clear() {
 	for (auto* input : inputboxes) {
-		//delete checkbox;
 		input->Detach();
+		delete input;
 	}
 	inputboxes.clear();
 }
