@@ -117,6 +117,7 @@ void SideMenu::sort_tasks(std::vector<std::shared_ptr<Task>>& tasks) const {
 
 	std::function<bool(std::shared_ptr<Task>, std::shared_ptr<Task>)> pred;
 
+	// Assign predicate function based on what we want to sort by
 	switch(sort_by) {
 	case SortBy::TASKNAME: 
 		pred = [*this](std::shared_ptr<Task> lhs, std::shared_ptr<Task> rhs) {

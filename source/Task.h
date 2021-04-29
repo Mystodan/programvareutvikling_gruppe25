@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <utility>
 
 class User;
 class TaskStatus;
@@ -15,13 +16,11 @@ struct TaskDB {
 	int status = -1;
 	int priority = 0; // Acts like boolean
 	int deleted = 0; // Acts like boolean
-	//int category_id = -1; // foreign
-	//int status_id = -1; // foreign
 };
 
 class Task {
 public:
-	Task(TaskDB task_db) : task_(task_db){}
+	Task(TaskDB task_db) : task_(std::move(task_db)){}
 	int get_id() const;
 
 	std::wstring get_description();
