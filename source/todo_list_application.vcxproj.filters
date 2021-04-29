@@ -43,16 +43,16 @@
     <Filter Include="Header Files\Components\Custom">
       <UniqueIdentifier>{9eaa253b-a4b2-4d8c-8613-2e8bfe0c75cf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Components">
-      <UniqueIdentifier>{d750494a-d412-4cd5-9a3d-1d9d475e1463}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Components\Custom">
-      <UniqueIdentifier>{9e687aa5-131a-43cb-bc9e-528fff9b8a5f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Components\Task Column Tabs">
       <UniqueIdentifier>{43e21943-4294-4af5-8334-8bf1096acecc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Components\Task Column Tabs">
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{d750494a-d412-4cd5-9a3d-1d9d475e1463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Custom">
+      <UniqueIdentifier>{9e687aa5-131a-43cb-bc9e-528fff9b8a5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Task Column Tabs">
       <UniqueIdentifier>{49098ec7-15a0-41a2-bd25-b8d28690f6d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -94,49 +94,49 @@
       <Filter>Source Files\Utils</Filter>
     </ClCompile>
     <ClCompile Include="SideMenu.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="InputColumn.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="BaseTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="AllTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="DeadlineTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="CheckboxColumn.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="StartDateTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="StatusTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="CustomInput.cpp">
-      <Filter>Source Files\Components\Custom</Filter>
+      <Filter>Source Files\UI\Custom</Filter>
     </ClCompile>
     <ClCompile Include="EmptyCheckBox.cpp">
-      <Filter>Source Files\Components\Custom</Filter>
+      <Filter>Source Files\UI\Custom</Filter>
     </ClCompile>
     <ClCompile Include="CreateTask.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="HelpWindow.cpp">
-      <Filter>Source Files\Components\Custom</Filter>
+      <Filter>Source Files\UI\Custom</Filter>
     </ClCompile>
     <ClCompile Include="PriorityTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="DeleteTask.cpp">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="RecycleBin.cpp">
-      <Filter>Source Files\Components</Filter>
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
