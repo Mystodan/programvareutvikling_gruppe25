@@ -2,7 +2,6 @@
 #include <string>
 
 class User;
-//class Category;
 class TaskStatus;
 
 /**
@@ -34,8 +33,6 @@ public:
 	int get_end_time();
 	void set_end_time(int end_time_);
 
-	//void add_user(User user);
-
 	int get_status();
 	void set_status(int status_);
 
@@ -44,22 +41,6 @@ public:
 
 	bool get_deleted();
 	void set_deleted(bool deleted);
-
-	/**
-	 * \brief removes the junction table entry where
-	 * user_id is the provided user's id and task_id is
-	 * this task's id
-	 * \param user to be removed from being associated with this task
-	 */
-	//void remove_user(User user);
-
-	//Category get_category();
-	//int get_category_id();
-	//void set_category_id(int category_id_);
-
-	//TaskStatus get_status();
-	//int get_status_id();
-	//void set_status_id(int status_id_);
 
 	TaskDB get_task() const;
 

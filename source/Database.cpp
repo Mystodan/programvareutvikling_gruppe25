@@ -4,7 +4,7 @@ namespace Database {
 	/**
 	 * \brief Inserts new default data into the database
 	 */
-	[[unused]] void insert_default_data() {
+	void insert_default_data() {
 		using namespace Database;
 
 		{ // Colors

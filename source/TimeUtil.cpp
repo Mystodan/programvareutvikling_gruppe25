@@ -5,8 +5,11 @@
 #include <iomanip>
 #include <cstring>
 
+// wchar_t to char is fine in our case
+#pragma warning( disable : 4244 ) 
+
 /**
-* \Function to imitate unix version of strptime on windows-versions
+* \brief Function to imitate unix version of strptime on windows-versions
 * \param s input char which will be converted to unixTime
 * \param f specifies which format parameter s is in
 * \param tm where output of strptime will be stored
@@ -27,7 +30,7 @@ char* strptime(const char* s, const char* f, struct tm* tm) {
 namespace Utils {
 	
 	/**
-	* \Converts unixTime (int) to date (dd.mm.yy) (wstring)
+	* \brief Converts unixTime (int) to date (dd.mm.yy) (wstring)
 	* \param unix_time to be converted to wstring
 	* \return wstring
 	*/
@@ -42,32 +45,27 @@ namespace Utils {
 	}
 
 	/**
-	* \Converts date (dd.mm.yy) (wstring) to unixTime (int)
+	* \brief Converts date (dd.mm.yy) (wstring) to unixTime (int)
 	* \param str_time to be converted to unixTime
 	* \return unixTime
 	*/
 	int string_to_unixtime(std::wstring str_time) {
-		struct tm tm; // Struct storing time structure
-		time_t unixTime = 0; // Will be used to store converted unixTime
-		memset(&tm, 0, sizeof(tm)); // Empties tm struct
+		tm tm{};								// Struct storing time structure
+		memset(&tm, 0, sizeof(tm));		// Empties tm struct
 
-		std::wstring wdate(str_time);
-		std::string sdate(wdate.begin(), wdate.end()); // Converts wstring to string
-		int length = sdate.size();
-		char* cdate;
-		cdate = &sdate[0]; // Converts string to char date
+		const std::string sdate(str_time.begin(), str_time.end()); // Converts wstring to string
 
 		// Further input validation
 		int day, month, year;
-		if (sscanf_s(sdate.c_str(), "%2d.%2d.%2d", &day, &month, &year) != 3) {
+		if (swscanf_s(str_time.c_str(), L"%2d.%2d.%2d", &day, &month, &year) != 3) {
 			return -1;
 		}
 
-		strptime(cdate, "%d.%m.%y", &tm); // Converts char date to tm structure
+		strptime(sdate.c_str(), "%d.%m.%y", &tm); // Converts char date to tm structure
 
 
-		unixTime = mktime(&tm); // Converts tm structure to unixTime
+		auto unixTime = mktime(&tm); // Converts tm structure to unixTime
 
-		return unixTime;
+		return static_cast<int>(unixTime);
 	}
 }

@@ -1,5 +1,4 @@
 #include "Task.h"
-#include "User.h"
 #include "Database.h"
 
 /*
@@ -152,49 +151,6 @@ void Task::set_deleted(bool deleted) {
 
 	update();
 }
-
-//void Task::remove_user(User user) {
-//	using namespace sqlite_orm;
-//	Database::remove<UsersTasksDB>(where(is_equal(&UserDB::id, user.get_id()) && where(is_equal(&TaskDB::id, task_.id))));
-//}
-
-
-
-//Category Task::get_category() {
-//	fetch();
-//
-//	return Database::get<CategoryDB>(task_.category_id);
-//}
-//
-//int Task::get_category_id() {
-//	fetch();
-//
-//	return task_.category_id;
-//}
-//
-//void Task::set_category_id(int category_id_) {
-//	task_.category_id = category_id_;
-//
-//	update();
-//}
-//
-//TaskStatus Task::get_status() {
-//	fetch();
-//
-//	return Database::get<TaskStatusDB>(task_.status_id);
-//}
-//
-//int Task::get_status_id() {
-//	fetch();
-//
-//	return task_.status_id;
-//}
-//
-//void Task::set_status_id(int status_id_) {
-//	task_.status_id = status_id_;
-//
-//	update();
-//}
 
 /**
  * \brief Retrieves the internal TaskDB object

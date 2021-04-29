@@ -6,7 +6,6 @@
 #include <ftxui/component/menu.hpp>
 #include <ftxui/component/screen_interactive.hpp>
 
-#include "Category.h"
 #include "Tasks.h"
 #include "Priority.h"
 #include "Completed.h"
@@ -14,7 +13,6 @@
 #include "CreateTask.h"
 #include "HelpWindow.h"
 #include "TaskManager.h"
-#include "TaskStatus.h"
 
 //using namespace ftxui;
 

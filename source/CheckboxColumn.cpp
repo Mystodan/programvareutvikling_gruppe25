@@ -1,7 +1,6 @@
 #include "CheckboxColumn.h"
 
 #include "EmptyCheckBox.h"
-#include "Category.h"
 
 using namespace ftxui;
 /**

@@ -12,7 +12,7 @@
  * \brief Main entry
  * \return exit status
  */
-int main(int argc, const char* argv[]) {
+int main() {
     // Set up an interactive terminal
     auto screen = ScreenInteractive::TerminalOutput();
 

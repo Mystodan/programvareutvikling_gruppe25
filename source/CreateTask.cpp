@@ -47,8 +47,11 @@ CreateTask::CreateTask() {
 
 			task.description = description; // Sets task description
 
-			int start_time = Utils::string_to_unixtime(start_time_input_.content); // Converts start_date string input to unixTime, makes it easier to add sorting functionality
-			int end_time = Utils::string_to_unixtime(end_time_input_.content); // Converts end_date string input to unixTime, makes it easier to add sorting functionality
+			// Converts start_date string input to unixTime, makes it easier to add sorting functionality
+			int start_time = Utils::string_to_unixtime(start_time_input_.content); 
+
+			// Converts end_date string input to unixTime, makes it easier to add sorting functionality
+			int end_time = Utils::string_to_unixtime(end_time_input_.content); 
 
 			task.start_time = start_time; // Sets task start time
 			task.end_time = end_time; // Sets task end time

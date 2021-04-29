@@ -149,7 +149,6 @@
   <ItemGroup>
     <ClCompile Include="AllTask.cpp" />
     <ClCompile Include="BaseTask.cpp" />
-    <ClCompile Include="Category.cpp" />
     <ClCompile Include="CreateTask.cpp" />
     <ClCompile Include="CustomInput.cpp" />
     <ClCompile Include="DeadlineTask.cpp" />
@@ -157,10 +156,8 @@
     <ClCompile Include="EmptyCheckBox.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="HelpWindow.cpp" />
-    <ClCompile Include="include\sqlite3\shell.c" />
     <ClCompile Include="include\sqlite3\sqlite3.c" />
     <ClCompile Include="InputColumn.cpp" />
-    <ClCompile Include="orm_test.cpp" />
     <ClCompile Include="CheckboxColumn.cpp" />
     <ClCompile Include="PriorityTask.cpp" />
     <ClCompile Include="RecycleBin.cpp" />
@@ -169,10 +166,7 @@
     <ClCompile Include="StatusTask.cpp" />
     <ClCompile Include="Task.cpp" />
     <ClCompile Include="TaskManager.cpp" />
-    <ClCompile Include="TaskStatus.cpp" />
     <ClCompile Include="TimeUtil.cpp" />
-    <ClCompile Include="User.cpp" />
-    <ClCompile Include="UsersTasks.cpp" />
     <ClCompile Include="todo_list_application.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -181,7 +175,6 @@
   <ItemGroup>
     <ClInclude Include="AllTask.h" />
     <ClInclude Include="BaseTask.h" />
-    <ClInclude Include="Category.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Completed.h" />
     <ClInclude Include="CreateTask.h" />
@@ -194,20 +187,15 @@
     <ClInclude Include="InputColumn.h" />
     <ClInclude Include="Priority.h" />
     <ClInclude Include="CheckboxColumn.h" />
-    <ClInclude Include="NewTask.h" />
     <ClInclude Include="PriorityTask.h" />
     <ClInclude Include="RecycleBin.h" />
     <ClInclude Include="SideMenu.h" />
     <ClInclude Include="StartDateTask.h" />
-    <ClInclude Include="Status.h" />
     <ClInclude Include="StatusTask.h" />
     <ClInclude Include="Task.h" />
     <ClInclude Include="TaskManager.h" />
     <ClInclude Include="Tasks.h" />
-    <ClInclude Include="TaskStatus.h" />
     <ClInclude Include="TimeUtil.h" />
-    <ClInclude Include="User.h" />
-    <ClInclude Include="UsersTasks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

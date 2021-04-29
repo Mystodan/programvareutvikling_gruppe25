@@ -3,11 +3,7 @@
 #include <iostream>
 #include <Windows.h>
 
-#include "Category.h"
 #include "Task.h"
-#include "TaskStatus.h"
-#include "User.h"
-#include "UsersTasks.h"
 #include "Color.h"
 
 namespace Database {
@@ -25,12 +21,6 @@ namespace Database {
 
 			// Create the database schema layout/structure
 			auto storage = make_storage("database.sqlite",
-				//make_table("users",
-				//	make_column("id", &UserDB::id, autoincrement(), primary_key()),
-				//	make_column("first_name", &UserDB::first_name),
-				//	make_column("last_name", &UserDB::last_name),
-				//	make_column("color_id", &UserDB::color_id),
-				//	foreign_key(&UserDB::color_id).references(&Color::id)),
 				make_table("tasks",
 					make_column("id", &TaskDB::id, autoincrement(), primary_key()),
 					make_column("description", &TaskDB::description, default_value("")), // allow null
@@ -39,11 +29,6 @@ namespace Database {
 					make_column("status", &TaskDB::status, default_value(0)),
 					make_column("priority", &TaskDB::priority, default_value(0)),
 					make_column("deleted", &TaskDB::deleted, default_value(0))),
-				//make_table("users_tasks", // Junction table
-				//	make_column("user_id", &UsersTasksDB::user_id),
-				//	foreign_key(&UsersTasksDB::user_id).references(&UserDB::id),
-				//	make_column("task_id", &UsersTasksDB::task_id),
-					//foreign_key(&UsersTasksDB::task_id).references(&TaskDB::id)),
 				make_table("color",
 					make_column("id", &Color::id, autoincrement(), primary_key()),
 					make_column("hex_color", &Color::hex_value))

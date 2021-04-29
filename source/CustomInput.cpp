@@ -10,7 +10,7 @@ namespace ftxui {
 	 */
 	bool CustomInput::OnEvent(Event event) {
 		// Always place the cursor rightmost because we no longer have internal left/right cursor control
-		cursor_position = std::max(0, std::min<int>(content.size(), cursor_position));
+		cursor_position = std::max(0, std::min<int>(static_cast<int>(content.size()), cursor_position));
 		std::wstring c;
 
 		// Backspace.

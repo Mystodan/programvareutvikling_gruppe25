@@ -1,7 +1,6 @@
 #include "InputColumn.h"
 
 #include "EmptyCheckBox.h"
-#include "Category.h"
 #include <Windows.h>
 
 using namespace ftxui;

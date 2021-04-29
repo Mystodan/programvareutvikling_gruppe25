@@ -37,22 +37,28 @@
     <Filter Include="Source Files\Utils">
       <UniqueIdentifier>{4092a3ba-dd2d-496a-a1c7-aaee32bc7365}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Components">
-      <UniqueIdentifier>{b0fded53-f7bd-485c-bef4-d1757c7ee170}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Components\Custom">
-      <UniqueIdentifier>{9eaa253b-a4b2-4d8c-8613-2e8bfe0c75cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Components\Task Column Tabs">
-      <UniqueIdentifier>{43e21943-4294-4af5-8334-8bf1096acecc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{d750494a-d412-4cd5-9a3d-1d9d475e1463}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI\Custom">
+    <Filter Include="Source Files\UI\Tabs">
+      <UniqueIdentifier>{56213129-83b6-4233-a026-5b671cac7f86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{b0fded53-f7bd-485c-bef4-d1757c7ee170}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Tabs">
+      <UniqueIdentifier>{7e0a0cf5-9b50-4eff-88ad-b2d33a4fd337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Tabs\Task Column Tabs">
+      <UniqueIdentifier>{b1053fa7-6b63-423c-87d3-8950a2db9dde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI\Custom Components">
+      <UniqueIdentifier>{9eaa253b-a4b2-4d8c-8613-2e8bfe0c75cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI\Custom Components">
       <UniqueIdentifier>{9e687aa5-131a-43cb-bc9e-528fff9b8a5f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\UI\Task Column Tabs">
+    <Filter Include="Source Files\UI\Tabs\Task Column Tabs">
       <UniqueIdentifier>{49098ec7-15a0-41a2-bd25-b8d28690f6d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -60,31 +66,13 @@
     <ClCompile Include="todo_list_application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="orm_test.cpp">
-      <Filter>Source Files\SQL</Filter>
-    </ClCompile>
-    <ClCompile Include="include\sqlite3\shell.c">
-      <Filter>Source Files\SQL\sqlite3</Filter>
-    </ClCompile>
     <ClCompile Include="include\sqlite3\sqlite3.c">
       <Filter>Source Files\SQL\sqlite3</Filter>
     </ClCompile>
     <ClCompile Include="Database.cpp">
       <Filter>Source Files\SQL</Filter>
     </ClCompile>
-    <ClCompile Include="User.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
     <ClCompile Include="Task.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="UsersTasks.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Category.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="TaskStatus.cpp">
       <Filter>Source Files\Data</Filter>
     </ClCompile>
     <ClCompile Include="TaskManager.cpp">
@@ -96,47 +84,47 @@
     <ClCompile Include="SideMenu.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="InputColumn.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
     <ClCompile Include="BaseTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="AllTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="DeadlineTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="CheckboxColumn.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="StartDateTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="StatusTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="CustomInput.cpp">
-      <Filter>Source Files\UI\Custom</Filter>
+      <Filter>Source Files\UI\Custom Components</Filter>
     </ClCompile>
     <ClCompile Include="EmptyCheckBox.cpp">
-      <Filter>Source Files\UI\Custom</Filter>
-    </ClCompile>
-    <ClCompile Include="CreateTask.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="HelpWindow.cpp">
-      <Filter>Source Files\UI\Custom</Filter>
+      <Filter>Source Files\UI\Custom Components</Filter>
     </ClCompile>
     <ClCompile Include="PriorityTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
     <ClCompile Include="DeleteTask.cpp">
-      <Filter>Source Files\UI\Task Column Tabs</Filter>
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateTask.cpp">
+      <Filter>Source Files\UI\Tabs</Filter>
     </ClCompile>
     <ClCompile Include="RecycleBin.cpp">
-      <Filter>Source Files\UI</Filter>
+      <Filter>Source Files\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="HelpWindow.cpp">
+      <Filter>Source Files\UI\Tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="InputColumn.cpp">
+      <Filter>Source Files\UI\Tabs\Task Column Tabs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,44 +139,11 @@
     <ClInclude Include="Task.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="User.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="Status.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="UsersTasks.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
     <ClInclude Include="Color.h">
       <Filter>Header Files\Data</Filter>
     </ClInclude>
-    <ClInclude Include="Category.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="TaskStatus.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="NewTask.h">
-      <Filter>Header Files\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="StatusTask.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="StartDateTask.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Tasks.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="Priority.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="RecycleBin.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="SideMenu.h">
-      <Filter>Header Files\Components</Filter>
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="TaskManager.h">
       <Filter>Header Files\Managers</Filter>
@@ -196,41 +151,56 @@
     <ClInclude Include="TimeUtil.h">
       <Filter>Header Files\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="InputColumn.h">
-      <Filter>Header Files\Components</Filter>
-    </ClInclude>
-    <ClInclude Include="AllTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="CreateTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="Completed.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="DeadlineTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
-    <ClInclude Include="CheckboxColumn.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
     <ClInclude Include="CustomInput.h">
-      <Filter>Header Files\Components\Custom</Filter>
+      <Filter>Header Files\UI\Custom Components</Filter>
     </ClInclude>
     <ClInclude Include="EmptyCheckBox.h">
-      <Filter>Header Files\Components\Custom</Filter>
+      <Filter>Header Files\UI\Custom Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RecycleBin.h">
+      <Filter>Header Files\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTask.h">
+      <Filter>Header Files\UI\Tabs</Filter>
     </ClInclude>
     <ClInclude Include="HelpWindow.h">
-      <Filter>Header Files\Components\Custom</Filter>
+      <Filter>Header Files\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Tasks.h">
+      <Filter>Header Files\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Priority.h">
+      <Filter>Header Files\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="Completed.h">
+      <Filter>Header Files\UI\Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="AllTask.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTask.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckboxColumn.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="DeadlineTask.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
     </ClInclude>
     <ClInclude Include="DeleteTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
     </ClInclude>
     <ClInclude Include="PriorityTask.h">
-      <Filter>Header Files\Components\Task Column Tabs</Filter>
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="InputColumn.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="StartDateTask.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusTask.h">
+      <Filter>Header Files\UI\Tabs\Task Column Tabs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

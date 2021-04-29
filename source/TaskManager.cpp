@@ -1,19 +1,8 @@
 #include "TaskManager.h"
 #include "Task.h"
-#include "User.h"
 #include "Database.h"
 
 using namespace sqlite_orm;
-
-//std::vector<std::shared_ptr<User>> TaskManager::get_all_users() {
-//	auto users_db = Database::get_db().get_all<UserDB>();
-//	std::vector<std::shared_ptr<User>> users{};
-//	users.reserve(users_db.size());
-//	for (auto user_db : users_db) {
-//		users.emplace_back(std::make_shared<User>(user_db));
-//	}
-//	return users;
-//}
 
 /**
  * \brief Will fetch all the tasks in the database

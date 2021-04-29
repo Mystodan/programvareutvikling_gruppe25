@@ -181,8 +181,6 @@ bool SideMenu::OnEvent(ftxui::Event event) {
 		}
 	};
 
-	//OutputDebugStringA((event.input() + "\n").c_str());
-
 	if (const auto it = key_map.find(event.input()); it != key_map.end()) {
 
 		// Only flip it if it is already selected/active
