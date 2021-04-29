@@ -33,6 +33,8 @@ public:
 
 	std::function<void()> on_change = []() {};
 
+	bool is_empty() const;
+
 private:
 	ftxui::Menu tasks_;          // Tasks column
 	DeleteTask deleted_;    // Delete column 

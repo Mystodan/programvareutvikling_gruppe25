@@ -84,7 +84,7 @@ void SideMenu::RebuildDataEntries() {
 			// Is deleted
 			return task->get_deleted() == 1;
 			}, on_change);
-		//check_empty_take_focus(td_RecycleBin);
+		check_empty_take_focus(td_RecycleBin);
 
 		td_CreateTask.on_change = on_change;
 	}

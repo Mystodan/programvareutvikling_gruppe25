@@ -22,7 +22,7 @@ namespace Database {
 		static auto storage = []() {
 
 			// Create the database schema layout/structure
-			auto storage = make_storage("new_db.sqlite",
+			auto storage = make_storage("database.sqlite",
 				//make_table("users",
 				//	make_column("id", &UserDB::id, autoincrement(), primary_key()),
 				//	make_column("first_name", &UserDB::first_name),

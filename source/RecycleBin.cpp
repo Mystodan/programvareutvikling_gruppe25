@@ -102,3 +102,7 @@ void RecycleBin::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
 		}
 	}
 }
+
+bool RecycleBin::is_empty() const {
+	return tasks_.entries.empty();
+}
