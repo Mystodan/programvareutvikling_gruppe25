@@ -27,7 +27,3 @@ void InputColumn::clear() {
 	}
 	inputboxes.clear();
 }
-
-//ftxui::Element InputColumn::Render() {
-//	return container_.Render();
-//}

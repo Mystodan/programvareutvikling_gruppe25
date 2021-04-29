@@ -143,9 +143,6 @@
     <None Include="..\.gitignore">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Database.h">
@@ -229,11 +226,11 @@
     <ClInclude Include="HelpWindow.h">
       <Filter>Header Files\Components\Custom</Filter>
     </ClInclude>
-    <ClInclude Include="PriorityTask.h">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
-    </ClInclude>
     <ClInclude Include="DeleteTask.h">
-      <Filter>Source Files\Components\Task Column Tabs</Filter>
+      <Filter>Header Files\Components\Task Column Tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityTask.h">
+      <Filter>Header Files\Components\Task Column Tabs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

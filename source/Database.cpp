@@ -1,7 +1,10 @@
 #include "database.h"
 
 namespace Database {
-	void insert_default_data() {
+	/**
+	 * \brief Inserts new default data into the database
+	 */
+	[[unused]] void insert_default_data() {
 		using namespace Database;
 
 		{ // Colors

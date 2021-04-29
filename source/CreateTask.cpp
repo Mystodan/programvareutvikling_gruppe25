@@ -3,6 +3,9 @@
 #include "TaskManager.h"
 #include "TimeUtil.h"
 
+/**
+ * \brief CreateTask constructor that will addd all it's children and set up internal callbacks
+ */
 CreateTask::CreateTask() {
 	Add(&container);                                  // Adds relevant containers from library
 	container.Add(&description_input_);
@@ -10,7 +13,6 @@ CreateTask::CreateTask() {
 	container.Add(&end_time_input_);
 	container.Add(&confirm_button);
 
-	//priority_box.label = L"(X = Priority)";           // Text is shown to user to explain that when box is marked with X, it is a priority
 	confirm_button.label = L"Confirm";                // Text content inside confirm button
 
 	confirm_button.on_click = [&]() {                 // When confirm button is clicked, do the following:

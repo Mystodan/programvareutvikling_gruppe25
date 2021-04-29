@@ -1,6 +1,10 @@
 #include "DeleteTask.h"
 #include "EmptyCheckBox.h"
 
+/**
+ * \brief Adds a tasks data to this component
+ * \param task task to be added
+ */
 void DeleteTask::add_task(const std::shared_ptr<Task>& task) {
 	auto* checkbox = new EmptyCheckBox();
 

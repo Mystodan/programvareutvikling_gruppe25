@@ -15,6 +15,9 @@
 
 class Task;
 
+/**
+ * \brief Base task that manages all task columns and rows
+ */
 class BaseTask : public ftxui::Component {
 public:
     BaseTask() {

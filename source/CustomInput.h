@@ -2,6 +2,10 @@
 #include <ftxui/component/input.hpp>
 
 namespace ftxui {
+	/**
+	 * \brief Custom inputbox that doesn't capture left/right inputs.
+	 * Also always keeps the cursor as far right as possible
+	 */
 	class CustomInput : public Input {
 	public:
 		bool OnEvent(ftxui::Event) override;

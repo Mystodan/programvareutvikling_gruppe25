@@ -9,7 +9,7 @@
 #include "Task.h"
 
 /**
- * \brief Sets up the "Priority" column
+ * \brief Sets up the "Tasks" column
  */
 class AllTask : public InputColumn {
 public:

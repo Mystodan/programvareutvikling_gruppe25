@@ -43,7 +43,7 @@ namespace Utils {
 
 	/**
 	* \Converts date (dd.mm.yy) (wstring) to unixTime (int)
-	* \param wstring to be converted to unixTime
+	* \param str_time to be converted to unixTime
 	* \return unixTime
 	*/
 	int string_to_unixtime(std::wstring str_time) {

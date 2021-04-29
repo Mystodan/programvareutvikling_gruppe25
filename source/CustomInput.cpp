@@ -2,9 +2,15 @@
 #include <Windows.h>
 
 namespace ftxui {
+	/**
+	 * \brief Callback for when an event happens in the UI.
+	 * Handles behavior on different key inputs for the component
+	 * \param event thrown from the UI
+	 * \return true if we captured the event in this component
+	 */
 	bool CustomInput::OnEvent(Event event) {
+		// Always place the cursor rightmost because we no longer have internal left/right cursor control
 		cursor_position = std::max(0, std::min<int>(content.size(), cursor_position));
-		//cursor_position = std::max(0, (int)content.size());
 		std::wstring c;
 
 		// Backspace.
@@ -40,18 +46,6 @@ namespace ftxui {
 			return false;
 		}
 
-		//if (event == Event::ArrowLeft && cursor_position > 0) {
-		//	cursor_position--;
-		//	OutputDebugStringA("Left");
-		//	return false;
-		//}
-
-		//if (event == Event::ArrowRight && cursor_position < (int)content.size()) {
-		//	cursor_position++;
-		//	OutputDebugStringA("Right");
-		//	return false;
-		//}
-
 		// Content
 		if (event.is_character()) {
 			content.insert(cursor_position, 1, event.character());
@@ -62,8 +56,11 @@ namespace ftxui {
 		return false;
 	}
 
+	/**
+	 * \brief Renders the CustomInput component
+	 * \return Element to be rendered
+	 */
 	Element CustomInput::Render() {
-		//cursor_position = std::max(0, std::min<int>(content.size(), cursor_position));
 
 		// Always have it placed to the right of the text because we no longer have left/right control of the cursor
 		cursor_position = std::max(0, (int)content.size());
@@ -101,6 +98,10 @@ namespace ftxui {
 			) | flex | inverted | frame | main_decorator;
 	}
 
+	/**
+	 * \brief Sets the content (text) for this input box
+	 * \param content_ to be set internally
+	 */
 	void CustomInput::set_content(const std::wstring& content_) {
 		content = content_;
 		original_content = content_;

@@ -23,7 +23,6 @@ public:
 	 */
     virtual void add_task(const std::shared_ptr<Task>& task) = 0;
     void clear();
-    //ftxui::Element Render() override;
 
     std::function<void()> on_enter = []() {};
     std::function<void()> on_change = [](){}; // Callback to be called when a state change happens

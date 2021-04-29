@@ -109,6 +109,10 @@ Element SideMenu::Render() {
 }
 
 
+/**
+ * \brief Sorts the tasks vector according to the active sort order and type
+ * \param tasks to be sorted
+ */
 void SideMenu::sort_tasks(std::vector<std::shared_ptr<Task>>& tasks) const {
 
 	std::function<bool(std::shared_ptr<Task>, std::shared_ptr<Task>)> pred;
@@ -162,6 +166,12 @@ void SideMenu::sort_tasks(std::vector<std::shared_ptr<Task>>& tasks) const {
 	std::sort(tasks.begin(), tasks.end(), pred);
 }
 
+/**
+ * \brief Callback for when an event happens in the UI.
+ * Handles sort order and type based on the event (input)
+ * \param event thrown from the UI
+ * \return true if we captured the event in this component
+ */
 bool SideMenu::OnEvent(ftxui::Event event) {
 	const auto flip_sort = [this]() {
 		if (sort_order == SortOrder::ASCENDING) {
@@ -171,7 +181,7 @@ bool SideMenu::OnEvent(ftxui::Event event) {
 		}
 	};
 
-	OutputDebugStringA((event.input() + "\n").c_str());
+	//OutputDebugStringA((event.input() + "\n").c_str());
 
 	if (const auto it = key_map.find(event.input()); it != key_map.end()) {
 

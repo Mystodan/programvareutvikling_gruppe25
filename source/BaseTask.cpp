@@ -44,7 +44,10 @@ void BaseTask::rebuild_data(const std::vector<std::shared_ptr<Task>>& tasks,
 }
 
 
-// Renders the elements with a window around each container
+/**
+ * \brief Renders BaseTask component
+ * \return Element to be rendered
+ */
 Element BaseTask::Render() {
 	auto task_win = window(text(L"Task(F1)") | center, task_.Render());
 	auto priority_win = window(text(L"Priority(F2)") | center | size(WIDTH, EQUAL, 12), priority_.Render());
@@ -65,20 +68,35 @@ Element BaseTask::Render() {
 	}), output_win);
 }
 
+/**
+ * \brief Adds output to the output window with a green color
+ * \param output to be added to the output window
+ */
 void BaseTask::add_output(const std::wstring& output) {
 	output_window_.selected_style = color(Color::Green);
 	output_window_.entries.push_back(output);
 }
 
+/**
+ * \brief Adds error output to the output window with a red color
+ * \param error_message 
+ */
 void BaseTask::add_error(const std::wstring& error_message) {
 	output_window_.selected_style = color(Color::Red);
 	output_window_.entries.push_back(error_message);
 }
 
+/**
+ * \brief Clears the output window 
+ */
 void BaseTask::clear_output() {
 	output_window_.entries.clear();
 }
 
+/**
+ * \brief Checks if the list of rows is empty
+ * \return true if empty
+ */
 bool BaseTask::is_empty() const {
 	return task_.inputboxes.empty();
 }

@@ -6,6 +6,9 @@
 #include "ftxui/component/menu.hpp"      // Menu 
 #include "ftxui/component/button.hpp"    // Button
 
+/**
+ * \brief Modal dialog for confirming user action
+ */
 class ConfirmationDialog : public ftxui::Component {
 public:
 	ConfirmationDialog();
@@ -21,6 +24,9 @@ public:
 	std::function<void()> on_no;
 };
 
+/**
+ * \brief RecycleBin that holds all tasks marked as deleted
+ */
 class RecycleBin : public ftxui::Component {
 public:
 	RecycleBin();

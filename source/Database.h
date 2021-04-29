@@ -1,6 +1,7 @@
 #pragma once
 #include <sqlite_orm3/sqlite_orm.h>
 #include <iostream>
+#include <Windows.h>
 
 #include "Category.h"
 #include "Task.h"
@@ -12,7 +13,8 @@
 namespace Database {
 
 	/**
-	 * \brief Mostly for internal use, returns an instance of the database storage object
+	 * \brief Returns an instance of the database storage object.
+	 *  Mostly for internal use.
 	 * \return the database storage object
 	 */
 	inline auto get_db() {
@@ -50,7 +52,7 @@ namespace Database {
 				storage.sync_schema(); // Sync schema and ignore tables that might not exist in the schema defined here
 			}
 			catch (const std::exception& e) {
-				std::cerr << e.what() << "\n";
+				OutputDebugStringA(e.what());
 			}
 
 			return storage;
@@ -60,7 +62,7 @@ namespace Database {
 	}
 
 	/**
-	 * \brief adds the object to the database
+	 * \brief Adds the object to the database
 	 * \param object to be added to the database
 	 * \return created id of the object
 	 */
@@ -70,7 +72,8 @@ namespace Database {
 	}
 
 	/**
-	 * \brief removes the object from the database
+	 * \brief Removes the object from the database
+	 * \tparam T Object type to be removed
 	 * \param object to be removed from the database
 	 */
 	template <typename T>
@@ -78,13 +81,18 @@ namespace Database {
 		return get_db().remove<T>(object.id);
 	}
 
+	/**
+     * \brief Removes multiple objects from the database
+     * \tparam T Object type to be removed
+     * \param args Objects to be removed
+     */
     template<class T, class... Args>
 	void remove(Args... args) {
 		return get_db().remove_all<T>(args...);
 	}
 
 	/**
-	 * \brief updates the object data in the database
+	 * \brief Updates the object data in the database
 	 * \param object to be updated with new data
 	 */
 	template <typename T>
@@ -101,7 +109,7 @@ namespace Database {
 	}
 
 	/**
-	 * \brief fetches object from the database
+	 * \brief Fetches object from the database
 	 * \param id of the object in the database
 	 * \return object data from the database or a object with id -1 if failed
 	 */
