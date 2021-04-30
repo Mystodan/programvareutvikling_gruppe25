@@ -1,0 +1,161 @@
+\hypertarget{class_input_column}{}\doxysection{Input\+Column Class Reference}
+\label{class_input_column}\index{InputColumn@{InputColumn}}
+
+
+Sets up the \char`\"{}\+Priority\char`\"{} column.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Column.\+h$>$}
+
+
+
+Inheritance diagram for Input\+Column\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_column__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Input\+Column\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_input_column__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_input_column_a239d5a416abbf81c504b45b8fbb6345a}{Input\+Column}} ()
+\item 
+void \mbox{\hyperlink{class_input_column_a519b1eb31af33b01d01398923013a19b}{fill\+\_\+data}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&tasks)
+\begin{DoxyCompactList}\small\item\em Fills component with all task data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_column_ad5d96aa424639800929acff538cae7f6}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears/detaches all checkboxes from our component. Will no longer be rendered or execute events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_input_column_a5103367c547e072d20c0cc1a7219da2b}{add\+\_\+task}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$ \&task)=0
+\begin{DoxyCompactList}\small\item\em Adds a task\textquotesingle{}s data to the component, also sets the callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{class_input_column_af744026a3cd466130b9bf677b80a79b8}{on\+\_\+change}} = \mbox{[}$\,$\mbox{]}()\{\}
+\item 
+std\+::function$<$ void(const std\+::wstring \&)$>$ \mbox{\hyperlink{class_input_column_a58c2c803c2025d1edb024199caff66c1}{add\+\_\+output}} = \mbox{[}$\,$\mbox{]}(const std\+::wstring\&)\{\}
+\item 
+std\+::function$<$ void(const std\+::wstring \&)$>$ \mbox{\hyperlink{class_input_column_a640790d4a766c66201891f6ffd982bbc}{add\+\_\+error}} = \mbox{[}$\,$\mbox{]}(const std\+::wstring\&)\{\}
+\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{class_input_column_acd5bef4c3490962976e8d67566891151}{clear\+\_\+output}} = \mbox{[}$\,$\mbox{]}()\{\}
+\item 
+ftxui\+::\+Container \mbox{\hyperlink{class_input_column_a7a878ae1d2956641f50bb2fdf8455858}{container\+\_\+}} = ftxui\+::\+Container\+::\+Vertical()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classftxui_1_1_custom_input}{ftxui\+::\+Custom\+Input}} $\ast$ $>$ \mbox{\hyperlink{class_input_column_ae728b403b8c85208c8d10afdeb1cc4ed}{inputboxes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the \char`\"{}\+Priority\char`\"{} column. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_input_column_a239d5a416abbf81c504b45b8fbb6345a}\label{class_input_column_a239d5a416abbf81c504b45b8fbb6345a}} 
+\index{InputColumn@{InputColumn}!InputColumn@{InputColumn}}
+\index{InputColumn@{InputColumn}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{InputColumn()}{InputColumn()}}
+{\footnotesize\ttfamily Input\+Column\+::\+Input\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_input_column_a5103367c547e072d20c0cc1a7219da2b}\label{class_input_column_a5103367c547e072d20c0cc1a7219da2b}} 
+\index{InputColumn@{InputColumn}!add\_task@{add\_task}}
+\index{add\_task@{add\_task}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{add\_task()}{add\_task()}}
+{\footnotesize\ttfamily virtual void Input\+Column\+::add\+\_\+task (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$ \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a task\textquotesingle{}s data to the component, also sets the callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & \mbox{\hyperlink{class_task}{Task}} to be added \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_status_task_a54a27030cab10bd31c5ea545b1aa79b8}{Status\+Task}}, \mbox{\hyperlink{class_start_date_task_a30f1be70ec19940440a518b3cd72f123}{Start\+Date\+Task}}, \mbox{\hyperlink{class_deadline_task_ab752d6dbcc12a89e3950f81e0b46b011}{Deadline\+Task}}, and \mbox{\hyperlink{class_all_task_aef2119e92a63c5267900ce2eb890ffc0}{All\+Task}}.
+
+\mbox{\Hypertarget{class_input_column_ad5d96aa424639800929acff538cae7f6}\label{class_input_column_ad5d96aa424639800929acff538cae7f6}} 
+\index{InputColumn@{InputColumn}!clear@{clear}}
+\index{clear@{clear}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Input\+Column\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears/detaches all checkboxes from our component. Will no longer be rendered or execute events. 
+
+\mbox{\Hypertarget{class_input_column_a519b1eb31af33b01d01398923013a19b}\label{class_input_column_a519b1eb31af33b01d01398923013a19b}} 
+\index{InputColumn@{InputColumn}!fill\_data@{fill\_data}}
+\index{fill\_data@{fill\_data}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{fill\_data()}{fill\_data()}}
+{\footnotesize\ttfamily void Input\+Column\+::fill\+\_\+data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&}]{tasks }\end{DoxyParamCaption})}
+
+
+
+Fills component with all task data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & \mbox{\hyperlink{class_tasks}{Tasks}} to be filled \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_input_column_a640790d4a766c66201891f6ffd982bbc}\label{class_input_column_a640790d4a766c66201891f6ffd982bbc}} 
+\index{InputColumn@{InputColumn}!add\_error@{add\_error}}
+\index{add\_error@{add\_error}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{add\_error}{add\_error}}
+{\footnotesize\ttfamily std\+::function$<$void(const std\+::wstring\&)$>$ Input\+Column\+::add\+\_\+error = \mbox{[}$\,$\mbox{]}(const std\+::wstring\&)\{\}}
+
+\mbox{\Hypertarget{class_input_column_a58c2c803c2025d1edb024199caff66c1}\label{class_input_column_a58c2c803c2025d1edb024199caff66c1}} 
+\index{InputColumn@{InputColumn}!add\_output@{add\_output}}
+\index{add\_output@{add\_output}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{add\_output}{add\_output}}
+{\footnotesize\ttfamily std\+::function$<$void(const std\+::wstring\&)$>$ Input\+Column\+::add\+\_\+output = \mbox{[}$\,$\mbox{]}(const std\+::wstring\&)\{\}}
+
+\mbox{\Hypertarget{class_input_column_acd5bef4c3490962976e8d67566891151}\label{class_input_column_acd5bef4c3490962976e8d67566891151}} 
+\index{InputColumn@{InputColumn}!clear\_output@{clear\_output}}
+\index{clear\_output@{clear\_output}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{clear\_output}{clear\_output}}
+{\footnotesize\ttfamily std\+::function$<$void()$>$ Input\+Column\+::clear\+\_\+output = \mbox{[}$\,$\mbox{]}()\{\}}
+
+\mbox{\Hypertarget{class_input_column_a7a878ae1d2956641f50bb2fdf8455858}\label{class_input_column_a7a878ae1d2956641f50bb2fdf8455858}} 
+\index{InputColumn@{InputColumn}!container\_@{container\_}}
+\index{container\_@{container\_}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{container\_}{container\_}}
+{\footnotesize\ttfamily ftxui\+::\+Container Input\+Column\+::container\+\_\+ = ftxui\+::\+Container\+::\+Vertical()}
+
+\mbox{\Hypertarget{class_input_column_ae728b403b8c85208c8d10afdeb1cc4ed}\label{class_input_column_ae728b403b8c85208c8d10afdeb1cc4ed}} 
+\index{InputColumn@{InputColumn}!inputboxes@{inputboxes}}
+\index{inputboxes@{inputboxes}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{inputboxes}{inputboxes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classftxui_1_1_custom_input}{ftxui\+::\+Custom\+Input}}$\ast$$>$ Input\+Column\+::inputboxes}
+
+\mbox{\Hypertarget{class_input_column_af744026a3cd466130b9bf677b80a79b8}\label{class_input_column_af744026a3cd466130b9bf677b80a79b8}} 
+\index{InputColumn@{InputColumn}!on\_change@{on\_change}}
+\index{on\_change@{on\_change}!InputColumn@{InputColumn}}
+\doxysubsubsection{\texorpdfstring{on\_change}{on\_change}}
+{\footnotesize\ttfamily std\+::function$<$void()$>$ Input\+Column\+::on\+\_\+change = \mbox{[}$\,$\mbox{]}()\{\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_input_column_8h}{Input\+Column.\+h}}\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_input_column_8cpp}{Input\+Column.\+cpp}}\end{DoxyCompactItemize}

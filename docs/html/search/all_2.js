@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['checkboxcolumn_14',['CheckboxColumn',['../class_checkbox_column.html',1,'CheckboxColumn'],['../class_checkbox_column.html#ae27517714a35875d7b5c721b255d8de2',1,'CheckboxColumn::CheckboxColumn()']]],
+  ['checkboxcolumn_2ecpp_15',['CheckboxColumn.cpp',['../_checkbox_column_8cpp.html',1,'']]],
+  ['checkboxcolumn_2eh_16',['CheckboxColumn.h',['../_checkbox_column_8h.html',1,'']]],
+  ['checkboxes_17',['checkboxes',['../class_checkbox_column.html#a3b38094b768d0c2beeffa3740e074199',1,'CheckboxColumn']]],
+  ['checked_18',['checked',['../class_empty_check_box.html#a18ba1960c79376cb19688fc7fa3fce07',1,'EmptyCheckBox']]],
+  ['clear_19',['clear',['../class_checkbox_column.html#a841650e4bdb2cae570b40ce49a31e3b4',1,'CheckboxColumn::clear()'],['../class_input_column.html#ad5d96aa424639800929acff538cae7f6',1,'InputColumn::clear()']]],
+  ['clear_5foutput_20',['clear_output',['../class_input_column.html#acd5bef4c3490962976e8d67566891151',1,'InputColumn::clear_output()'],['../class_base_task.html#a6b423b7c17f29bd8af2f0f41bacdda9c',1,'BaseTask::clear_output()']]],
+  ['color_21',['Color',['../struct_color.html',1,'']]],
+  ['color_2eh_22',['Color.h',['../_color_8h.html',1,'']]],
+  ['completed_23',['Completed',['../class_completed.html',1,'Completed'],['../class_completed.html#a70217933abfb29d26147c703d96c7cb9',1,'Completed::Completed()']]],
+  ['completed_2eh_24',['Completed.h',['../_completed_8h.html',1,'']]],
+  ['confirmationdialog_25',['ConfirmationDialog',['../class_confirmation_dialog.html',1,'ConfirmationDialog'],['../class_confirmation_dialog.html#ad51edfa0f0b454df29cfc336bf716b00',1,'ConfirmationDialog::ConfirmationDialog()']]],
+  ['container_26',['container',['../class_confirmation_dialog.html#aefc087af5adb859d30e9bb8a1c7839a4',1,'ConfirmationDialog::container()'],['../class_side_menu.html#ab1b6e7e023dfddb03205d2e3634233e2',1,'SideMenu::container()']]],
+  ['container_5f_27',['container_',['../class_checkbox_column.html#ac9e013a3509e2618f90dbc6347191e47',1,'CheckboxColumn::container_()'],['../class_input_column.html#a7a878ae1d2956641f50bb2fdf8455858',1,'InputColumn::container_()']]],
+  ['createtask_28',['CreateTask',['../class_create_task.html',1,'CreateTask'],['../class_create_task.html#a527407a211afe9d2be4343aa5c351832',1,'CreateTask::CreateTask()']]],
+  ['createtask_2ecpp_29',['CreateTask.cpp',['../_create_task_8cpp.html',1,'']]],
+  ['createtask_2eh_30',['CreateTask.h',['../_create_task_8h.html',1,'']]],
+  ['custominput_31',['CustomInput',['../classftxui_1_1_custom_input.html',1,'ftxui']]],
+  ['custominput_2ecpp_32',['CustomInput.cpp',['../_custom_input_8cpp.html',1,'']]],
+  ['custominput_2eh_33',['CustomInput.h',['../_custom_input_8h.html',1,'']]]
+];

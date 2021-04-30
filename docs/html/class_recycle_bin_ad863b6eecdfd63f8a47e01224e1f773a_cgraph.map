@@ -1,0 +1,5 @@
+<map id="RecycleBin::RecycleBin" name="RecycleBin::RecycleBin">
+<area shape="rect" id="node1" title="RecycleBin constructor." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$class_task_manager.html#a7b8a1eca51c3228b3a939904f4fefa54" title="Deletes a task from the database with a task object." alt="" coords="216,5,391,32"/>
+<area shape="rect" id="node3" href="$class_task.html#afb23600fa824dd9bf3f33f421d88224b" title="Retrieves the internal TaskDB object." alt="" coords="439,5,547,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="SideMenu::RebuildDataEntries" name="SideMenu::RebuildDataEntries">
+<area shape="rect" id="node1" title="Rebuilds all the data entries when a change happens to one of the data entries (tasks)" alt="" coords="5,97,204,123"/>
+<area shape="rect" id="node2" href="$class_task_manager.html#aae79aa83904a7dc2f49f4cc86a2ce8ae" title="Will fetch all the tasks in the database." alt="" coords="262,5,409,47"/>
+<area shape="rect" id="node4" href="$class_base_task.html#a09298a2d90353543819d169a1a348861" title=" " alt="" coords="256,71,415,98"/>
+<area shape="rect" id="node5" href="$class_recycle_bin.html#a65dbd94d88d1da690a44c9e1e54bc21f" title="Rebuilds all the internal data for all it&#39;s children." alt="" coords="252,122,419,149"/>
+<area shape="rect" id="node6" href="$class_side_menu.html#a7bcd9864a84ed1d4fe697a4bb99c2115" title="Sorts the tasks vector according to the active sort order and type." alt="" coords="261,173,410,199"/>
+<area shape="rect" id="node3" href="$namespace_database.html#a6208f3900f3b5e2fd49b0bcf60eda980" title="Returns an instance of the database storage object. Mostly for internal use." alt="" coords="467,13,591,39"/>
+</map>

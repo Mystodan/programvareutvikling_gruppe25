@@ -1,0 +1,5 @@
+<map id="BaseTask::rebuild_data" name="BaseTask::rebuild_data">
+<area shape="rect" id="node1" title=" " alt="" coords="447,5,605,32"/>
+<area shape="rect" id="node2" href="$class_side_menu.html#af6006fe2d5571092aed44f1bb3dd0c60" title="Rebuilds all the data entries when a change happens to one of the data entries (tasks)" alt="" coords="200,5,399,32"/>
+<area shape="rect" id="node3" href="$class_side_menu.html#a3471cb1320d88789caf9d6a17ab6f7b1" title="Fills the component with all it&#39;s children and containers." alt="" coords="5,5,152,32"/>
+</map>

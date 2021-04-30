@@ -1,0 +1,8 @@
+<map id="InputColumn" name="InputColumn">
+<area shape="rect" id="node1" title="Sets up the &quot;Priority&quot; column." alt="" coords="179,131,294,325"/>
+<area shape="rect" id="node3" href="$class_all_task.html" title="Sets up the &quot;Tasks&quot; column." alt="" coords="5,373,100,451"/>
+<area shape="rect" id="node4" href="$class_deadline_task.html" title="Sets up the &quot;Priority&quot; column." alt="" coords="124,373,224,451"/>
+<area shape="rect" id="node5" href="$class_start_date_task.html" title="StartDateTask includes: filling, adding &amp; clearing StartDateTask data." alt="" coords="248,373,353,451"/>
+<area shape="rect" id="node6" href="$class_status_task.html" title="StatusTask includes: filling, adding &amp; clearing status data." alt="" coords="377,373,472,451"/>
+<area shape="rect" id="node2" title=" " alt="" coords="177,5,297,83"/>
+</map>

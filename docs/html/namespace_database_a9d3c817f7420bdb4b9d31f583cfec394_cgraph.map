@@ -1,0 +1,4 @@
+<map id="Database::add" name="Database::add">
+<area shape="rect" id="node1" title="Adds the object to the database." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$namespace_database.html#a6208f3900f3b5e2fd49b0bcf60eda980" title="Returns an instance of the database storage object. Mostly for internal use." alt="" coords="160,5,284,32"/>
+</map>

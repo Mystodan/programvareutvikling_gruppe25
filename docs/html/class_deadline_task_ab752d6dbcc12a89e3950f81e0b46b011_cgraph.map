@@ -1,0 +1,6 @@
+<map id="DeadlineTask::add_task" name="DeadlineTask::add_task">
+<area shape="rect" id="node1" title="Adds tasks data to this component." alt="" coords="5,35,167,61"/>
+<area shape="rect" id="node2" href="$namespace_utils.html#a72f55fac39292836b2f3a0c3e3cef965" title="Converts date (dd.mm.yy) (wstring) to unixTime (int)" alt="" coords="215,5,377,32"/>
+<area shape="rect" id="node4" href="$namespace_utils.html#aa1afecbc87a8d4f7051d613b368e564e" title="Converts unixTime (int) to date (dd.mm.yy) (wstring)" alt="" coords="235,57,357,98"/>
+<area shape="rect" id="node3" href="$_time_util_8cpp.html#aa2057efb13697a7ca5de17a98260451e" title="Function to imitate unix version of strptime on windows&#45;versions." alt="" coords="425,5,495,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="TaskManager::add_task" name="TaskManager::add_task">
+<area shape="rect" id="node1" title="Adds a new task to the database from a task object." alt="" coords="216,5,377,32"/>
+<area shape="rect" id="node2" href="$class_create_task.html#a527407a211afe9d2be4343aa5c351832" title="CreateTask constructor that will addd all it&#39;s children and set up internal callbacks." alt="" coords="5,5,168,32"/>
+</map>

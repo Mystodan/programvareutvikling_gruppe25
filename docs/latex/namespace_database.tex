@@ -1,0 +1,189 @@
+\hypertarget{namespace_database}{}\doxysection{Database Namespace Reference}
+\label{namespace_database}\index{Database@{Database}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_database_ae3e04db5a41bb57be7b002e2ed389dc7}{insert\+\_\+default\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em Inserts new default data into the database. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{namespace_database_a6208f3900f3b5e2fd49b0bcf60eda980}{get\+\_\+db}} ()
+\begin{DoxyCompactList}\small\item\em Returns an instance of the database storage object. Mostly for internal use. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\int \mbox{\hyperlink{namespace_database_a9d3c817f7420bdb4b9d31f583cfec394}{add}} (T object)
+\begin{DoxyCompactList}\small\item\em Adds the object to the database. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_database_a592a2bf2a0b302a6e0e1ab277323b8d3}{remove}} (T object)
+\begin{DoxyCompactList}\small\item\em Removes the object from the database. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T , class... Args$>$ }\\void \mbox{\hyperlink{namespace_database_a70ce992e4f30ab3cc940629fdadf065c}{remove}} (Args... args)
+\begin{DoxyCompactList}\small\item\em Removes multiple objects from the database. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespace_database_a3194a666a3b45d43b11e46156baba291}{update}} (T object)
+\begin{DoxyCompactList}\small\item\em Updates the object data in the database. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_database_a2dbbd0461170b672f7fdf080e74536b9}{get}} (int id)
+\begin{DoxyCompactList}\small\item\em Fetches object from the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_database_a9d3c817f7420bdb4b9d31f583cfec394}\label{namespace_database_a9d3c817f7420bdb4b9d31f583cfec394}} 
+\index{Database@{Database}!add@{add}}
+\index{add@{add}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int Database\+::add (\begin{DoxyParamCaption}\item[{T}]{object }\end{DoxyParamCaption})}
+
+
+
+Adds the object to the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & to be added to the database \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+created id of the object 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{namespace_database_a9d3c817f7420bdb4b9d31f583cfec394_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_database_a2dbbd0461170b672f7fdf080e74536b9}\label{namespace_database_a2dbbd0461170b672f7fdf080e74536b9}} 
+\index{Database@{Database}!get@{get}}
+\index{get@{get}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Database\+::get (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Fetches object from the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the object in the database \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object data from the database or a object with id -\/1 if failed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{namespace_database_a2dbbd0461170b672f7fdf080e74536b9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_database_a6208f3900f3b5e2fd49b0bcf60eda980}\label{namespace_database_a6208f3900f3b5e2fd49b0bcf60eda980}} 
+\index{Database@{Database}!get\_db@{get\_db}}
+\index{get\_db@{get\_db}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{get\_db()}{get\_db()}}
+{\footnotesize\ttfamily auto Database\+::get\+\_\+db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an instance of the database storage object. Mostly for internal use. 
+
+\begin{DoxyReturn}{Returns}
+the database storage object 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_database_a6208f3900f3b5e2fd49b0bcf60eda980_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_database_ae3e04db5a41bb57be7b002e2ed389dc7}\label{namespace_database_ae3e04db5a41bb57be7b002e2ed389dc7}} 
+\index{Database@{Database}!insert\_default\_data@{insert\_default\_data}}
+\index{insert\_default\_data@{insert\_default\_data}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{insert\_default\_data()}{insert\_default\_data()}}
+{\footnotesize\ttfamily void Database\+::insert\+\_\+default\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inserts new default data into the database. 
+
+Inserts default data needed for the DB This is not really a good function to do on every startup, only needs to be done once. \mbox{\Hypertarget{namespace_database_a70ce992e4f30ab3cc940629fdadf065c}\label{namespace_database_a70ce992e4f30ab3cc940629fdadf065c}} 
+\index{Database@{Database}!remove@{remove}}
+\index{remove@{remove}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T , class... Args$>$ \\
+void Database\+::remove (\begin{DoxyParamCaption}\item[{Args...}]{args }\end{DoxyParamCaption})}
+
+
+
+Removes multiple objects from the database. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Object type to be removed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Objects to be removed \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{namespace_database_a70ce992e4f30ab3cc940629fdadf065c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_database_a592a2bf2a0b302a6e0e1ab277323b8d3}\label{namespace_database_a592a2bf2a0b302a6e0e1ab277323b8d3}} 
+\index{Database@{Database}!remove@{remove}}
+\index{remove@{remove}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Database\+::remove (\begin{DoxyParamCaption}\item[{T}]{object }\end{DoxyParamCaption})}
+
+
+
+Removes the object from the database. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Object type to be removed \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em object} & to be removed from the database \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{namespace_database_a592a2bf2a0b302a6e0e1ab277323b8d3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespace_database_a3194a666a3b45d43b11e46156baba291}\label{namespace_database_a3194a666a3b45d43b11e46156baba291}} 
+\index{Database@{Database}!update@{update}}
+\index{update@{update}!Database@{Database}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Database\+::update (\begin{DoxyParamCaption}\item[{T}]{object }\end{DoxyParamCaption})}
+
+
+
+Updates the object data in the database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & to be updated with new data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{namespace_database_a3194a666a3b45d43b11e46156baba291_cgraph}
+\end{center}
+\end{figure}

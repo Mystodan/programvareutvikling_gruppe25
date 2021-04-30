@@ -1,0 +1,4 @@
+<map id="TaskManager::delete_task" name="TaskManager::delete_task">
+<area shape="rect" id="node1" title="Deletes a task from the database with a task object." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$class_task.html#afb23600fa824dd9bf3f33f421d88224b" title="Retrieves the internal TaskDB object." alt="" coords="228,5,336,32"/>
+</map>

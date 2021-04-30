@@ -1,0 +1,308 @@
+\hypertarget{class_task}{}\doxysection{Task Class Reference}
+\label{class_task}\index{Task@{Task}}
+
+
+{\ttfamily \#include $<$Task.\+h$>$}
+
+
+
+Collaboration diagram for Task\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_task__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_task_ab9857366b4dedeba70eccfc787995998}{Task}} (\mbox{\hyperlink{struct_task_d_b}{Task\+DB}} task\+\_\+db)
+\item 
+int \mbox{\hyperlink{class_task_a6f31431c549287f1f4d1dd7b4170c12d}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves task\textquotesingle{}s internal database ID (PK) \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{class_task_a66ca6f4d5bb0f2c89d10906e54510f71}{get\+\_\+description}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the task\textquotesingle{}s description/name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_a209e57de43e9df746a076e293395d34f}{set\+\_\+description}} (std\+::wstring description\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the task\textquotesingle{}s description/name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_task_a56b4f9c816502d0bdf484f18f006a054}{get\+\_\+start\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the tasks\textquotesingle{}s start time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_acc30f04f0a546eab5f3ee1cefc3d237c}{set\+\_\+start\+\_\+time}} (int start\+\_\+time\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the tasks\textquotesingle{}s start time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_task_ab74648dd6bc5ba29380fe3715cd5881d}{get\+\_\+end\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tasks\textquotesingle{}s end time/deadline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_a710c82248b7103793ed30d39ca5dadc2}{set\+\_\+end\+\_\+time}} (int end\+\_\+time\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the task\textquotesingle{}s end time/deadline. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_task_a9fb51a1cd7fef8e27da3911a25356f13}{get\+\_\+status}} ()
+\begin{DoxyCompactList}\small\item\em Gets the task\textquotesingle{}s status/progress. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_ab5d4350d31e9d2ba36c6990bb5204252}{set\+\_\+status}} (int status\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the task\textquotesingle{}s status/progress. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_a1a5be8c8651994e167f1c0b97d244f8a}{get\+\_\+priority}} ()
+\begin{DoxyCompactList}\small\item\em Gets the task\textquotesingle{}s priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_a3f746ba91099cdf4607cc45c780daa8b}{set\+\_\+priority}} (bool has\+\_\+priority)
+\begin{DoxyCompactList}\small\item\em Sets the task\textquotesingle{}s priority. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_task_a0b4aa267da7a94c0d4c600836a228377}{get\+\_\+deleted}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the tasks is deleted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_task_ab196292ac56d8b9a71e78b6ed2ac18d3}{set\+\_\+deleted}} (bool deleted)
+\begin{DoxyCompactList}\small\item\em Sets the task\textquotesingle{}s deleted state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_task_d_b}{Task\+DB}} \mbox{\hyperlink{class_task_afb23600fa824dd9bf3f33f421d88224b}{get\+\_\+task}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the internal \mbox{\hyperlink{struct_task_d_b}{Task\+DB}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_task_ab9857366b4dedeba70eccfc787995998}\label{class_task_ab9857366b4dedeba70eccfc787995998}} 
+\index{Task@{Task}!Task@{Task}}
+\index{Task@{Task}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{Task()}{Task()}}
+{\footnotesize\ttfamily Task\+::\+Task (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_task_d_b}{Task\+DB}}}]{task\+\_\+db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_task_a0b4aa267da7a94c0d4c600836a228377}\label{class_task_a0b4aa267da7a94c0d4c600836a228377}} 
+\index{Task@{Task}!get\_deleted@{get\_deleted}}
+\index{get\_deleted@{get\_deleted}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_deleted()}{get\_deleted()}}
+{\footnotesize\ttfamily bool Task\+::get\+\_\+deleted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the tasks is deleted. 
+
+\begin{DoxyReturn}{Returns}
+deleted state 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a66ca6f4d5bb0f2c89d10906e54510f71}\label{class_task_a66ca6f4d5bb0f2c89d10906e54510f71}} 
+\index{Task@{Task}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}}
+{\footnotesize\ttfamily std\+::wstring Task\+::get\+\_\+description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the task\textquotesingle{}s description/name. 
+
+\begin{DoxyReturn}{Returns}
+task description/name 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_ab74648dd6bc5ba29380fe3715cd5881d}\label{class_task_ab74648dd6bc5ba29380fe3715cd5881d}} 
+\index{Task@{Task}!get\_end\_time@{get\_end\_time}}
+\index{get\_end\_time@{get\_end\_time}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_end\_time()}{get\_end\_time()}}
+{\footnotesize\ttfamily int Task\+::get\+\_\+end\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the tasks\textquotesingle{}s end time/deadline. 
+
+\begin{DoxyReturn}{Returns}
+end time/deadline 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a6f31431c549287f1f4d1dd7b4170c12d}\label{class_task_a6f31431c549287f1f4d1dd7b4170c12d}} 
+\index{Task@{Task}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily int Task\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves task\textquotesingle{}s internal database ID (PK) 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_task_a1a5be8c8651994e167f1c0b97d244f8a}\label{class_task_a1a5be8c8651994e167f1c0b97d244f8a}} 
+\index{Task@{Task}!get\_priority@{get\_priority}}
+\index{get\_priority@{get\_priority}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_priority()}{get\_priority()}}
+{\footnotesize\ttfamily bool Task\+::get\+\_\+priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the task\textquotesingle{}s priority. 
+
+\begin{DoxyReturn}{Returns}
+priority 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a56b4f9c816502d0bdf484f18f006a054}\label{class_task_a56b4f9c816502d0bdf484f18f006a054}} 
+\index{Task@{Task}!get\_start\_time@{get\_start\_time}}
+\index{get\_start\_time@{get\_start\_time}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_start\_time()}{get\_start\_time()}}
+{\footnotesize\ttfamily int Task\+::get\+\_\+start\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the tasks\textquotesingle{}s start time. 
+
+\begin{DoxyReturn}{Returns}
+start time 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a9fb51a1cd7fef8e27da3911a25356f13}\label{class_task_a9fb51a1cd7fef8e27da3911a25356f13}} 
+\index{Task@{Task}!get\_status@{get\_status}}
+\index{get\_status@{get\_status}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_status()}{get\_status()}}
+{\footnotesize\ttfamily int Task\+::get\+\_\+status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the task\textquotesingle{}s status/progress. 
+
+\begin{DoxyReturn}{Returns}
+status/progress 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_afb23600fa824dd9bf3f33f421d88224b}\label{class_task_afb23600fa824dd9bf3f33f421d88224b}} 
+\index{Task@{Task}!get\_task@{get\_task}}
+\index{get\_task@{get\_task}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{get\_task()}{get\_task()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_task_d_b}{Task\+DB}} Task\+::get\+\_\+task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the internal \mbox{\hyperlink{struct_task_d_b}{Task\+DB}} object. 
+
+\begin{DoxyReturn}{Returns}
+internal \mbox{\hyperlink{struct_task_d_b}{Task\+DB}} object 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Task\+::fetch() 
+\end{DoxySeeAlso}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_task_afb23600fa824dd9bf3f33f421d88224b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_task_ab196292ac56d8b9a71e78b6ed2ac18d3}\label{class_task_ab196292ac56d8b9a71e78b6ed2ac18d3}} 
+\index{Task@{Task}!set\_deleted@{set\_deleted}}
+\index{set\_deleted@{set\_deleted}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_deleted()}{set\_deleted()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+deleted (\begin{DoxyParamCaption}\item[{bool}]{deleted }\end{DoxyParamCaption})}
+
+
+
+Sets the task\textquotesingle{}s deleted state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deleted} & new deleted state \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a209e57de43e9df746a076e293395d34f}\label{class_task_a209e57de43e9df746a076e293395d34f}} 
+\index{Task@{Task}!set\_description@{set\_description}}
+\index{set\_description@{set\_description}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_description()}{set\_description()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+description (\begin{DoxyParamCaption}\item[{std\+::wstring}]{description\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the task\textquotesingle{}s description/name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em description\+\_\+} & new description to be set internally \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a710c82248b7103793ed30d39ca5dadc2}\label{class_task_a710c82248b7103793ed30d39ca5dadc2}} 
+\index{Task@{Task}!set\_end\_time@{set\_end\_time}}
+\index{set\_end\_time@{set\_end\_time}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_end\_time()}{set\_end\_time()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+end\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{end\+\_\+time\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the task\textquotesingle{}s end time/deadline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em end\+\_\+time\+\_\+} & new end time/deadline to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_a3f746ba91099cdf4607cc45c780daa8b}\label{class_task_a3f746ba91099cdf4607cc45c780daa8b}} 
+\index{Task@{Task}!set\_priority@{set\_priority}}
+\index{set\_priority@{set\_priority}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_priority()}{set\_priority()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+priority (\begin{DoxyParamCaption}\item[{bool}]{has\+\_\+priority }\end{DoxyParamCaption})}
+
+
+
+Sets the task\textquotesingle{}s priority. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+\_\+priority} & new priority to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_acc30f04f0a546eab5f3ee1cefc3d237c}\label{class_task_acc30f04f0a546eab5f3ee1cefc3d237c}} 
+\index{Task@{Task}!set\_start\_time@{set\_start\_time}}
+\index{set\_start\_time@{set\_start\_time}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_start\_time()}{set\_start\_time()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+start\+\_\+time (\begin{DoxyParamCaption}\item[{int}]{start\+\_\+time\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the tasks\textquotesingle{}s start time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+time\+\_\+} & new start time to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_task_ab5d4350d31e9d2ba36c6990bb5204252}\label{class_task_ab5d4350d31e9d2ba36c6990bb5204252}} 
+\index{Task@{Task}!set\_status@{set\_status}}
+\index{set\_status@{set\_status}!Task@{Task}}
+\doxysubsubsection{\texorpdfstring{set\_status()}{set\_status()}}
+{\footnotesize\ttfamily void Task\+::set\+\_\+status (\begin{DoxyParamCaption}\item[{int}]{status\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Sets the task\textquotesingle{}s status/progress. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status\+\_\+} & new status/progress to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Task\+::update() 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_task_8h}{Task.\+h}}\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_task_8cpp}{Task.\+cpp}}\end{DoxyCompactItemize}

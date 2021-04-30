@@ -1,0 +1,6 @@
+<map id="StartDateTask::add_task" name="StartDateTask::add_task">
+<area shape="rect" id="node1" title="Adds task data to component and converts unix time (int) to a string." alt="" coords="5,35,172,61"/>
+<area shape="rect" id="node2" href="$namespace_utils.html#a72f55fac39292836b2f3a0c3e3cef965" title="Converts date (dd.mm.yy) (wstring) to unixTime (int)" alt="" coords="220,5,383,32"/>
+<area shape="rect" id="node4" href="$namespace_utils.html#aa1afecbc87a8d4f7051d613b368e564e" title="Converts unixTime (int) to date (dd.mm.yy) (wstring)" alt="" coords="240,57,363,98"/>
+<area shape="rect" id="node3" href="$_time_util_8cpp.html#aa2057efb13697a7ca5de17a98260451e" title="Function to imitate unix version of strptime on windows&#45;versions." alt="" coords="431,5,500,32"/>
+</map>

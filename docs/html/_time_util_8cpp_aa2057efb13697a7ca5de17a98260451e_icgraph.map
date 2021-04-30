@@ -1,0 +1,7 @@
+<map id="strptime" name="strptime">
+<area shape="rect" id="node1" title="Function to imitate unix version of strptime on windows&#45;versions." alt="" coords="431,56,500,83"/>
+<area shape="rect" id="node2" href="$namespace_utils.html#a72f55fac39292836b2f3a0c3e3cef965" title="Converts date (dd.mm.yy) (wstring) to unixTime (int)" alt="" coords="220,56,383,83"/>
+<area shape="rect" id="node3" href="$class_deadline_task.html#ab752d6dbcc12a89e3950f81e0b46b011" title="Adds tasks data to this component." alt="" coords="8,5,169,32"/>
+<area shape="rect" id="node4" href="$class_start_date_task.html#a30f1be70ec19940440a518b3cd72f123" title="Adds task data to component and converts unix time (int) to a string." alt="" coords="5,56,172,83"/>
+<area shape="rect" id="node5" href="$class_create_task.html#a527407a211afe9d2be4343aa5c351832" title="CreateTask constructor that will addd all it&#39;s children and set up internal callbacks." alt="" coords="7,107,170,133"/>
+</map>

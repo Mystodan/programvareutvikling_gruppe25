@@ -1,0 +1,4 @@
+<map id="Utils::string_to_unixtime" name="Utils::string_to_unixtime">
+<area shape="rect" id="node1" title="Converts date (dd.mm.yy) (wstring) to unixTime (int)" alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$_time_util_8cpp.html#aa2057efb13697a7ca5de17a98260451e" title="Function to imitate unix version of strptime on windows&#45;versions." alt="" coords="216,5,285,32"/>
+</map>

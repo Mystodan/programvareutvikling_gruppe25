@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['task_135',['Task',['../class_task.html',1,'Task'],['../class_task.html#ab9857366b4dedeba70eccfc787995998',1,'Task::Task()']]],
+  ['task_2ecpp_136',['Task.cpp',['../_task_8cpp.html',1,'']]],
+  ['task_2eh_137',['Task.h',['../_task_8h.html',1,'']]],
+  ['taskdb_138',['TaskDB',['../struct_task_d_b.html',1,'']]],
+  ['taskmanager_139',['TaskManager',['../class_task_manager.html',1,'']]],
+  ['taskmanager_2ecpp_140',['TaskManager.cpp',['../_task_manager_8cpp.html',1,'']]],
+  ['taskmanager_2eh_141',['TaskManager.h',['../_task_manager_8h.html',1,'']]],
+  ['taskname_142',['TASKNAME',['../class_side_menu.html#adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b',1,'SideMenu']]],
+  ['tasks_143',['Tasks',['../class_tasks.html',1,'Tasks'],['../class_tasks.html#ad939efd9b6d4b0f8b78001241924334e',1,'Tasks::Tasks()']]],
+  ['tasks_2eh_144',['Tasks.h',['../_tasks_8h.html',1,'']]],
+  ['td_5fcompleted_145',['td_Completed',['../class_side_menu.html#a67aa258bd2ba55a9fb94221b402537b4',1,'SideMenu']]],
+  ['td_5fcreatetask_146',['td_CreateTask',['../class_side_menu.html#a3ed39cff3027d92135825cbf57273c17',1,'SideMenu']]],
+  ['td_5fpriority_147',['td_Priority',['../class_side_menu.html#a77a50cc33cfcb7925471e049d1bc0c10',1,'SideMenu']]],
+  ['td_5frecyclebin_148',['td_RecycleBin',['../class_side_menu.html#a1056f92cafa5ef2eebb47a0eb1d53947',1,'SideMenu']]],
+  ['td_5ftasks_149',['td_Tasks',['../class_side_menu.html#afe2eae46cea9b5744f4175895b245896',1,'SideMenu']]],
+  ['testbutton_2ecpp_150',['TESTbutton.cpp',['../_t_e_s_tbutton_8cpp.html',1,'']]],
+  ['timeutil_2ecpp_151',['TimeUtil.cpp',['../_time_util_8cpp.html',1,'']]],
+  ['timeutil_2eh_152',['TimeUtil.h',['../_time_util_8h.html',1,'']]],
+  ['todo_5flist_5fapplication_2ecpp_153',['todo_list_application.cpp',['../todo__list__application_8cpp.html',1,'']]]
+];

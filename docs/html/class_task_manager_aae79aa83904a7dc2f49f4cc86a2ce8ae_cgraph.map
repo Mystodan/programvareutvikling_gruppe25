@@ -1,0 +1,4 @@
+<map id="TaskManager::get_all_tasks" name="TaskManager::get_all_tasks">
+<area shape="rect" id="node1" title="Will fetch all the tasks in the database." alt="" coords="5,5,152,47"/>
+<area shape="rect" id="node2" href="$namespace_database.html#a6208f3900f3b5e2fd49b0bcf60eda980" title="Returns an instance of the database storage object. Mostly for internal use." alt="" coords="200,13,324,39"/>
+</map>

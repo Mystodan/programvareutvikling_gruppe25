@@ -1,0 +1,4 @@
+<map id="Database::update" name="Database::update">
+<area shape="rect" id="node1" title="Updates the object data in the database." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$namespace_database.html#a6208f3900f3b5e2fd49b0bcf60eda980" title="Returns an instance of the database storage object. Mostly for internal use." alt="" coords="177,5,301,32"/>
+</map>

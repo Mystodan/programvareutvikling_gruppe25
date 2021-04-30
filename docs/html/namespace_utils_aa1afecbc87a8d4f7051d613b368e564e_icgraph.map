@@ -1,0 +1,5 @@
+<map id="Utils::unixtime_to_string" name="Utils::unixtime_to_string">
+<area shape="rect" id="node1" title="Converts unixTime (int) to date (dd.mm.yy) (wstring)" alt="" coords="220,23,343,65"/>
+<area shape="rect" id="node2" href="$class_deadline_task.html#ab752d6dbcc12a89e3950f81e0b46b011" title="Adds tasks data to this component." alt="" coords="8,5,169,32"/>
+<area shape="rect" id="node3" href="$class_start_date_task.html#a30f1be70ec19940440a518b3cd72f123" title="Adds task data to component and converts unix time (int) to a string." alt="" coords="5,56,172,83"/>
+</map>

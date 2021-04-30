@@ -1,0 +1,330 @@
+\hypertarget{class_side_menu}{}\doxysection{Side\+Menu Class Reference}
+\label{class_side_menu}\index{SideMenu@{SideMenu}}
+
+
+\char`\"{}\+Main\char`\"{} component which holds all the tabs  
+
+
+
+
+{\ttfamily \#include $<$Side\+Menu.\+h$>$}
+
+
+
+Inheritance diagram for Side\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{class_side_menu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Side\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_menu__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Sort\+By}} \+: int \{ \newline
+\mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b}{TASKNAME}}
+, \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095facaf55db72c49969e2ed270adbcd0a8f5}{PRIORITY}}
+, \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa5f241c8c8f985b3c51e05d39cf030f4c}{STATUS}}
+, \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa70c2c0562cf73d08253b7d7d60637ccd}{STARTDATE}}
+, \newline
+\mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fae127c5fed59b59402a4bfcc1404fe7ec}{DEADLINE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}{Sort\+Order}} \+: int \{ \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754a83ec681a20197326c163ea3b39ef7c32}{ASCENDING}} = 0
+, \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754acff818f0ae4cef845577e39283886a53}{DESCENDING}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_side_menu_a3471cb1320d88789caf9d6a17ab6f7b1}{Side\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Fills the component with all it\textquotesingle{}s children and containers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_menu_af6006fe2d5571092aed44f1bb3dd0c60}{Rebuild\+Data\+Entries}} ()
+\begin{DoxyCompactList}\small\item\em Rebuilds all the data entries when a change happens to one of the data entries (tasks) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_side_menu_abcf57560bf157f61a72c0041f45ce8de}{On\+Event}} (Event) override
+\begin{DoxyCompactList}\small\item\em Callback for when an event happens in the UI. Handles sort order and type based on the event (input) \end{DoxyCompactList}\item 
+Element \mbox{\hyperlink{class_side_menu_a9a5c854b5c78a534a5726cf6d39ed3e9}{Render}} () override
+\begin{DoxyCompactList}\small\item\em Builds render element for this component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_side_menu_a7bcd9864a84ed1d4fe697a4bb99c2115}{sort\+\_\+tasks}} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&tasks) const
+\begin{DoxyCompactList}\small\item\em Sorts the tasks vector according to the active sort order and type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Container \mbox{\hyperlink{class_side_menu_acd410dfeaff0d9a41fbc52dd3e5476dd}{main\+\_\+container}} = Container\+::\+Horizontal()
+\item 
+Container \mbox{\hyperlink{class_side_menu_ab1b6e7e023dfddb03205d2e3634233e2}{container}} = Container\+::\+Tab(\&menu.\+selected)
+\item 
+Menu \mbox{\hyperlink{class_side_menu_aeb4a722afd248b07ca7df4ee47c59456}{menu}}
+\item 
+\mbox{\hyperlink{class_tasks}{Tasks}} \mbox{\hyperlink{class_side_menu_afe2eae46cea9b5744f4175895b245896}{td\+\_\+\+Tasks}}
+\item 
+\mbox{\hyperlink{class_priority}{Priority}} \mbox{\hyperlink{class_side_menu_a77a50cc33cfcb7925471e049d1bc0c10}{td\+\_\+\+Priority}}
+\item 
+\mbox{\hyperlink{class_completed}{Completed}} \mbox{\hyperlink{class_side_menu_a67aa258bd2ba55a9fb94221b402537b4}{td\+\_\+\+Completed}}
+\item 
+\mbox{\hyperlink{class_recycle_bin}{Recycle\+Bin}} \mbox{\hyperlink{class_side_menu_a1056f92cafa5ef2eebb47a0eb1d53947}{td\+\_\+\+Recycle\+Bin}}
+\item 
+\mbox{\hyperlink{class_create_task}{Create\+Task}} \mbox{\hyperlink{class_side_menu_a3ed39cff3027d92135825cbf57273c17}{td\+\_\+\+Create\+Task}}
+\item 
+\mbox{\hyperlink{classftxui_1_1_help_window}{Help\+Window}} \mbox{\hyperlink{class_side_menu_a07e92fa3a09d23bb02300951dab3d185}{help\+\_\+window}}
+\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{class_side_menu_aaa6b98c4a145b21e90a485dcf81fdb0f}{on\+\_\+change}} = \mbox{[}$\,$\mbox{]}() \{\}
+\item 
+\mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Sort\+By}} \mbox{\hyperlink{class_side_menu_ae1ddb10464acda225cfdff0cac5efadb}{sort\+\_\+by}} = \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b}{Sort\+By\+::\+TASKNAME}}
+\item 
+\mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}{Sort\+Order}} \mbox{\hyperlink{class_side_menu_a8eca740ec0b6339211c485d6fbad3bf9}{sort\+\_\+order}} = \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754a83ec681a20197326c163ea3b39ef7c32}{Sort\+Order\+::\+ASCENDING}}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Sort\+By}} $>$ \mbox{\hyperlink{class_side_menu_afd95d8a8ff34c4591369c02c718bc9f7}{key\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\char`\"{}\+Main\char`\"{} component which holds all the tabs 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}} 
+\index{SideMenu@{SideMenu}!SortBy@{SortBy}}
+\index{SortBy@{SortBy}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{SortBy}{SortBy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Side\+Menu\+::\+Sort\+By}} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TASKNAME@{TASKNAME}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!TASKNAME@{TASKNAME}}}\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b}} 
+TASKNAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PRIORITY@{PRIORITY}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!PRIORITY@{PRIORITY}}}\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095facaf55db72c49969e2ed270adbcd0a8f5}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095facaf55db72c49969e2ed270adbcd0a8f5}} 
+PRIORITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS@{STATUS}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!STATUS@{STATUS}}}\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa5f241c8c8f985b3c51e05d39cf030f4c}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa5f241c8c8f985b3c51e05d39cf030f4c}} 
+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STARTDATE@{STARTDATE}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!STARTDATE@{STARTDATE}}}\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa70c2c0562cf73d08253b7d7d60637ccd}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fa70c2c0562cf73d08253b7d7d60637ccd}} 
+STARTDATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEADLINE@{DEADLINE}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!DEADLINE@{DEADLINE}}}\mbox{\Hypertarget{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fae127c5fed59b59402a4bfcc1404fe7ec}\label{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fae127c5fed59b59402a4bfcc1404fe7ec}} 
+DEADLINE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}\label{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}} 
+\index{SideMenu@{SideMenu}!SortOrder@{SortOrder}}
+\index{SortOrder@{SortOrder}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{SortOrder}{SortOrder}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}{Side\+Menu\+::\+Sort\+Order}} \+: int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ASCENDING@{ASCENDING}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!ASCENDING@{ASCENDING}}}\mbox{\Hypertarget{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754a83ec681a20197326c163ea3b39ef7c32}\label{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754a83ec681a20197326c163ea3b39ef7c32}} 
+ASCENDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DESCENDING@{DESCENDING}!SideMenu@{SideMenu}}\index{SideMenu@{SideMenu}!DESCENDING@{DESCENDING}}}\mbox{\Hypertarget{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754acff818f0ae4cef845577e39283886a53}\label{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754acff818f0ae4cef845577e39283886a53}} 
+DESCENDING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_side_menu_a3471cb1320d88789caf9d6a17ab6f7b1}\label{class_side_menu_a3471cb1320d88789caf9d6a17ab6f7b1}} 
+\index{SideMenu@{SideMenu}!SideMenu@{SideMenu}}
+\index{SideMenu@{SideMenu}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{SideMenu()}{SideMenu()}}
+{\footnotesize\ttfamily Side\+Menu\+::\+Side\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fills the component with all it\textquotesingle{}s children and containers. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_menu_a3471cb1320d88789caf9d6a17ab6f7b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_side_menu_abcf57560bf157f61a72c0041f45ce8de}\label{class_side_menu_abcf57560bf157f61a72c0041f45ce8de}} 
+\index{SideMenu@{SideMenu}!OnEvent@{OnEvent}}
+\index{OnEvent@{OnEvent}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{OnEvent()}{OnEvent()}}
+{\footnotesize\ttfamily bool Side\+Menu\+::\+On\+Event (\begin{DoxyParamCaption}\item[{Event}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Callback for when an event happens in the UI. Handles sort order and type based on the event (input) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & thrown from the UI \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if we captured the event in this component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_side_menu_af6006fe2d5571092aed44f1bb3dd0c60}\label{class_side_menu_af6006fe2d5571092aed44f1bb3dd0c60}} 
+\index{SideMenu@{SideMenu}!RebuildDataEntries@{RebuildDataEntries}}
+\index{RebuildDataEntries@{RebuildDataEntries}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{RebuildDataEntries()}{RebuildDataEntries()}}
+{\footnotesize\ttfamily void Side\+Menu\+::\+Rebuild\+Data\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rebuilds all the data entries when a change happens to one of the data entries (tasks) 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_menu_af6006fe2d5571092aed44f1bb3dd0c60_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_menu_af6006fe2d5571092aed44f1bb3dd0c60_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_side_menu_a9a5c854b5c78a534a5726cf6d39ed3e9}\label{class_side_menu_a9a5c854b5c78a534a5726cf6d39ed3e9}} 
+\index{SideMenu@{SideMenu}!Render@{Render}}
+\index{Render@{Render}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily Element Side\+Menu\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+Builds render element for this component. 
+
+\begin{DoxyReturn}{Returns}
+Element to be rendered 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_side_menu_a7bcd9864a84ed1d4fe697a4bb99c2115}\label{class_side_menu_a7bcd9864a84ed1d4fe697a4bb99c2115}} 
+\index{SideMenu@{SideMenu}!sort\_tasks@{sort\_tasks}}
+\index{sort\_tasks@{sort\_tasks}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{sort\_tasks()}{sort\_tasks()}}
+{\footnotesize\ttfamily void Side\+Menu\+::sort\+\_\+tasks (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&}]{tasks }\end{DoxyParamCaption}) const}
+
+
+
+Sorts the tasks vector according to the active sort order and type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & to be sorted \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_side_menu_a7bcd9864a84ed1d4fe697a4bb99c2115_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_side_menu_ab1b6e7e023dfddb03205d2e3634233e2}\label{class_side_menu_ab1b6e7e023dfddb03205d2e3634233e2}} 
+\index{SideMenu@{SideMenu}!container@{container}}
+\index{container@{container}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{container}{container}}
+{\footnotesize\ttfamily Container Side\+Menu\+::container = Container\+::\+Tab(\&menu.\+selected)}
+
+\mbox{\Hypertarget{class_side_menu_a07e92fa3a09d23bb02300951dab3d185}\label{class_side_menu_a07e92fa3a09d23bb02300951dab3d185}} 
+\index{SideMenu@{SideMenu}!help\_window@{help\_window}}
+\index{help\_window@{help\_window}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{help\_window}{help\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classftxui_1_1_help_window}{Help\+Window}} Side\+Menu\+::help\+\_\+window}
+
+\mbox{\Hypertarget{class_side_menu_afd95d8a8ff34c4591369c02c718bc9f7}\label{class_side_menu_afd95d8a8ff34c4591369c02c718bc9f7}} 
+\index{SideMenu@{SideMenu}!key\_map@{key\_map}}
+\index{key\_map@{key\_map}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{key\_map}{key\_map}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Sort\+By}}$>$ Side\+Menu\+::key\+\_\+map}
+
+\mbox{\Hypertarget{class_side_menu_acd410dfeaff0d9a41fbc52dd3e5476dd}\label{class_side_menu_acd410dfeaff0d9a41fbc52dd3e5476dd}} 
+\index{SideMenu@{SideMenu}!main\_container@{main\_container}}
+\index{main\_container@{main\_container}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{main\_container}{main\_container}}
+{\footnotesize\ttfamily Container Side\+Menu\+::main\+\_\+container = Container\+::\+Horizontal()}
+
+\mbox{\Hypertarget{class_side_menu_aeb4a722afd248b07ca7df4ee47c59456}\label{class_side_menu_aeb4a722afd248b07ca7df4ee47c59456}} 
+\index{SideMenu@{SideMenu}!menu@{menu}}
+\index{menu@{menu}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{menu}{menu}}
+{\footnotesize\ttfamily Menu Side\+Menu\+::menu}
+
+\mbox{\Hypertarget{class_side_menu_aaa6b98c4a145b21e90a485dcf81fdb0f}\label{class_side_menu_aaa6b98c4a145b21e90a485dcf81fdb0f}} 
+\index{SideMenu@{SideMenu}!on\_change@{on\_change}}
+\index{on\_change@{on\_change}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{on\_change}{on\_change}}
+{\footnotesize\ttfamily std\+::function$<$void()$>$ Side\+Menu\+::on\+\_\+change = \mbox{[}$\,$\mbox{]}() \{\}}
+
+\mbox{\Hypertarget{class_side_menu_ae1ddb10464acda225cfdff0cac5efadb}\label{class_side_menu_ae1ddb10464acda225cfdff0cac5efadb}} 
+\index{SideMenu@{SideMenu}!sort\_by@{sort\_by}}
+\index{sort\_by@{sort\_by}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{sort\_by}{sort\_by}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095f}{Sort\+By}} Side\+Menu\+::sort\+\_\+by = \mbox{\hyperlink{class_side_menu_adb3bb633bc7836f0ff39a95158ba095fafd50befb525d00fc4041157efdda3b4b}{Sort\+By\+::\+TASKNAME}}}
+
+\mbox{\Hypertarget{class_side_menu_a8eca740ec0b6339211c485d6fbad3bf9}\label{class_side_menu_a8eca740ec0b6339211c485d6fbad3bf9}} 
+\index{SideMenu@{SideMenu}!sort\_order@{sort\_order}}
+\index{sort\_order@{sort\_order}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{sort\_order}{sort\_order}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754}{Sort\+Order}} Side\+Menu\+::sort\+\_\+order = \mbox{\hyperlink{class_side_menu_ab4b6e94ffb31939f459160dcf05c1754a83ec681a20197326c163ea3b39ef7c32}{Sort\+Order\+::\+ASCENDING}}}
+
+\mbox{\Hypertarget{class_side_menu_a67aa258bd2ba55a9fb94221b402537b4}\label{class_side_menu_a67aa258bd2ba55a9fb94221b402537b4}} 
+\index{SideMenu@{SideMenu}!td\_Completed@{td\_Completed}}
+\index{td\_Completed@{td\_Completed}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{td\_Completed}{td\_Completed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_completed}{Completed}} Side\+Menu\+::td\+\_\+\+Completed}
+
+\mbox{\Hypertarget{class_side_menu_a3ed39cff3027d92135825cbf57273c17}\label{class_side_menu_a3ed39cff3027d92135825cbf57273c17}} 
+\index{SideMenu@{SideMenu}!td\_CreateTask@{td\_CreateTask}}
+\index{td\_CreateTask@{td\_CreateTask}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{td\_CreateTask}{td\_CreateTask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_create_task}{Create\+Task}} Side\+Menu\+::td\+\_\+\+Create\+Task}
+
+\mbox{\Hypertarget{class_side_menu_a77a50cc33cfcb7925471e049d1bc0c10}\label{class_side_menu_a77a50cc33cfcb7925471e049d1bc0c10}} 
+\index{SideMenu@{SideMenu}!td\_Priority@{td\_Priority}}
+\index{td\_Priority@{td\_Priority}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{td\_Priority}{td\_Priority}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_priority}{Priority}} Side\+Menu\+::td\+\_\+\+Priority}
+
+\mbox{\Hypertarget{class_side_menu_a1056f92cafa5ef2eebb47a0eb1d53947}\label{class_side_menu_a1056f92cafa5ef2eebb47a0eb1d53947}} 
+\index{SideMenu@{SideMenu}!td\_RecycleBin@{td\_RecycleBin}}
+\index{td\_RecycleBin@{td\_RecycleBin}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{td\_RecycleBin}{td\_RecycleBin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_recycle_bin}{Recycle\+Bin}} Side\+Menu\+::td\+\_\+\+Recycle\+Bin}
+
+\mbox{\Hypertarget{class_side_menu_afe2eae46cea9b5744f4175895b245896}\label{class_side_menu_afe2eae46cea9b5744f4175895b245896}} 
+\index{SideMenu@{SideMenu}!td\_Tasks@{td\_Tasks}}
+\index{td\_Tasks@{td\_Tasks}!SideMenu@{SideMenu}}
+\doxysubsubsection{\texorpdfstring{td\_Tasks}{td\_Tasks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tasks}{Tasks}} Side\+Menu\+::td\+\_\+\+Tasks}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_side_menu_8h}{Side\+Menu.\+h}}\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_side_menu_8cpp}{Side\+Menu.\+cpp}}\end{DoxyCompactItemize}

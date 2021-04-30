@@ -1,0 +1,4 @@
+<map id="ftxui::CustomInput" name="ftxui::CustomInput">
+<area shape="rect" id="node1" title="Custom inputbox that doesn&#39;t capture left/right inputs. Also always keeps the cursor as far right as ..." alt="" coords="5,131,140,267"/>
+<area shape="rect" id="node2" title=" " alt="" coords="47,5,98,83"/>
+</map>

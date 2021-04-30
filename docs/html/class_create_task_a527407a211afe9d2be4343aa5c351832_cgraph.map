@@ -1,0 +1,7 @@
+<map id="CreateTask::CreateTask" name="CreateTask::CreateTask">
+<area shape="rect" id="node1" title="CreateTask constructor that will addd all it&#39;s children and set up internal callbacks." alt="" coords="5,31,168,57"/>
+<area shape="rect" id="node2" href="$class_task_manager.html#a7f1ffeb2e17e3c5fac721722ab3e8468" title="Adds a new task to the database from a task object." alt="" coords="217,5,378,32"/>
+<area shape="rect" id="node4" href="$namespace_utils.html#a72f55fac39292836b2f3a0c3e3cef965" title="Converts date (dd.mm.yy) (wstring) to unixTime (int)" alt="" coords="216,56,379,83"/>
+<area shape="rect" id="node3" href="$class_task.html#afb23600fa824dd9bf3f33f421d88224b" title="Retrieves the internal TaskDB object." alt="" coords="427,5,535,32"/>
+<area shape="rect" id="node5" href="$_time_util_8cpp.html#aa2057efb13697a7ca5de17a98260451e" title="Function to imitate unix version of strptime on windows&#45;versions." alt="" coords="446,56,515,83"/>
+</map>

@@ -1,0 +1,145 @@
+\hypertarget{class_checkbox_column}{}\doxysection{Checkbox\+Column Class Reference}
+\label{class_checkbox_column}\index{CheckboxColumn@{CheckboxColumn}}
+
+
+Sets up the \char`\"{}\+Priority\char`\"{} column.  
+
+
+
+
+{\ttfamily \#include $<$Checkbox\+Column.\+h$>$}
+
+
+
+Inheritance diagram for Checkbox\+Column\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_checkbox_column__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Checkbox\+Column\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_checkbox_column__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_checkbox_column_ae27517714a35875d7b5c721b255d8de2}{Checkbox\+Column}} ()
+\item 
+void \mbox{\hyperlink{class_checkbox_column_a36d94af9bb8c6a2f1f9fc32caaa4134a}{fill\+\_\+data}} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&tasks)
+\begin{DoxyCompactList}\small\item\em Fills component with all task data. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_checkbox_column_a9caef4f62a368bd56345f7cb5397bdab}{add\+\_\+task}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$ \&task)=0
+\begin{DoxyCompactList}\small\item\em Adds a task\textquotesingle{}s data to the component, also sets the callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_checkbox_column_a841650e4bdb2cae570b40ce49a31e3b4}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears/detaches all checkboxes from our component. Will no longer be rendered or execute events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{class_checkbox_column_a5ee89d2da0d7bb6bbb09bfb16a372c31}{on\+\_\+enter}} = \mbox{[}$\,$\mbox{]}() \{\}
+\item 
+std\+::function$<$ void()$>$ \mbox{\hyperlink{class_checkbox_column_a2082d18a8b809dc8268070907832c634}{on\+\_\+change}} = \mbox{[}$\,$\mbox{]}()\{\}
+\item 
+ftxui\+::\+Container \mbox{\hyperlink{class_checkbox_column_ac9e013a3509e2618f90dbc6347191e47}{container\+\_\+}} = ftxui\+::\+Container\+::\+Vertical()
+\item 
+std\+::vector$<$ ftxui\+::\+Check\+Box $\ast$ $>$ \mbox{\hyperlink{class_checkbox_column_a3b38094b768d0c2beeffa3740e074199}{checkboxes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sets up the \char`\"{}\+Priority\char`\"{} column. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_checkbox_column_ae27517714a35875d7b5c721b255d8de2}\label{class_checkbox_column_ae27517714a35875d7b5c721b255d8de2}} 
+\index{CheckboxColumn@{CheckboxColumn}!CheckboxColumn@{CheckboxColumn}}
+\index{CheckboxColumn@{CheckboxColumn}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{CheckboxColumn()}{CheckboxColumn()}}
+{\footnotesize\ttfamily Checkbox\+Column\+::\+Checkbox\+Column (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_checkbox_column_a9caef4f62a368bd56345f7cb5397bdab}\label{class_checkbox_column_a9caef4f62a368bd56345f7cb5397bdab}} 
+\index{CheckboxColumn@{CheckboxColumn}!add\_task@{add\_task}}
+\index{add\_task@{add\_task}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{add\_task()}{add\_task()}}
+{\footnotesize\ttfamily virtual void Checkbox\+Column\+::add\+\_\+task (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$ \&}]{task }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a task\textquotesingle{}s data to the component, also sets the callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & \mbox{\hyperlink{class_task}{Task}} to be added \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_priority_task_ae6ed4d0c1f54646eab58fd043a17377f}{Priority\+Task}}, and \mbox{\hyperlink{class_delete_task_a9bc50b1fa69c6b1c2fe3351973bce11b}{Delete\+Task}}.
+
+\mbox{\Hypertarget{class_checkbox_column_a841650e4bdb2cae570b40ce49a31e3b4}\label{class_checkbox_column_a841650e4bdb2cae570b40ce49a31e3b4}} 
+\index{CheckboxColumn@{CheckboxColumn}!clear@{clear}}
+\index{clear@{clear}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Checkbox\+Column\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears/detaches all checkboxes from our component. Will no longer be rendered or execute events. 
+
+\mbox{\Hypertarget{class_checkbox_column_a36d94af9bb8c6a2f1f9fc32caaa4134a}\label{class_checkbox_column_a36d94af9bb8c6a2f1f9fc32caaa4134a}} 
+\index{CheckboxColumn@{CheckboxColumn}!fill\_data@{fill\_data}}
+\index{fill\_data@{fill\_data}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{fill\_data()}{fill\_data()}}
+{\footnotesize\ttfamily void Checkbox\+Column\+::fill\+\_\+data (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_task}{Task}} $>$$>$ \&}]{tasks }\end{DoxyParamCaption})}
+
+
+
+Fills component with all task data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tasks} & \mbox{\hyperlink{class_tasks}{Tasks}} to be filled \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_checkbox_column_a3b38094b768d0c2beeffa3740e074199}\label{class_checkbox_column_a3b38094b768d0c2beeffa3740e074199}} 
+\index{CheckboxColumn@{CheckboxColumn}!checkboxes@{checkboxes}}
+\index{checkboxes@{checkboxes}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{checkboxes}{checkboxes}}
+{\footnotesize\ttfamily std\+::vector$<$ftxui\+::\+Check\+Box$\ast$$>$ Checkbox\+Column\+::checkboxes}
+
+\mbox{\Hypertarget{class_checkbox_column_ac9e013a3509e2618f90dbc6347191e47}\label{class_checkbox_column_ac9e013a3509e2618f90dbc6347191e47}} 
+\index{CheckboxColumn@{CheckboxColumn}!container\_@{container\_}}
+\index{container\_@{container\_}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{container\_}{container\_}}
+{\footnotesize\ttfamily ftxui\+::\+Container Checkbox\+Column\+::container\+\_\+ = ftxui\+::\+Container\+::\+Vertical()}
+
+\mbox{\Hypertarget{class_checkbox_column_a2082d18a8b809dc8268070907832c634}\label{class_checkbox_column_a2082d18a8b809dc8268070907832c634}} 
+\index{CheckboxColumn@{CheckboxColumn}!on\_change@{on\_change}}
+\index{on\_change@{on\_change}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{on\_change}{on\_change}}
+{\footnotesize\ttfamily std\+::function$<$void()$>$ Checkbox\+Column\+::on\+\_\+change = \mbox{[}$\,$\mbox{]}()\{\}}
+
+\mbox{\Hypertarget{class_checkbox_column_a5ee89d2da0d7bb6bbb09bfb16a372c31}\label{class_checkbox_column_a5ee89d2da0d7bb6bbb09bfb16a372c31}} 
+\index{CheckboxColumn@{CheckboxColumn}!on\_enter@{on\_enter}}
+\index{on\_enter@{on\_enter}!CheckboxColumn@{CheckboxColumn}}
+\doxysubsubsection{\texorpdfstring{on\_enter}{on\_enter}}
+{\footnotesize\ttfamily std\+::function$<$void()$>$ Checkbox\+Column\+::on\+\_\+enter = \mbox{[}$\,$\mbox{]}() \{\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_checkbox_column_8h}{Checkbox\+Column.\+h}}\item 
+G\+:/repos/prog1004-\/gruppe-\/25/source/\mbox{\hyperlink{_checkbox_column_8cpp}{Checkbox\+Column.\+cpp}}\end{DoxyCompactItemize}
