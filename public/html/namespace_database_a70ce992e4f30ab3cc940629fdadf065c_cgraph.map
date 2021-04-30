@@ -1,4 +1,0 @@
-<map id="Database::remove" name="Database::remove">
-<area shape="rect" id="node1" title="Removes multiple objects from the database." alt="" coords="5,5,132,32"/>
-<area shape="rect" id="node2" href="$namespace_database.html#a6208f3900f3b5e2fd49b0bcf60eda980" title="Returns an instance of the database storage object. Mostly for internal use." alt="" coords="180,5,304,32"/>
-</map>

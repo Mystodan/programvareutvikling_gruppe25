@@ -1,7 +1,0 @@
-<map id="BaseTask" name="BaseTask">
-<area shape="rect" id="node1" title="Base task that manages all task columns and rows." alt="" coords="118,131,231,296"/>
-<area shape="rect" id="node3" href="$class_completed.html" title="Manages the top side menu tab &#45; &quot;Completed&quot;." alt="" coords="5,344,109,421"/>
-<area shape="rect" id="node4" href="$class_priority.html" title="Manages the top side menu tab &#45; &quot;Priority&quot;." alt="" coords="133,344,216,421"/>
-<area shape="rect" id="node5" href="$class_tasks.html" title="Manages the top side menu tab &#45; &quot;Tasks&quot;." alt="" coords="240,344,317,421"/>
-<area shape="rect" id="node2" title=" " alt="" coords="115,5,235,83"/>
-</map>

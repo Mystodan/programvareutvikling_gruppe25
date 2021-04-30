@@ -1,4 +1,0 @@
-<map id="TaskManager::delete_task" name="TaskManager::delete_task">
-<area shape="rect" id="node1" title="Deletes a task from the database with a task object." alt="" coords="216,5,391,32"/>
-<area shape="rect" id="node2" href="$class_recycle_bin.html#ad863b6eecdfd63f8a47e01224e1f773a" title="RecycleBin constructor." alt="" coords="5,5,168,32"/>
-</map>

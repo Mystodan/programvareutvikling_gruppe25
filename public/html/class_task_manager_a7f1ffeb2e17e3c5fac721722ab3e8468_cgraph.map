@@ -1,4 +1,0 @@
-<map id="TaskManager::add_task" name="TaskManager::add_task">
-<area shape="rect" id="node1" title="Adds a new task to the database from a task object." alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node2" href="$class_task.html#afb23600fa824dd9bf3f33f421d88224b" title="Retrieves the internal TaskDB object." alt="" coords="215,5,323,32"/>
-</map>

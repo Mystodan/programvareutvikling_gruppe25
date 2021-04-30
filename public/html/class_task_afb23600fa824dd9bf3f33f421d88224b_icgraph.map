@@ -1,7 +1,0 @@
-<map id="Task::get_task" name="Task::get_task">
-<area shape="rect" id="node1" title="Retrieves the internal TaskDB object." alt="" coords="439,31,547,57"/>
-<area shape="rect" id="node2" href="$class_task_manager.html#a7f1ffeb2e17e3c5fac721722ab3e8468" title="Adds a new task to the database from a task object." alt="" coords="223,5,384,32"/>
-<area shape="rect" id="node4" href="$class_task_manager.html#a7b8a1eca51c3228b3a939904f4fefa54" title="Deletes a task from the database with a task object." alt="" coords="216,56,391,83"/>
-<area shape="rect" id="node3" href="$class_create_task.html#a527407a211afe9d2be4343aa5c351832" title="CreateTask constructor that will addd all it&#39;s children and set up internal callbacks." alt="" coords="5,5,168,32"/>
-<area shape="rect" id="node5" href="$class_recycle_bin.html#ad863b6eecdfd63f8a47e01224e1f773a" title="RecycleBin constructor." alt="" coords="5,56,168,83"/>
-</map>
